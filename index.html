@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guana - Share rides across Costa Rica</title>
+  <meta name="description" content="Share rides between beaches, towns, and cities across Costa Rica. Save money, meet people, travel better.">
+  <link rel="stylesheet" href="/brand.css">
+  <style>
+    .hero {
+      text-align: center;
+      padding: 80px 24px 48px;
+      max-width: 560px;
+    }
+
+    .hero-title {
+      font-size: 44px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--golden) 0%, #E8B030 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 28px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .badge-hint {
+      font-size: 13px;
+      color: var(--text-tertiary);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 560px;
+      width: 100%;
+      padding: 0 24px 48px;
+    }
+
+    .feature {
+      text-align: center;
+      padding: 28px 16px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .feature-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .feature-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    .legal-links {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .legal-links a {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      margin: 0 12px;
+    }
+
+    .legal-links a:hover {
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 500px) {
+      .hero { padding: 56px 24px 36px; }
+      .hero-title { font-size: 34px; }
+      .hero-subtitle { font-size: 16px; }
+      .features { grid-template-columns: 1fr; max-width: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page page--center">
+    <div class="hero">
+      <div class="brand-name" style="font-size: 20px; margin-bottom: 48px; letter-spacing: 1px; color: var(--navy);">GUANA</div>
+
+      <h1 class="hero-title">
+        Share rides across<br><span>Costa Rica</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Travel between beaches, towns, and cities together. Save money, meet great people, and move sustainably.
+      </p>
+
+      <div class="hero-cta">
+        <div class="badge">Coming soon to the App Store</div>
+        <p class="badge-hint">iOS app launching soon</p>
+      </div>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">&#127965;</div>
+        <div class="feature-label">Beach to beach</div>
+        <div class="feature-desc">Tamarindo, Santa Teresa, Nosara and more</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#128176;</div>
+        <div class="feature-label">Split costs</div>
+        <div class="feature-desc">Fair prices set by drivers</div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">&#127793;</div>
+        <div class="feature-label">Travel green</div>
+        <div class="feature-desc">Fewer cars, smaller footprint</div>
+      </div>
+    </div>
+
+    <div class="legal-links">
+      <a href="/privacy/">Privacy Policy</a>
+      <a href="/terms/">Terms of Service</a>
+    </div>
+  </div>
+</body>
+</html>

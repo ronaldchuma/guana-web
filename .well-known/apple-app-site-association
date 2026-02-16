@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["M9PF7F628M.Guana.Guana"],
+        "components": [
+          {
+            "/": "/auth/callback",
+            "comment": "Supabase auth redirect (email verification, password reset)"
+          }
+        ]
+      }
+    ]
+  }
+}

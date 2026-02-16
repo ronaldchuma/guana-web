@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Confirmed - Guana</title>
+  <link rel="stylesheet" href="/brand.css">
+</head>
+<body>
+  <div class="page page--center">
+    <div class="brand">
+      <div class="brand-name">Guana</div>
+    </div>
+
+    <div class="card" style="text-align: center;">
+      <div class="icon-circle icon-circle--golden">&#10003;</div>
+      <h1 class="heading">You're all set!</h1>
+      <p class="subheading">Your email has been confirmed.<br>Tap below to continue in the app.</p>
+      <a id="openApp" class="btn btn--primary" href="#">Open Guana</a>
+      <p class="caption">If the app doesn't open, make sure Guana is installed.</p>
+    </div>
+  </div>
+
+  <script>
+    var fragment = window.location.hash;
+    var appURL = 'guana://auth/callback' + fragment;
+    document.getElementById('openApp').href = appURL;
+    setTimeout(function () { window.location.href = appURL; }, 600);
+  </script>
+</body>
+</html>

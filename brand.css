@@ -1,0 +1,266 @@
+/* ── Guana Brand Tokens ────────────────────────────────────── */
+
+:root {
+  /* Primary palette */
+  --navy:        #142E4D;
+  --navy-light:  #1E3F66;
+  --steel-blue:  #5A8EC8;
+  --earth:       #8C6647;
+  --earth-light: #C79E73;
+  --golden:      #FAD166;
+  --golden-soft: #FBE4A0;
+
+  /* Neutrals */
+  --white:         #FFFFFF;
+  --warm-white:    #FCFCFA;
+  --sand:          #F5F3EF;
+  --sand-dark:     #E8E4DD;
+  --text-primary:  rgba(0, 0, 0, 0.88);
+  --text-secondary:rgba(0, 0, 0, 0.55);
+  --text-tertiary: rgba(0, 0, 0, 0.35);
+  --border:        rgba(0, 0, 0, 0.08);
+
+  /* Layout */
+  --radius:     20px;
+  --radius-sm:  14px;
+  --radius-xs:  10px;
+  --max-width:  480px;
+  --page-pad:   24px;
+
+  /* Type */
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI',
+          Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--text-primary);
+  background: var(--sand);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: var(--navy); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+/* ── Layout ───────────────────────────────────────────────── */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--page-pad);
+}
+
+.page--center {
+  justify-content: center;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 48px 32px;
+  max-width: var(--max-width);
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card--narrow {
+  max-width: 560px;
+}
+
+.card--wide {
+  max-width: 640px;
+}
+
+/* ── Brand header ─────────────────────────────────────────── */
+
+.brand {
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+.brand-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.5px;
+}
+
+.brand-tagline {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* ── Typography ───────────────────────────────────────────── */
+
+.heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.subheading {
+  font-size: 16px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.body-text {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.caption {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+
+/* ── Buttons ──────────────────────────────────────────────── */
+
+.btn {
+  display: inline-block;
+  padding: 16px 48px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.1s;
+  text-decoration: none;
+}
+
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  background: var(--navy);
+  color: var(--white);
+}
+.btn--primary:hover { background: var(--navy-light); }
+
+.btn--secondary {
+  background: var(--sand);
+  color: var(--navy);
+}
+.btn--secondary:hover { background: var(--sand-dark); }
+
+/* ── Icon circles ─────────────────────────────────────────── */
+
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.icon-circle--golden {
+  background: linear-gradient(135deg, var(--golden) 0%, #F0C040 100%);
+}
+
+.icon-circle--navy {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* ── Legal pages ──────────────────────────────────────────── */
+
+.legal {
+  max-width: 640px;
+  width: 100%;
+  padding: 48px var(--page-pad);
+}
+
+.legal h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.legal .updated {
+  font-size: 14px;
+  color: var(--text-tertiary);
+  margin-bottom: 32px;
+}
+
+.legal h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.legal p, .legal li {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.legal ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.legal a {
+  color: var(--steel-blue);
+  text-decoration: underline;
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+
+.footer {
+  text-align: center;
+  padding: 32px var(--page-pad);
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.footer p {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+.footer p + p { margin-top: 4px; }
+
+.footer a { color: var(--text-secondary); }
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 500px) {
+  .card { padding: 36px 24px; }
+  .heading { font-size: 22px; }
+  .btn { padding: 14px 36px; }
+}
