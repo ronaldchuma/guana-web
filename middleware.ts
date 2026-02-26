@@ -1,13 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const DEFAULT_LOCALE = "en";
-const LOCALES = ["en", "es"];
-
-function getLocaleFromPath(pathname: string): string | null {
-  const maybeLocale = pathname.split("/")[1];
-  return LOCALES.includes(maybeLocale) ? maybeLocale : null;
-}
-
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -17,20 +9,20 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/api") ||
     pathname.startsWith("/.well-known") ||
     pathname.startsWith("/auth") ||
-    pathname.includes(".") // static files
+    pathname.includes(".")
   ) {
     return NextResponse.next();
   }
 
-  // Check if pathname already has a locale
-  if (getLocaleFromPath(pathname)) {
+  // Already has a locale prefix
+  const segment = pathname.split("/")[1];
+  if (segment === "en" || segment === "es") {
     return NextResponse.next();
   }
 
-  // For paths without locale, rewrite to default locale (en)
-  // This keeps URLs clean: / -> internally routes to /en
+  // Rewrite to default locale
   const url = request.nextUrl.clone();
-  url.pathname = `/${DEFAULT_LOCALE}${pathname}`;
+  url.pathname = `/en${pathname}`;
   return NextResponse.rewrite(url);
 }
 
