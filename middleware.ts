@@ -1,13 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { i18n } from "@/lib/i18n/config";
+
+const DEFAULT_LOCALE = "en";
+const LOCALES = ["en", "es"];
 
 function getLocaleFromPath(pathname: string): string | null {
-  const segments = pathname.split("/");
-  const maybeLocale = segments[1];
-  if (i18n.locales.includes(maybeLocale as any)) {
-    return maybeLocale;
-  }
-  return null;
+  const maybeLocale = pathname.split("/")[1];
+  return LOCALES.includes(maybeLocale) ? maybeLocale : null;
 }
 
 export function middleware(request: NextRequest) {
@@ -25,15 +23,14 @@ export function middleware(request: NextRequest) {
   }
 
   // Check if pathname already has a locale
-  const pathnameLocale = getLocaleFromPath(pathname);
-  if (pathnameLocale) {
+  if (getLocaleFromPath(pathname)) {
     return NextResponse.next();
   }
 
   // For paths without locale, rewrite to default locale (en)
   // This keeps URLs clean: / -> internally routes to /en
   const url = request.nextUrl.clone();
-  url.pathname = `/${i18n.defaultLocale}${pathname}`;
+  url.pathname = `/${DEFAULT_LOCALE}${pathname}`;
   return NextResponse.rewrite(url);
 }
 
