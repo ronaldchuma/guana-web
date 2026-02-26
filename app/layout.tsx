@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { ClientSmoothScroll } from "@/components/motion/ClientSmoothScroll";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -79,7 +79,7 @@ export default function RootLayout({
   return (
     <html className={`${plusJakarta.variable} ${easeDisplay.variable}`} suppressHydrationWarning>
       <body>
-        <SmoothScroll />
+        <ClientSmoothScroll />
         {children}
       </body>
     </html>
