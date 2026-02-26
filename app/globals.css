@@ -1,0 +1,864 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════
+   GUANA — Design System  (Lumos-adapted)
+   ─────────────────────────────────────────────────────────────
+   Single source of truth: CSS custom properties → Tailwind map.
+   All sizing is fluid via clamp(min, preferred, max).
+   Viewport range: 20rem (320px) – 90rem (1440px).
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Fluid helper ──
+   vw-factor = (max − min) / (90 − 20) expressed as vw + min-rem
+   Formula:  clamp(min, min + (max-min) × ((100vw - 20rem) / 70), max)
+   Shorthand: clamp(MIN, calc(MIN + (MAX-MIN) * ((100vw - 20rem) / 70rem)), MAX)
+   ──────────────────────────────────────────────────────────── */
+
+@layer base {
+  :root {
+    /* ═══════ TYPOGRAPHY SCALE ═══════════════════════════════ */
+    /* Each step is fluid between 320 px ↔ 1440 px viewports  */
+
+    /* display  – hero headings, enormous impact text           */
+    --text-display:       clamp(3.25rem, calc(3.25rem + 2.75 * ((100vw - 20rem) / 70)), 6rem);
+    --leading-display:    0.92;
+    --tracking-display:   -0.03em;
+
+    /* h1  – page-level headings                               */
+    --text-h1:            clamp(2.25rem, calc(2.25rem + 1.75 * ((100vw - 20rem) / 70)), 4rem);
+    --leading-h1:         0.95;
+    --tracking-h1:        -0.025em;
+
+    /* h2  – section headings                                  */
+    --text-h2:            clamp(1.75rem, calc(1.75rem + 1.25 * ((100vw - 20rem) / 70)), 3rem);
+    --leading-h2:         0.98;
+    --tracking-h2:        -0.02em;
+
+    /* h3  – sub-section headings                              */
+    --text-h3:            clamp(1.375rem, calc(1.375rem + 0.875 * ((100vw - 20rem) / 70)), 2.25rem);
+    --leading-h3:         1.1;
+    --tracking-h3:        -0.015em;
+
+    /* h4  – card titles, feature headings                     */
+    --text-h4:            clamp(1.125rem, calc(1.125rem + 0.625 * ((100vw - 20rem) / 70)), 1.75rem);
+    --leading-h4:         1.15;
+    --tracking-h4:        -0.01em;
+
+    /* h5  – small headings, labels with weight                */
+    --text-h5:            clamp(1rem, calc(1rem + 0.375 * ((100vw - 20rem) / 70)), 1.375rem);
+    --leading-h5:         1.2;
+    --tracking-h5:        -0.005em;
+
+    /* h6  – overlines, eyebrows, smallest heading             */
+    --text-h6:            clamp(0.8125rem, calc(0.8125rem + 0.1875 * ((100vw - 20rem) / 70)), 1rem);
+    --leading-h6:         1.3;
+    --tracking-h6:        0.04em;
+
+    /* main – default body text                                */
+    --text-main:          clamp(1rem, calc(1rem + 0.125 * ((100vw - 20rem) / 70)), 1.125rem);
+    --leading-main:       1.6;
+    --tracking-main:      0em;
+
+    /* large – intro paragraphs, emphasized body text          */
+    --text-large:         clamp(1.125rem, calc(1.125rem + 0.25 * ((100vw - 20rem) / 70)), 1.375rem);
+    --leading-large:      1.5;
+    --tracking-large:     -0.005em;
+
+    /* small – captions, meta, secondary content               */
+    --text-small:         clamp(0.8125rem, calc(0.8125rem + 0.0625 * ((100vw - 20rem) / 70)), 0.875rem);
+    --leading-small:      1.5;
+    --tracking-small:     0.005em;
+
+
+    /* ═══════ SPACING SCALE (1–8) ═══════════════════════════ */
+    /* Proportional fluid steps for gaps, padding, margin      */
+
+    --space-1:  clamp(0.25rem, calc(0.25rem + 0.25 * ((100vw - 20rem) / 70)), 0.5rem);      /* 4–8   */
+    --space-2:  clamp(0.5rem, calc(0.5rem + 0.5 * ((100vw - 20rem) / 70)), 1rem);            /* 8–16  */
+    --space-3:  clamp(0.75rem, calc(0.75rem + 0.75 * ((100vw - 20rem) / 70)), 1.5rem);       /* 12–24 */
+    --space-4:  clamp(1rem, calc(1rem + 1 * ((100vw - 20rem) / 70)), 2rem);                  /* 16–32 */
+    --space-5:  clamp(1.5rem, calc(1.5rem + 1.5 * ((100vw - 20rem) / 70)), 3rem);            /* 24–48 */
+    --space-6:  clamp(2rem, calc(2rem + 2 * ((100vw - 20rem) / 70)), 4rem);                  /* 32–64 */
+    --space-7:  clamp(3rem, calc(3rem + 3 * ((100vw - 20rem) / 70)), 6rem);                  /* 48–96 */
+    --space-8:  clamp(4rem, calc(4rem + 4 * ((100vw - 20rem) / 70)), 8rem);                  /* 64–128 */
+
+
+    /* ═══════ SECTION SPACING ════════════════════════════════ */
+
+    --section-space:      clamp(4rem, calc(4rem + 4 * ((100vw - 20rem) / 70)), 8rem);
+    --section-space-sm:   clamp(2.5rem, calc(2.5rem + 2.5 * ((100vw - 20rem) / 70)), 5rem);
+    --section-space-lg:   clamp(5rem, calc(5rem + 5 * ((100vw - 20rem) / 70)), 10rem);
+    --page-top:           clamp(5rem, calc(5rem + 3 * ((100vw - 20rem) / 70)), 8rem);
+
+
+    /* ═══════ SITE LAYOUT ════════════════════════════════════ */
+
+    --site-width:         90rem;                                                              /* 1440px max */
+    --site-margin:        clamp(1.25rem, calc(1.25rem + 1.25 * ((100vw - 20rem) / 70)), 2.5rem);
+    --site-gutter:        clamp(1rem, calc(1rem + 0.5 * ((100vw - 20rem) / 70)), 1.5rem);
+    --site-columns:       12;
+
+
+    /* ═══════ CONTAINERS ═════════════════════════════════════ */
+
+    --container-full:     var(--site-width);           /* 90rem  / 1440px */
+    --container-main:     80rem;                       /* 1280px – primary content */
+    --container-bar:      72rem;                       /* 1152px – narrower sections */
+    --container-narrow:   56rem;                       /* 896px  – text-focused */
+    --container-small:    40rem;                       /* 640px  – forms, CTAs */
+
+
+    /* ═══════ SURFACE TOKENS ═════════════════════════════════ */
+
+    --color-surface:        #FAF8F4;
+    --color-surface-raised: #FFFFFF;
+    --color-surface-sunken: #F5F1EB;
+    --color-surface-overlay: rgba(11, 18, 16, 0.6);
+
+
+    /* ═══════ TEXT TOKENS ════════════════════════════════════ */
+
+    --color-text-primary:   #0B1210;
+    --color-text-secondary: #263330;
+    --color-text-tertiary:  rgba(11, 18, 16, 0.5);
+    --color-text-inverse:   #FAF8F4;
+
+
+    /* ═══════ BRAND TOKENS ═══════════════════════════════════ */
+
+    --color-brand:        #0D7C66;
+    --color-brand-hover:  #0A5F4E;
+    --color-brand-light:  #E8F5F1;
+
+
+    /* ═══════ SEMANTIC TOKENS ════════════════════════════════ */
+
+    --color-success:  #2D8B4E;
+    --color-warning:  #E2813B;
+    --color-danger:   #D45D4C;
+    --color-info:     #2E6DB4;
+
+
+    /* ═══════ RADIUS ═════════════════════════════════════════ */
+
+    --radius-sm:    0.5rem;
+    --radius-md:    0.75rem;
+    --radius-lg:    1rem;
+    --radius-xl:    1.5rem;
+    --radius-2xl:   2rem;
+    --radius-full:  9999px;
+
+
+    /* ═══════ SHADOWS ════════════════════════════════════════ */
+
+    --shadow-card:       0 1px 3px rgba(11,18,16,0.04), 0 8px 24px rgba(11,18,16,0.06);
+    --shadow-card-hover: 0 2px 8px rgba(11,18,16,0.06), 0 16px 40px rgba(11,18,16,0.1);
+    --shadow-elevated:   0 4px 16px rgba(11,18,16,0.08), 0 24px 56px rgba(11,18,16,0.12);
+
+
+    /* ═══════ MOTION ═════════════════════════════════════════ */
+
+    --ease-out:         cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out:      cubic-bezier(0.65, 0, 0.35, 1);
+    --duration-fast:    200ms;
+    --duration-normal:  400ms;
+    --duration-slow:    600ms;
+  }
+
+  /* ── Reset heading default styles (Lumos pattern) ── */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-cream-light text-deep font-sans;
+    font-size: var(--text-main);
+    line-height: var(--leading-main);
+    letter-spacing: var(--tracking-main);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-teal-100 text-deep;
+  }
+
+  /* Remove default heading styles — apply via utility classes only (Lumos DRY) */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-medium;
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   COMPONENT LAYER
+   ═══════════════════════════════════════════════════════════════ */
+
+@layer components {
+
+  /* ── Containers (variable-driven) ── */
+
+  .container-guana {
+    @apply mx-auto w-full;
+    max-width: var(--container-main);
+    padding-left: var(--site-margin);
+    padding-right: var(--site-margin);
+  }
+
+  .container-bar {
+    @apply mx-auto w-full;
+    max-width: var(--container-bar);
+    padding-left: var(--site-margin);
+    padding-right: var(--site-margin);
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full;
+    max-width: var(--container-narrow);
+    padding-left: var(--site-margin);
+    padding-right: var(--site-margin);
+  }
+
+  .container-small {
+    @apply mx-auto w-full;
+    max-width: var(--container-small);
+    padding-left: var(--site-margin);
+    padding-right: var(--site-margin);
+  }
+
+  .container-full {
+    @apply mx-auto w-full;
+    max-width: var(--container-full);
+    padding-left: var(--site-margin);
+    padding-right: var(--site-margin);
+  }
+
+
+  /* ── Section spacing ── */
+
+  .section-space {
+    padding-top: var(--section-space);
+    padding-bottom: var(--section-space);
+  }
+
+  .section-space-sm {
+    padding-top: var(--section-space-sm);
+    padding-bottom: var(--section-space-sm);
+  }
+
+  .section-space-lg {
+    padding-top: var(--section-space-lg);
+    padding-bottom: var(--section-space-lg);
+  }
+
+  .page-top {
+    padding-top: var(--page-top);
+  }
+
+
+  /* ── Glass card ── */
+
+  .glass-card {
+    @apply rounded-2xl border border-deep/[0.06] bg-white/80 backdrop-blur-sm;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* ── Eyebrow text ── */
+
+  .eyebrow {
+    font-size: var(--text-h6);
+    line-height: var(--leading-h6);
+    letter-spacing: var(--tracking-h6);
+    @apply font-semibold uppercase text-teal-600;
+  }
+
+  /* ── Route ribbon (decorative road line) ── */
+
+  .route-ribbon {
+    position: relative;
+  }
+
+  .route-ribbon::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #0D7C66, #2E6DB4, transparent);
+    opacity: 0.2;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   FEATURE PILLS — Expanding accordion + synced visual
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Expanded-width custom property ── */
+[data-feature-pills-init] {
+  --content-item-expanded: 28em;
+}
+
+@media screen and (max-width: 991px) {
+  [data-feature-pills-init] {
+    --content-item-expanded: calc(50% - 0.5em);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  [data-feature-pills-init] {
+    --content-item-expanded: 100%;
+  }
+}
+
+/* ── Container ── */
+.fp-wrap {
+  color: var(--color-text-primary);
+  width: 100%;
+  max-width: var(--container-main);
+  position: relative;
+}
+
+.fp-layout {
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  display: flex;
+  gap: 2em;
+  position: relative;
+}
+
+.fp-col {
+  width: 50%;
+  position: relative;
+}
+
+.fp-col.is--visual {
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  min-height: 28em;
+}
+
+/* ── Left column: pill list ── */
+.fp-info-collection {
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  display: flex;
+}
+
+.fp-info-list {
+  gap: 0.75em;
+  max-width: var(--content-item-expanded);
+  flex-flow: column;
+  flex: none;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.fp-info-item {
+  padding: 0;
+  position: relative;
+}
+
+.fp-item-bg {
+  z-index: 0;
+  background-color: rgba(13, 124, 102, 0.06);
+  border-radius: 2em;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+}
+
+.fp-item-button {
+  z-index: 1;
+  gap: 0.625em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.75em 1.25em;
+  display: flex;
+  position: relative;
+  color: inherit;
+  font-family: inherit;
+}
+
+.fp-item-label {
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  flex: none;
+  font-size: var(--text-h5);
+  font-weight: 600;
+}
+
+.fp-item-icon {
+  aspect-ratio: 1;
+  background-color: rgba(13, 124, 102, 0.12);
+  border-radius: var(--radius-full);
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  width: 1.25em;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+.fp-item-icon-bar {
+  background-color: var(--color-brand);
+  flex: none;
+  width: 1px;
+  height: 50%;
+  padding: 0;
+  position: absolute;
+}
+
+.fp-item-icon-bar.is--horizontal {
+  width: 50%;
+  height: 1px;
+}
+
+/* ── Content (expanded inner) ── */
+.fp-item-content {
+  z-index: 2;
+  pointer-events: none;
+  position: absolute;
+  inset: 0%;
+}
+
+.fp-item-mask {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fp-item-inner {
+  max-width: var(--content-item-expanded);
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: max-content;
+  padding: 1.25em 1.5em 1.75em;
+  display: flex;
+}
+
+.fp-item-body {
+  margin-bottom: 0;
+  font-size: var(--text-main);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.fp-item-body-span {
+  opacity: 0.5;
+  font-weight: 400;
+  font-size: var(--text-small);
+}
+
+/* ── Right column: visuals ── */
+.fp-visual-collection {
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.fp-visual-list {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.fp-visual-item {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+}
+
+.fp-visual-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.fp-visual-cover {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+}
+
+.fp-visual-cover-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Close button ── */
+.fp-close {
+  z-index: 2;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.fp-close-button {
+  aspect-ratio: 1;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background-color: rgba(11, 18, 16, 0.06);
+  border: none;
+  border-radius: var(--radius-full);
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  padding: 8px;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* ── Transitions (default state) ── */
+[data-feature-pills-button] {
+  opacity: 1;
+  transition: opacity 400ms var(--ease-out) 300ms;
+}
+
+[data-feature-pills-inner] {
+  opacity: 0;
+  transition: opacity 300ms var(--ease-out) 0ms;
+}
+
+[data-feature-pills-visual] {
+  opacity: 0;
+  transition: opacity 350ms var(--ease-out);
+}
+
+[data-feature-pills-cover] {
+  opacity: 1;
+  transition: opacity 350ms var(--ease-out);
+}
+
+/* ── Active pill ── */
+[data-feature-pills-item][data-active="true"] [data-feature-pills-button] {
+  opacity: 0;
+  transition: opacity 50ms var(--ease-out) 0ms;
+}
+
+[data-feature-pills-item][data-active="true"] [data-feature-pills-inner] {
+  opacity: 1;
+}
+
+/* ── Active visual ── */
+[data-feature-pills-visual][data-active="true"] {
+  opacity: 1;
+}
+
+[data-feature-pills-cover][data-active="false"] {
+  opacity: 0;
+}
+
+/* ── Close button show/hide ── */
+[data-feature-pills-close] {
+  transform: scale(0) rotate(135deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 500ms cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+[data-feature-pills-active="true"] [data-feature-pills-close] {
+  transform: scale(1) rotate(45deg);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Responsive: tablet & below ── */
+@media screen and (max-width: 991px) {
+  .fp-layout {
+    flex-flow: column;
+    gap: 2em;
+  }
+
+  .fp-col {
+    width: 100%;
+  }
+
+  .fp-col.is--visual {
+    aspect-ratio: 1;
+    border-radius: var(--radius-2xl);
+    order: -9999;
+    overflow: hidden;
+  }
+
+  .fp-info-collection {
+    padding: 0;
+  }
+
+  .fp-info-list {
+    flex-flow: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: none;
+  }
+
+  .fp-info-item {
+    width: var(--content-item-expanded);
+  }
+
+  .fp-item-button {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .fp-item-inner {
+    max-width: 100%;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   UTILITY LAYER — Typography (Lumos u-text-* pattern)
+   ═══════════════════════════════════════════════════════════════ */
+
+@layer utilities {
+
+  /* ── Typography utilities ── */
+
+  .u-text-display {
+    font-size: var(--text-display);
+    line-height: var(--leading-display);
+    letter-spacing: var(--tracking-display);
+  }
+
+  .u-text-h1 {
+    font-size: var(--text-h1);
+    line-height: var(--leading-h1);
+    letter-spacing: var(--tracking-h1);
+  }
+
+  .u-text-h2 {
+    font-size: var(--text-h2);
+    line-height: var(--leading-h2);
+    letter-spacing: var(--tracking-h2);
+  }
+
+  .u-text-h3 {
+    font-size: var(--text-h3);
+    line-height: var(--leading-h3);
+    letter-spacing: var(--tracking-h3);
+  }
+
+  .u-text-h4 {
+    font-size: var(--text-h4);
+    line-height: var(--leading-h4);
+    letter-spacing: var(--tracking-h4);
+  }
+
+  .u-text-h5 {
+    font-size: var(--text-h5);
+    line-height: var(--leading-h5);
+    letter-spacing: var(--tracking-h5);
+  }
+
+  .u-text-h6 {
+    font-size: var(--text-h6);
+    line-height: var(--leading-h6);
+    letter-spacing: var(--tracking-h6);
+  }
+
+  .u-text-main {
+    font-size: var(--text-main);
+    line-height: var(--leading-main);
+    letter-spacing: var(--tracking-main);
+  }
+
+  .u-text-large {
+    font-size: var(--text-large);
+    line-height: var(--leading-large);
+    letter-spacing: var(--tracking-large);
+  }
+
+  .u-text-small {
+    font-size: var(--text-small);
+    line-height: var(--leading-small);
+    letter-spacing: var(--tracking-small);
+  }
+
+
+  /* ── Spacing utilities (gap/padding/margin via scale) ── */
+
+  .u-gap-1 { gap: var(--space-1); }
+  .u-gap-2 { gap: var(--space-2); }
+  .u-gap-3 { gap: var(--space-3); }
+  .u-gap-4 { gap: var(--space-4); }
+  .u-gap-5 { gap: var(--space-5); }
+  .u-gap-6 { gap: var(--space-6); }
+  .u-gap-7 { gap: var(--space-7); }
+  .u-gap-8 { gap: var(--space-8); }
+
+  .u-pad-1 { padding: var(--space-1); }
+  .u-pad-2 { padding: var(--space-2); }
+  .u-pad-3 { padding: var(--space-3); }
+  .u-pad-4 { padding: var(--space-4); }
+  .u-pad-5 { padding: var(--space-5); }
+  .u-pad-6 { padding: var(--space-6); }
+  .u-pad-7 { padding: var(--space-7); }
+  .u-pad-8 { padding: var(--space-8); }
+
+  .u-margin-top-1 { margin-top: var(--space-1); }
+  .u-margin-top-2 { margin-top: var(--space-2); }
+  .u-margin-top-3 { margin-top: var(--space-3); }
+  .u-margin-top-4 { margin-top: var(--space-4); }
+  .u-margin-top-5 { margin-top: var(--space-5); }
+  .u-margin-top-6 { margin-top: var(--space-6); }
+  .u-margin-top-7 { margin-top: var(--space-7); }
+  .u-margin-top-8 { margin-top: var(--space-8); }
+
+  .u-margin-bottom-1 { margin-bottom: var(--space-1); }
+  .u-margin-bottom-2 { margin-bottom: var(--space-2); }
+  .u-margin-bottom-3 { margin-bottom: var(--space-3); }
+  .u-margin-bottom-4 { margin-bottom: var(--space-4); }
+  .u-margin-bottom-5 { margin-bottom: var(--space-5); }
+  .u-margin-bottom-6 { margin-bottom: var(--space-6); }
+  .u-margin-bottom-7 { margin-bottom: var(--space-7); }
+  .u-margin-bottom-8 { margin-bottom: var(--space-8); }
+
+
+  /* ── Margin trim (Lumos pattern — removes first/last child margin) ── */
+
+  .u-margin-trim > :first-child { margin-top: 0; }
+  .u-margin-trim > :last-child  { margin-bottom: 0; }
+
+
+  /* ── Text gradient ── */
+
+  .text-gradient {
+    @apply bg-gradient-flow bg-clip-text text-transparent;
+    background-size: 200% 200%;
+  }
+
+  /* ── Scrollbar ── */
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(13, 124, 102, 0.15) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(13, 124, 102, 0.15);
+    border-radius: 2px;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   INTERACTION STYLES (outside layers for specificity)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Card lift on hover ── */
+.card-lift {
+  transition: transform var(--duration-normal) var(--ease-out),
+              box-shadow var(--duration-normal) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+/* ── Underline link ── */
+[data-underline-link] {
+  position: relative;
+}
+
+[data-underline-link]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.04em;
+  width: 100%;
+  height: 0.06em;
+  background: currentColor;
+  transform: scaleX(0.001);
+  transform-origin: right;
+  transition: transform 0.7s cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-underline-link]:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* ── Focus ring ── */
+.focus-ring {
+  @apply outline-none;
+}
+
+.focus-ring:focus-visible {
+  @apply ring-2 ring-teal-400 ring-offset-2 ring-offset-cream-light;
+}
+
+/* ── Data-reveal initial state ── */
+[data-reveal] {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

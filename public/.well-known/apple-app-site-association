@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "M9PF7F628M.Guana.Guana",
+        "paths": [
+          "/auth/callback",
+          "/trip/*"
+        ]
+      }
+    ]
+  }
+}

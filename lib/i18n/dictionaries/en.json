@@ -1,0 +1,441 @@
+{
+  "meta": {
+    "title": "Guana — Share rides across Costa Rica",
+    "description": "Find affordable rides between Costa Rica's cities and best surf spots. Or share your drive and offset costs.",
+    "ogTitle": "Guana — Share rides across Costa Rica",
+    "ogDescription": "Ridesharing for surfers, travelers, and locals moving between Costa Rica's cities and beach destinations."
+  },
+  "nav": {
+    "home": "Home",
+    "routes": "Routes",
+    "drivers": "Drive",
+    "safety": "Safety",
+    "faq": "FAQ",
+    "about": "About",
+    "support": "Support",
+    "download": "Get the App",
+    "language": "ES",
+    "popular_routes": "Popular Routes",
+    "popular_routes_desc": "Explore popular destinations and routes across Costa Rica.",
+    "airport_transfers": "Airport Transfers",
+    "airport_transfers_desc": "Reliable airport pickup and drop-off services.",
+    "become_driver": "Become a Driver",
+    "become_driver_desc": "Join our network and start earning on your own schedule.",
+    "driver_safety": "Driver Safety",
+    "driver_safety_desc": "How we keep drivers and riders safe on every trip.",
+    "driver_support": "Driver Support",
+    "driver_support_desc": "Get help, report issues, and access driver resources."
+  },
+  "hero": {
+    "badge": "Ridesharing for Costa Rica",
+    "title": "Share the ride to your",
+    "titlePrefix": "next",
+    "titleWords": ["adventure", "wave", "hike", "escape", "sunset"],
+    "subtitle": "",
+    "cta": "Get the App",
+    "ctaSecondary": "Browse Routes"
+  },
+  "howItWorks": {
+    "headline": "Windows down, music up, strangers becoming friends before the next town. That's how Costa Rica was meant to be traveled and Guana makes it happen every day.",
+    "cta": "Get the App"
+  },
+  "steps": {
+    "title": "Getting there, together",
+    "subtitle": "Three simple steps to your next adventure across Costa Rica.",
+    "items": [
+      {
+        "title": "Find your ride",
+        "description": "Search by destination, date, or surf break. Smart matching finds the best rides — or suggests nearby alternatives when there's no exact match."
+      },
+      {
+        "title": "Book and connect",
+        "description": "Reserve your seat, message your driver, and coordinate the details. Verified profiles and ratings help you choose with confidence."
+      },
+      {
+        "title": "Share the journey",
+        "description": "Track your trip live, split the costs, and make a new friend before you hit the beach. That's the Guana way."
+      }
+    ]
+  },
+  "features": {
+    "title": "Built for the journey",
+    "subtitle": "Every feature designed for how people actually travel in Costa Rica.",
+    "items": [
+      {
+        "title": "Smart Search",
+        "description": "Intelligent trip matching with fallback suggestions by time, nearby cities, and flexible dates.",
+        "icon": "search"
+      },
+      {
+        "title": "Live Tracking",
+        "description": "Driver broadcasts location in real-time. Passengers follow the trip on a live map.",
+        "icon": "map"
+      },
+      {
+        "title": "In-App Messaging",
+        "description": "Real-time chat between driver and passenger. No need to share personal contact info.",
+        "icon": "message"
+      },
+      {
+        "title": "Verified Profiles",
+        "description": "Identity and vehicle verification with visible trust badges on every profile.",
+        "icon": "shield"
+      },
+      {
+        "title": "Board Space",
+        "description": "Vehicles list features like surfboard space, AC, WiFi — so you know before you book.",
+        "icon": "surfboard"
+      },
+      {
+        "title": "Bilingual",
+        "description": "Full English and Spanish support throughout the entire app experience.",
+        "icon": "globe"
+      },
+      {
+        "title": "Trip Management",
+        "description": "Full trip lifecycle from draft to completed. Real-time status updates and push notifications.",
+        "icon": "route"
+      },
+      {
+        "title": "Flexible Publishing",
+        "description": "10-step wizard to publish a trip: origin, destination, stopovers, date, time, seats, price, vehicle.",
+        "icon": "edit"
+      },
+      {
+        "title": "Ratings & Reviews",
+        "description": "Post-trip ratings build community trust. See driver history before you book.",
+        "icon": "star"
+      }
+    ],
+    "coverAlt": "Guana app features overview"
+  },
+  "routes": {
+    "title": "Popular routes",
+    "subtitle": "The most traveled corridors connecting Costa Rica's cities to its best destinations.",
+    "cta": "Find Rides",
+    "ctaAll": "See All Routes",
+    "distance": "Distance",
+    "duration": "Drive time",
+    "price": "From",
+    "perPerson": "per person"
+  },
+  "trust": {
+    "title": "Your safety, protected",
+    "subtitle": "Built into every ride — verified identities, encrypted communications, and real-time tracking keep you safe on every Guana trip.",
+    "cta": "Learn more",
+    "cards": [
+      {
+        "title": "Verified identities for every driver and passenger"
+      },
+      {
+        "title": "End-to-end encrypted messages and secure payments"
+      },
+      {
+        "title": "Real-time tracking — share your trip location instantly"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Guana Ride?",
+    "subtitle": "Your next adventure across Costa Rica is one tap away.",
+    "download": "Download on the App Store",
+    "drivers": "Want to drive?",
+    "driversLink": "Learn about driving with Guana"
+  },
+  "footer": {
+    "tagline": "Making Costa Rica's roads a little more full and a lot more fun.",
+    "ride": "Ride with Guana",
+    "drive": "Drive with Guana",
+    "company": "Company",
+    "getApp": "Get the App",
+    "popular_routes": "Popular Routes",
+    "airport_transfers": "Airport Transfers",
+    "become_driver": "Become a Driver",
+    "driver_resources": "Driver Resources",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "\u00a9 2025 Guana. All rights reserved.",
+    "madeWith": "Made with \u2764\ufe0f in Costa Rica"
+  },
+  "driversPage": {
+    "title": "Offset your travel costs",
+    "subtitle": "You're already driving. Fill your empty seats, share costs, and make the journey better for everyone.",
+    "cta": "Start Driving with Guana",
+    "howTitle": "How publishing works",
+    "howSteps": [
+      {
+        "title": "Set your route",
+        "description": "Enter origin, destination, and any stopovers along the way."
+      },
+      {
+        "title": "Pick your schedule",
+        "description": "Choose your date and departure time. Publish recurring trips or one-offs."
+      },
+      {
+        "title": "Set your price",
+        "description": "Set a fair per-seat price to offset fuel and tolls. You control the cost."
+      },
+      {
+        "title": "Select your vehicle",
+        "description": "Add your car details — make, model, features like AC, WiFi, or board space."
+      },
+      {
+        "title": "Go live",
+        "description": "Publish your trip and start receiving booking requests from passengers."
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Earn per seat",
+        "description": "Set your own price. Offset fuel, tolls, and wear on your vehicle."
+      },
+      {
+        "title": "Stay flexible",
+        "description": "Publish only when you want. No commitments, no schedules."
+      },
+      {
+        "title": "Meet great people",
+        "description": "Share the drive with fellow surfers, travelers, and locals."
+      },
+      {
+        "title": "Safe & private",
+        "description": "In-app messaging, verified passengers, and full trip management."
+      }
+    ]
+  },
+  "safetyPage": {
+    "title": "Your safety, built in",
+    "subtitle": "Trust and safety aren't features we added — they're the foundation Guana is built on.",
+    "sections": [
+      {
+        "title": "Identity Verification",
+        "description": "Every user can verify their identity by uploading official documents. Verified users get a visible badge, building trust across the community. Our review process ensures authenticity."
+      },
+      {
+        "title": "Vehicle Verification",
+        "description": "Drivers add their vehicle details including make, model, color, and license plate. Passengers see exactly what car to expect. Vehicle verification badges show trusted drivers."
+      },
+      {
+        "title": "Verified Badges",
+        "description": "Clear visual indicators on profiles and trip cards show verification status. ID verified, vehicle verified, and rating badges give passengers and drivers confidence at a glance."
+      },
+      {
+        "title": "Secure Messaging",
+        "description": "All communication happens in-app through real-time chat. No need to share phone numbers or personal contact information. Your privacy is protected."
+      },
+      {
+        "title": "Ratings & Reviews",
+        "description": "After every completed trip, both drivers and passengers leave ratings and reviews. This builds accountability and helps the community identify reliable travel partners."
+      },
+      {
+        "title": "Encrypted Communications",
+        "description": "Certificate-pinned networking ensures secure data transmission. Local storage is encrypted. Authentication tokens are stored securely in the device keychain."
+      },
+      {
+        "title": "Community Guidelines",
+        "description": "All users agree to community standards that promote respectful, safe interactions. Violations are reviewed and may result in account restrictions."
+      }
+    ]
+  },
+  "faqPage": {
+    "title": "Frequently asked questions",
+    "subtitle": "Everything you need to know about riding and driving with Guana.",
+    "categories": {
+      "general": {
+        "title": "General",
+        "items": [
+          {
+            "q": "What is Guana?",
+            "a": "Guana is a ridesharing app for intercity travel in Costa Rica. Drivers publish trips with available seats, and passengers search and book rides between cities and beach destinations. It's collaborative economy — cost sharing, not a taxi service."
+          },
+          {
+            "q": "How is Guana different from Uber or a taxi?",
+            "a": "Guana is for intercity trips, not on-demand urban rides. Drivers are regular people sharing their planned journey and splitting costs. It's more affordable, more social, and connects you to destinations that public transit doesn't serve well."
+          },
+          {
+            "q": "Where does Guana operate?",
+            "a": "Guana operates across Costa Rica, with popular routes connecting San Jos\u00e9 to surf and beach destinations like Jac\u00f3, Tamarindo, Santa Teresa, Nosara, Dominical, and Puerto Viejo."
+          },
+          {
+            "q": "What languages does Guana support?",
+            "a": "Guana is fully bilingual — available in both English and Spanish throughout the entire app experience."
+          },
+          {
+            "q": "Is Guana free to use?",
+            "a": "The app is free to download and use. Passengers pay the per-seat price set by the driver to offset shared travel costs."
+          }
+        ]
+      },
+      "passengers": {
+        "title": "For Passengers",
+        "items": [
+          {
+            "q": "How do I find a trip?",
+            "a": "Open the app, enter your origin, destination, travel date, and number of passengers. Guana will show matching trips. If there are no exact matches, smart suggestions offer alternatives by time of day, nearby cities, and flexible dates."
+          },
+          {
+            "q": "What if there are no exact matches?",
+            "a": "Guana's intelligent search provides fallback suggestions — trips at different times, from nearby cities, or on alternative dates — so you still have options even when there isn't a perfect match."
+          },
+          {
+            "q": "How do I book a seat?",
+            "a": "Browse available trips, review the driver's profile, vehicle details, and price. When you find a trip you like, reserve your seat directly in the app."
+          },
+          {
+            "q": "Can I message the driver before booking?",
+            "a": "Yes. Once you've found a trip, you can message the driver in-app to ask questions or coordinate details before booking."
+          },
+          {
+            "q": "How do I track my trip?",
+            "a": "When the driver starts the trip, their location is broadcast in real-time. You can follow along on the map from the moment the trip begins."
+          },
+          {
+            "q": "What if the driver cancels?",
+            "a": "You'll receive a push notification immediately if a trip is cancelled. You can search for alternative trips or save the route for future notifications."
+          }
+        ]
+      },
+      "drivers": {
+        "title": "For Drivers",
+        "items": [
+          {
+            "q": "How do I publish a trip?",
+            "a": "Use the 10-step publishing wizard: set your origin, destination, route, stopovers, date, departure time, available seats, price per seat, and vehicle. You can publish in under 2 minutes."
+          },
+          {
+            "q": "Can I save a trip as a draft?",
+            "a": "Yes. You can start creating a trip and save it as a draft to publish later. Pick up right where you left off."
+          },
+          {
+            "q": "How do I set my price?",
+            "a": "You set the per-seat price when publishing. Consider fuel costs, tolls, and the distance to set a fair price that offsets your travel expenses."
+          },
+          {
+            "q": "How do bookings work?",
+            "a": "When a passenger books a seat on your trip, you receive a notification. You can review the passenger's profile and manage your bookings from the trip dashboard."
+          },
+          {
+            "q": "What if I need to cancel?",
+            "a": "You can cancel a published trip from the trip management screen. All booked passengers will be notified immediately."
+          }
+        ]
+      },
+      "safety": {
+        "title": "Safety & Trust",
+        "items": [
+          {
+            "q": "How is identity verified?",
+            "a": "Users upload official identification documents through the app. Our verification team reviews submissions and grants a verified badge upon approval."
+          },
+          {
+            "q": "How does the rating system work?",
+            "a": "After each completed trip, both the driver and passenger can leave a rating and written review. Ratings are visible on profiles, helping the community make informed decisions."
+          },
+          {
+            "q": "What if I have a problem during a trip?",
+            "a": "You can use in-app messaging to communicate with your trip partner. For serious concerns, contact our support team through the app or website."
+          }
+        ]
+      },
+      "account": {
+        "title": "Account",
+        "items": [
+          {
+            "q": "How do I create an account?",
+            "a": "Download the app from the App Store, sign up with your email, and follow the guided onboarding to set up your profile with a name, photo, and travel preferences."
+          },
+          {
+            "q": "Can I delete my account?",
+            "a": "Yes. You can request account deletion through the app settings. Your data will be removed in accordance with our privacy policy."
+          }
+        ]
+      }
+    }
+  },
+  "aboutPage": {
+    "title": "About Guana",
+    "subtitle": "Building a better way to move through Costa Rica.",
+    "mission": {
+      "title": "Our mission",
+      "description": "Costa Rica has incredible destinations connected by beautiful roads — but getting between them isn't always easy. Public transit is limited, private shuttles are expensive, and solo drives leave empty seats.\n\nGuana connects drivers heading to these destinations with passengers looking for rides. It's simple: drivers offset their travel costs, passengers get affordable transport, and everyone shares the journey.\n\nWe built Guana for the surfers driving to Santa Teresa, the travelers heading to Tamarindo, the locals commuting between cities, and the digital nomads exploring the coast. It's ridesharing designed for how people actually move in Costa Rica."
+    },
+    "values": [
+      {
+        "title": "Community-driven",
+        "description": "Guana is built by and for the people who use it. Every feature comes from real needs on real roads."
+      },
+      {
+        "title": "Trust first",
+        "description": "Verified identities, transparent reviews, and secure messaging create a foundation of trust."
+      },
+      {
+        "title": "Adventure-ready",
+        "description": "From surfboard space to coastal routes — Guana is designed for the adventurous lifestyle."
+      },
+      {
+        "title": "Pura vida",
+        "description": "We believe in sharing, sustainability, and making every journey a little more enjoyable."
+      }
+    ]
+  },
+  "supportPage": {
+    "title": "How can we help?",
+    "subtitle": "Reach out and we'll get back to you as soon as possible.",
+    "form": {
+      "name": "Your name",
+      "email": "Email address",
+      "subject": "Subject",
+      "message": "How can we help?",
+      "submit": "Send Message",
+      "success": "Message sent! We'll get back to you soon.",
+      "error": "Something went wrong. Please try again or email us directly."
+    },
+    "email": "hello@guana.app",
+    "emailLabel": "Or email us directly"
+  },
+  "downloadPage": {
+    "title": "Get Guana",
+    "subtitle": "Download Guana free on the App Store and start sharing rides across Costa Rica.",
+    "opening": "Opening App Store...",
+    "manual": "If the App Store doesn't open automatically:",
+    "button": "Download on the App Store"
+  },
+  "tripPage": {
+    "title": "Opening Guana...",
+    "subtitle": "We're opening this trip in the Guana app.",
+    "loading": "Redirecting to Guana...",
+    "fallback": "Don't have the app yet?",
+    "download": "Download Guana",
+    "manual": "Open in App Store"
+  },
+  "legalPrivacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: January 2025"
+  },
+  "legalTerms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: January 2025"
+  },
+  "routeDetail": {
+    "findRides": "Find rides",
+    "aboutRoute": "About this route",
+    "howToBook": "How to book this route",
+    "howToBookSteps": [
+      "Download the Guana app from the App Store",
+      "Search for trips from {origin} to {destination}",
+      "Browse available drivers, check profiles and vehicles",
+      "Book your seat and message your driver"
+    ],
+    "relatedRoutes": "Related routes",
+    "faqTitle": "Common questions about this route",
+    "downloadCta": "Find rides on this route"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "getApp": "Get the App",
+    "viewAll": "View all",
+    "backToRoutes": "Back to routes",
+    "home": "Home",
+    "puraVida": "Pura vida rides."
+  }
+}
