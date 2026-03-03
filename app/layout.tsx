@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import { ClientSmoothScroll } from "@/components/motion/ClientSmoothScroll";
 import "./globals.css";
 
@@ -81,6 +82,7 @@ export default function RootLayout({
       <body>
         <ClientSmoothScroll />
         {children}
+        <Analytics />
       </body>
     </html>
   );
