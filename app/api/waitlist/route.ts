@@ -40,9 +40,10 @@ export async function POST(request: Request) {
     if (error) throw error;
 
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown error";
     return NextResponse.json(
-      { error: "Failed to submit" },
+      { error: "Failed to submit", debug: message },
       { status: 500 }
     );
   }
