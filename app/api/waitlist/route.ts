@@ -41,9 +41,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    const message = err instanceof Error ? err.message : "Unknown error";
     return NextResponse.json(
-      { error: "Failed to submit", debug: message },
+      { error: "Failed to submit", debug: JSON.stringify(err, Object.getOwnPropertyNames(err ?? {})) },
       { status: 500 }
     );
   }
