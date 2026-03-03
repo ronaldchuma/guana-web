@@ -52,6 +52,13 @@ export default async function LocaleLayout({
 
   return (
     <>
+      {locale !== "en" && (
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.lang="${locale}"`,
+          }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

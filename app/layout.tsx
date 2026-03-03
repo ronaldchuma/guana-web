@@ -77,7 +77,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={`${plusJakarta.variable} ${easeDisplay.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${plusJakarta.variable} ${easeDisplay.variable}`} suppressHydrationWarning>
       <body>
         <ClientSmoothScroll />
         {children}

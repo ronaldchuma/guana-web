@@ -7,17 +7,12 @@ export default function AuthCallbackPage() {
   const [showManual, setShowManual] = useState(false);
 
   useEffect(() => {
-    // The Universal Link system should handle this redirect natively.
-    // As a fallback, try to open the app via custom scheme with the
-    // current URL's search params (which contain the auth tokens).
     const searchParams = window.location.search;
     const hashParams = window.location.hash;
 
-    // Attempt to open the app via custom URL scheme
     const appUrl = `guana://auth/callback${searchParams}${hashParams}`;
     window.location.href = appUrl;
 
-    // After a timeout, show the manual fallback button
     const timer = setTimeout(() => {
       setShowManual(true);
     }, 3000);
@@ -26,143 +21,32 @@ export default function AuthCallbackPage() {
   }, []);
 
   return (
-    <html lang="en">
-      <body>
-        <div
-          style={{
-            display: "flex",
-            minHeight: "100vh",
-            alignItems: "center",
-            justifyContent: "center",
-            fontFamily:
-              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
-            backgroundColor: "#FAFAF5",
-            color: "#1A2B2A",
-            padding: "24px",
-          }}
-        >
-          <div style={{ textAlign: "center", maxWidth: "400px" }}>
-            {/* Logo */}
-            <div
-              style={{
-                width: "80px",
-                height: "80px",
-                borderRadius: "16px",
-                backgroundColor: "#0D7C66",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                margin: "0 auto",
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "32px",
-                  fontWeight: "bold",
-                  color: "white",
-                }}
-              >
-                G
-              </span>
-            </div>
-
-            <h1
-              style={{
-                marginTop: "24px",
-                fontSize: "24px",
-                fontWeight: "bold",
-              }}
-            >
-              Redirecting to Guana...
-            </h1>
-
-            <p
-              style={{
-                marginTop: "8px",
-                fontSize: "14px",
-                color: "rgba(26, 43, 42, 0.6)",
-              }}
-            >
-              Completing your sign-in.
-            </p>
-
-            {/* Loading spinner */}
-            {!showManual && (
-              <div
-                style={{
-                  marginTop: "24px",
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "6px",
-                }}
-              >
-                <span
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(13, 124, 102, 0.5)",
-                    animation: "pulse 1.4s ease-in-out infinite",
-                  }}
-                />
-                <span
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(13, 124, 102, 0.5)",
-                    animation: "pulse 1.4s ease-in-out 0.2s infinite",
-                  }}
-                />
-                <span
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    borderRadius: "50%",
-                    backgroundColor: "rgba(13, 124, 102, 0.5)",
-                    animation: "pulse 1.4s ease-in-out 0.4s infinite",
-                  }}
-                />
-              </div>
-            )}
-
-            {/* Manual fallback */}
-            {showManual && (
-              <div style={{ marginTop: "32px" }}>
-                <a
-                  href={APP_STORE_URL}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "12px 32px",
-                    borderRadius: "9999px",
-                    backgroundColor: "#0D7C66",
-                    color: "white",
-                    fontWeight: "600",
-                    fontSize: "16px",
-                    textDecoration: "none",
-                    transition: "background-color 0.2s",
-                  }}
-                >
-                  Open Guana
-                </a>
-              </div>
-            )}
-
-            <style
-              dangerouslySetInnerHTML={{
-                __html: `
-                  @keyframes pulse {
-                    0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
-                    40% { opacity: 1; transform: scale(1); }
-                  }
-                `,
-              }}
-            />
-          </div>
+    <div className="flex min-h-screen items-center justify-center bg-cream p-6 font-sans text-deep">
+      <div className="max-w-sm text-center">
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-teal">
+          <span className="text-3xl font-bold text-white">G</span>
         </div>
-      </body>
-    </html>
+
+        <h1 className="mt-6 text-2xl font-bold">Redirecting to Guana...</h1>
+        <p className="mt-2 text-sm text-deep/60">Completing your sign-in.</p>
+
+        {!showManual && (
+          <div className="mt-6 flex items-center justify-center">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-teal/20 border-t-teal" />
+          </div>
+        )}
+
+        {showManual && (
+          <div className="mt-8">
+            <a
+              href={APP_STORE_URL}
+              className="inline-flex items-center justify-center rounded-full bg-teal px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-teal/90"
+            >
+              Open Guana
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }

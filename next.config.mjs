@@ -43,6 +43,17 @@ const nextConfig = {
       },
     ];
   },
+
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/:path((?!en|es|api|_next|auth|\\.well-known|favicon\\.ico|robots\\.txt|sitemap\\.xml).*)",
+          destination: "/en/:path",
+        },
+      ],
+    };
+  },
 };
 
 export default nextConfig;
