@@ -7,7 +7,7 @@ const waitlistSchema = z.object({
   full_name: z.string().min(1).max(100),
   email: z.string().email().max(255),
   phone: z.string().max(20).nullish().transform((v) => v || null),
-  role: z.enum(["rider", "driver"]),
+  role: z.enum(["driver", "passenger", "both"]),
   routes: z.array(z.string().max(100)).max(20).default([]),
   source: z.string().max(100).nullish().transform((v) => v || null),
 });
@@ -40,9 +40,9 @@ export async function POST(request: Request) {
     if (error) throw error;
 
     return NextResponse.json({ success: true });
-  } catch (err) {
+  } catch {
     return NextResponse.json(
-      { error: "Failed to submit", debug: JSON.stringify(err, Object.getOwnPropertyNames(err ?? {})) },
+      { error: "Failed to submit" },
       { status: 500 }
     );
   }
