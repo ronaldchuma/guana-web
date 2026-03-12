@@ -74,6 +74,9 @@ export const metadata: Metadata = {
     description:
       "Find or offer rides between Costa Rica's cities and surf destinations.",
   },
+  verification: {
+    google: "7CiTFgsTm031CuGPcH2BA5zje_gPqmQxYn3NttdJN4U",
+  },
   robots: {
     index: true,
     follow: true,
