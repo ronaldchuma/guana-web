@@ -321,16 +321,13 @@ BEGIN
     v_last_name := array_to_string(v_name_parts[2:], ' ');
   END IF;
 
+  -- 1. Create contact in Resend
   v_contact_body := jsonb_build_object('email', NEW.email);
   IF v_first_name IS NOT NULL AND v_first_name != '' THEN
     v_contact_body := v_contact_body || jsonb_build_object('first_name', v_first_name);
   END IF;
   IF v_last_name IS NOT NULL AND v_last_name != '' THEN
     v_contact_body := v_contact_body || jsonb_build_object('last_name', v_last_name);
-  END IF;
-
-  IF v_segment_id IS NOT NULL THEN
-    v_contact_body := v_contact_body || jsonb_build_object('segment_ids', jsonb_build_array(v_segment_id));
   END IF;
 
   PERFORM net.http_post(
@@ -342,6 +339,19 @@ BEGIN
     body := v_contact_body
   );
 
+  -- 2. Add contact to waitlist segment (separate API call)
+  IF v_segment_id IS NOT NULL THEN
+    PERFORM net.http_post(
+      url := 'https://api.resend.com/segments/' || v_segment_id || '/contacts',
+      headers := jsonb_build_object(
+        'Content-Type', 'application/json',
+        'Authorization', 'Bearer ' || v_resend_key
+      ),
+      body := jsonb_build_object('email', NEW.email)
+    );
+  END IF;
+
+  -- 3. Send welcome email
   v_email_html := public.waitlist_welcome_email_html(NEW.full_name);
   PERFORM net.http_post(
     url := 'https://api.resend.com/emails',
