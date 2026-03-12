@@ -30,9 +30,14 @@ export default function WaitlistForm({ variant = "stacked" }: WaitlistFormProps)
 
   if (status === "success") {
     return (
-      <p className="text-[18px] font-sans font-normal text-black">
-        {"You're on the list! We'll let you know when Guana launches."}
-      </p>
+      <div className="flex flex-col gap-2 max-w-[440px]">
+        <p className="text-[18px] font-sans font-normal text-black">
+          Pura vida — you{"'"}re in!
+        </p>
+        <p className="text-[16px] font-sans font-normal text-black/50 leading-[1.4]">
+          We{"'"}ll send you a personal note when it{"'"}s your turn. Keep an eye on your inbox.
+        </p>
+      </div>
     );
   }
 

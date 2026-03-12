@@ -14,11 +14,11 @@ export function ScrollPath() {
     if (!path) return;
 
     const length = path.getTotalLength();
-    // Negative dashoffset starts the dash beyond the path end (top of page),
-    // so at scroll=0 nothing is visible. As progress -> 1, offset -> 0 = full path.
-    // This reveals from the path END (y~0, top of page) downward toward the START (y~7680).
-    path.style.strokeDasharray = `${length}`;
-    path.style.strokeDashoffset = `${-length}`;
+    // Use a 4-value dash pattern to reveal from the path END (y~0, top) downward
+    // toward the START (y~7680). Avoids negative dashoffset which Safari doesn't support.
+    // Pattern: [0 dash, gap skip, drawn dash, length skip] — only positive values.
+    path.style.strokeDasharray = `0 ${length} 0 ${length}`;
+    path.style.strokeDashoffset = "0";
 
     let ticking = false;
 
@@ -26,7 +26,9 @@ export function ScrollPath() {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = docHeight > 0 ? Math.min(1, scrollTop / docHeight) : 0;
-      path.style.strokeDashoffset = `${length * (progress - 1)}`;
+      const drawn = progress * length;
+      const gap = length - drawn;
+      path.style.strokeDasharray = `0 ${gap} ${drawn} ${length}`;
       ticking = false;
     };
 
