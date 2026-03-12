@@ -48,6 +48,7 @@ export default function WaitlistForm({ variant = "stacked" }: WaitlistFormProps)
           <input
             type="email"
             required
+            aria-label="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Your email address"
@@ -76,6 +77,7 @@ export default function WaitlistForm({ variant = "stacked" }: WaitlistFormProps)
       <input
         type="email"
         required
+        aria-label="Email address"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="Your email address"

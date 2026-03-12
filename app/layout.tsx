@@ -7,12 +7,12 @@ import "./globals.css";
 const neueHaas = localFont({
   src: [
     {
-      path: "../public/fonts/Neue Haas Grotesk Display Pro 55 Roman.otf",
+      path: "../public/fonts/Neue Haas Grotesk Display Pro 55 Roman.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/Neue Haas Grotesk Display Pro 65 Medium.otf",
+      path: "../public/fonts/Neue Haas Grotesk Display Pro 65 Medium.woff2",
       weight: "500",
       style: "normal",
     },
@@ -90,9 +90,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "https://zkmrnbemrbogwzztzpyj.supabase.co/storage/v1/object/public/Website%20Media/favicon.png", type: "image/png" },
+      { url: "/images/favicon.png", type: "image/png" },
     ],
-    apple: "https://zkmrnbemrbogwzztzpyj.supabase.co/storage/v1/object/public/Website%20Media/favicon.png",
+    apple: "/images/favicon.png",
   },
   manifest: "/site.webmanifest",
   other: {

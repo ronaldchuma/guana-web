@@ -9,7 +9,6 @@ import { usePrefersReducedMotion } from "./use-prefers-reduced-motion";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, CSSPlugin);
-  gsap.defaults({ force3D: true });
 }
 
 /**

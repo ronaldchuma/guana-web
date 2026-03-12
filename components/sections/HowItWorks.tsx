@@ -178,7 +178,7 @@ export default function HowItWorks({ dictionary }: HowItWorksProps) {
                   className="absolute inset-0 will-change-[transform,opacity]"
                   style={{ opacity: i === 0 ? 1 : 0, scale: i === 0 ? "1" : "1.06" }}
                 >
-                  <Image src={src} alt={steps.items[i]?.title ?? ""} fill sizes="50vw" className="object-cover" priority={i === 0} />
+                  <Image src={src} alt={steps.items[i]?.title ?? ""} fill sizes="50vw" className="object-cover" />
                 </div>
               ))}
             </div>
