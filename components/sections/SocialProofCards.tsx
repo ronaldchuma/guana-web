@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MEDIA } from "@/lib/media";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -39,13 +40,29 @@ interface SocialProofCardsProps {
 export default function SocialProofCards({ dictionary }: SocialProofCardsProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     const section = sectionRef.current;
     const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
     if (!section || cards.length === 0) return;
 
-    // Set initial state: centered, blurred, invisible
+    // When reduced motion is preferred, place cards at final positions immediately
+    if (prefersReducedMotion) {
+      cards.forEach((card, i) => {
+        const data = CARDS[i];
+        gsap.set(card, {
+          left: data.left,
+          top: data.top,
+          opacity: 1,
+          scale: 1,
+          rotate: data.rotate,
+        });
+      });
+      return;
+    }
+
+    // Set initial state: centered, invisible (use opacity instead of blur for perf)
     gsap.set(cards, {
       xPercent: -50,
       yPercent: -50,
@@ -54,7 +71,6 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
       left: "50%",
       top: "50%",
       opacity: 0,
-      filter: "blur(12px)",
       scale: 0.6,
       rotate: 0,
     });
@@ -78,7 +94,6 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
           xPercent: 0,
           yPercent: 0,
           opacity: 1,
-          filter: "blur(0px)",
           scale: 1,
           rotate: data.rotate,
           duration: 1.2,
@@ -90,11 +105,8 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
 
     return () => {
       tl.kill();
-      ScrollTrigger.getAll().forEach((st) => {
-        if (st.trigger === section) st.kill();
-      });
     };
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <section

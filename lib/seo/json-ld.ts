@@ -9,7 +9,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: "Guana",
     url: BASE_URL,
-    logo: `${BASE_URL}/logo.png`,
+    logo: "https://zkmrnbemrbogwzztzpyj.supabase.co/storage/v1/object/public/Website%20Media/guana-logo.png",
     description:
       "Guana is a ridesharing platform connecting travelers across Costa Rica with affordable, social, and sustainable shared rides.",
     foundingDate: "2024",

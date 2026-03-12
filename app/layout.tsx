@@ -87,11 +87,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "https://zkmrnbemrbogwzztzpyj.supabase.co/storage/v1/object/public/Website%20Media/favicon.png", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "https://zkmrnbemrbogwzztzpyj.supabase.co/storage/v1/object/public/Website%20Media/favicon.png",
   },
   manifest: "/site.webmanifest",
   other: {

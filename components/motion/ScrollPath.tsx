@@ -7,6 +7,7 @@ const PATH_D =
 
 export function ScrollPath() {
   const animPathRef = useRef<SVGPathElement>(null);
+  const rafIdRef = useRef(0);
 
   useEffect(() => {
     const path = animPathRef.current;
@@ -14,20 +15,33 @@ export function ScrollPath() {
 
     const length = path.getTotalLength();
     // Negative dashoffset starts the dash beyond the path end (top of page),
-    // so at scroll=0 nothing is visible. As progress → 1, offset → 0 = full path.
-    // This reveals from the path END (y≈0, top of page) downward toward the START (y≈7680).
+    // so at scroll=0 nothing is visible. As progress -> 1, offset -> 0 = full path.
+    // This reveals from the path END (y~0, top of page) downward toward the START (y~7680).
     path.style.strokeDasharray = `${length}`;
     path.style.strokeDashoffset = `${-length}`;
 
-    const handleScroll = () => {
+    let ticking = false;
+
+    const updatePath = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = docHeight > 0 ? Math.min(1, scrollTop / docHeight) : 0;
       path.style.strokeDashoffset = `${length * (progress - 1)}`;
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        rafIdRef.current = requestAnimationFrame(updatePath);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(rafIdRef.current);
+    };
   }, []);
 
   return (

@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn, localePath } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/tokens";
 import { GuanaLogo } from "@/components/ui/GuanaLogo";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -26,6 +27,7 @@ interface HeaderProps {
 export function Header({ locale, dictionary }: HeaderProps) {
   const { nav } = dictionary;
   const pathname = usePathname();
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const barRef = useRef<HTMLDivElement>(null);
@@ -43,9 +45,9 @@ export function Header({ locale, dictionary }: HeaderProps) {
   /* ── Entrance animation ── */
   useEffect(() => {
     const bar = barRef.current;
-    if (!bar) return;
+    if (!bar || prefersReducedMotion) return;
     gsap.fromTo(bar, { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", delay: 0.1 });
-  }, []);
+  }, [prefersReducedMotion]);
 
   /* ── Progress indicator via ScrollTrigger ── */
   useEffect(() => {
@@ -119,12 +121,23 @@ export function Header({ locale, dictionary }: HeaderProps) {
     const links = mobileLinksRef.current;
     if (!menu || !links) return;
     if (mobileOpen) {
-      gsap.to(menu, { opacity: 1, pointerEvents: "auto", duration: 0.3, ease: "power3.out" });
-      gsap.fromTo(links.children, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out", stagger: 0.06, delay: 0.05 });
+      if (prefersReducedMotion) {
+        menu.style.opacity = "1";
+        menu.style.pointerEvents = "auto";
+        Array.from(links.children).forEach((child) => { (child as HTMLElement).style.opacity = "1"; });
+      } else {
+        gsap.to(menu, { opacity: 1, pointerEvents: "auto", duration: 0.3, ease: "power3.out" });
+        gsap.fromTo(links.children, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out", stagger: 0.06, delay: 0.05 });
+      }
     } else {
-      gsap.to(menu, { opacity: 0, pointerEvents: "none", duration: 0.25, ease: "power3.in" });
+      if (prefersReducedMotion) {
+        menu.style.opacity = "0";
+        menu.style.pointerEvents = "none";
+      } else {
+        gsap.to(menu, { opacity: 0, pointerEvents: "none", duration: 0.25, ease: "power3.in" });
+      }
     }
-  }, [mobileOpen]);
+  }, [mobileOpen, prefersReducedMotion]);
 
   useEffect(() => { setMobileOpen(false); }, [pathname]);
   const closeMobile = useCallback(() => setMobileOpen(false), []);

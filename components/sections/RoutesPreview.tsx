@@ -3,10 +3,12 @@
 import { useRef, useEffect, useCallback } from "react";
 import { gsap } from "gsap";
 import { MEDIA } from "@/lib/media";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import type { Locale } from "@/lib/i18n/config";
 
 /* ── Config ──────────────────────────────────────────────── */
 const DURATION = 0.65;
+const DURATION_REDUCED = 0.01;
 const EASE = "power3.inOut";
 const GAP = 8; // px between slides
 
@@ -49,6 +51,7 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
   const slideRefs    = useRef<(HTMLDivElement | null)[]>([]);
   const activeIdxRef = useRef(0);
   const goToRef      = useRef<(i: number) => void>(() => {});
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   const setSlideRef = useCallback((el: HTMLDivElement | null, i: number) => {
     slideRefs.current[i] = el;
@@ -60,6 +63,8 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
     const slides = slideRefs.current.filter(Boolean) as HTMLDivElement[];
     const total  = slides.length;
     if (!total) return;
+
+    const duration = prefersReducedMotion ? DURATION_REDUCED : DURATION;
 
     let isAnimating = false;
     let slideWidth  = 0;
@@ -122,11 +127,15 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
       slides.forEach((slide, idx) => {
         const offset = getOffset(idx);
 
+        // Only promote visible slides to GPU layers
+        const isVisible = offset >= -2 && offset <= 2;
+        slide.style.willChange = isVisible ? "transform" : "auto";
+
         if (offset < -3 || offset > 3) {
           if (animate && prev !== undefined) {
             const prevOffset = getOffset(idx, prev);
             if (prevOffset >= -2 && prevOffset <= 2) {
-              gsap.to(slide, { ...slideProps(prevOffset < 0 ? -3 : 3), duration: DURATION, ease: EASE, overwrite: true });
+              gsap.to(slide, { ...slideProps(prevOffset < 0 ? -3 : 3), duration, ease: EASE, overwrite: true });
               return;
             }
           }
@@ -136,7 +145,7 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
 
         slide.setAttribute("data-status", offset === 0 ? "active" : "inactive");
         const props = slideProps(offset);
-        if (animate) gsap.to(slide,  { ...props, duration: DURATION, ease: EASE, overwrite: true });
+        if (animate) gsap.to(slide,  { ...props, duration, ease: EASE, overwrite: true });
         else         gsap.set(slide, props);
       });
     }
@@ -162,7 +171,7 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
 
       activeIdxRef.current = normalized;
       layout(true, prev);
-      gsap.delayedCall(DURATION + 0.05, () => { isAnimating = false; });
+      gsap.delayedCall(duration + 0.05, () => { isAnimating = false; });
     }
 
     goToRef.current = goTo;
@@ -170,13 +179,18 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
     measure();
     layout(false);
 
-    // Autoplay — advances every 4s, pauses while hovering the viewport
+    // Autoplay — advances every 4s, pauses on hover and focus (WCAG 2.2.2)
     let autoplayId: ReturnType<typeof setInterval>;
-    const startAutoplay = () => { autoplayId = setInterval(() => goTo(activeIdxRef.current + 1), 4000); };
+    const startAutoplay = () => {
+      if (prefersReducedMotion) return; // No autoplay for reduced motion
+      autoplayId = setInterval(() => goTo(activeIdxRef.current + 1), 4000);
+    };
     const stopAutoplay  = () => clearInterval(autoplayId);
     startAutoplay();
     viewport.addEventListener("mouseenter", stopAutoplay);
     viewport.addEventListener("mouseleave", startAutoplay);
+    viewport.addEventListener("focusin", stopAutoplay);
+    viewport.addEventListener("focusout", startAutoplay);
 
     const onResize = debounce(() => { measure(); layout(false); }, 100);
     window.addEventListener("resize", onResize);
@@ -184,10 +198,12 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
       stopAutoplay();
       viewport.removeEventListener("mouseenter", stopAutoplay);
       viewport.removeEventListener("mouseleave", startAutoplay);
+      viewport.removeEventListener("focusin", stopAutoplay);
+      viewport.removeEventListener("focusout", startAutoplay);
       window.removeEventListener("resize", onResize);
       gsap.killTweensOf(slides);
     };
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <section id="features" className="py-16 sm:py-28 md:py-36">
@@ -224,10 +240,10 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
                 aria-roledescription="slide"
                 data-status={i === 0 ? "active" : "inactive"}
                 onClick={() => goToRef.current(i)}
-                className="absolute top-0 left-0 h-full cursor-pointer select-none"
+                className="absolute top-0 left-0 h-full cursor-pointer select-none overflow-hidden rounded-[10px]"
                 style={{
                   clipPath: "inset(0px calc(var(--clip) * 1px) round 10px)",
-                  willChange: "transform, clip-path",
+                  WebkitClipPath: "inset(0px calc(var(--clip) * 1px) round 10px)",
                 } as React.CSSProperties}
               >
                 <div className="relative w-full h-full overflow-hidden rounded-[10px]">
