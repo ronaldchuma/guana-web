@@ -178,7 +178,7 @@ export default function HowItWorks({ dictionary }: HowItWorksProps) {
                   className="absolute inset-0 will-change-[transform,opacity]"
                   style={{ opacity: i === 0 ? 1 : 0, scale: i === 0 ? "1" : "1.06" }}
                 >
-                  <Image src={src} alt={steps.items[i]?.title ?? ""} fill sizes="50vw" className="object-cover" />
+                  <Image src={src} alt={steps.items[i]?.title ?? ""} fill sizes="(max-width: 1400px) calc(50vw - 80px), 600px" className="object-cover" />
                 </div>
               ))}
             </div>
@@ -198,7 +198,7 @@ export default function HowItWorks({ dictionary }: HowItWorksProps) {
               <p className="mt-3 text-[18px] font-sans font-normal text-black leading-[1.2]">{item.description}</p>
             </div>
             <div className="relative w-full aspect-[4/3] rounded-[10px] overflow-hidden">
-              <Image src={STEP_IMAGES[i]} alt={item.title} fill sizes="100vw" className="object-cover" />
+              <Image src={STEP_IMAGES[i]} alt={item.title} fill sizes="(max-width: 768px) calc(100vw - 48px), 600px" className="object-cover" />
             </div>
           </div>
         ))}

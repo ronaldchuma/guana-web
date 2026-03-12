@@ -62,6 +62,7 @@ export default function Hero({ dictionary }: HeroProps) {
                   alt="Guana app screenshot"
                   fill
                   priority
+                  fetchPriority="high"
                   className="object-contain"
                   sizes="(min-width: 640px) 294px, 220px"
                 />

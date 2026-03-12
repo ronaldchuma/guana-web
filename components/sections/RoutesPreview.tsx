@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { MEDIA } from "@/lib/media";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
@@ -248,12 +249,13 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
               >
                 <div className="relative w-full h-full overflow-hidden rounded-[10px]">
                   {/* Photo */}
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src={route.image}
                     alt={`${route.origin} to ${route.destination}`}
+                    fill
+                    sizes="(max-width: 479px) 85vw, (max-width: 767px) 78vw, (max-width: 991px) 65vw, 60vw"
                     draggable={false}
-                    className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                    className="object-cover pointer-events-none"
                   />
 
                   {/* Gradient */}
