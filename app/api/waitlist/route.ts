@@ -37,10 +37,19 @@ export async function POST(request: Request) {
     const supabase = getSupabaseAdmin();
     const { error } = await supabase.from("waitlist").insert(result.data);
 
-    if (error) throw error;
+    if (error) {
+      // Unique constraint on email — treat as success so we don't leak
+      // whether an address is already on the list.
+      if (error.code === "23505") {
+        return NextResponse.json({ success: true });
+      }
+      console.error("[waitlist]", error);
+      throw error;
+    }
 
     return NextResponse.json({ success: true });
-  } catch {
+  } catch (err) {
+    console.error("[waitlist]", err);
     return NextResponse.json(
       { error: "Failed to submit" },
       { status: 500 }

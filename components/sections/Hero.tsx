@@ -76,7 +76,6 @@ export default function Hero({ dictionary }: HeroProps) {
                 src={MEDIA.appMockup}
                 alt="Guana app screenshot"
                 fill
-                priority
                 className="object-contain object-top"
                 sizes="294px"
               />
