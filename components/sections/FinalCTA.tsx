@@ -1,107 +1,57 @@
-"use client";
+import Image from "next/image";
+import { MEDIA } from "@/lib/media";
+import WaitlistForm from "@/components/ui/WaitlistForm";
 
-import { useRef } from "react";
-import type { Locale } from "@/lib/i18n/config";
-import { localePath } from "@/lib/utils";
-import { APP_STORE_URL, ROUTES } from "@/lib/tokens";
-import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
-import { useSectionReveal } from "@/components/motion/use-gsap";
-
-/* -------------------------------------------------------------------------- */
-/*  Types                                                                     */
-/* -------------------------------------------------------------------------- */
-
-interface CTADictionary {
-  cta: {
-    title: string;
-    subtitle: string;
-    download: string;
-    drivers: string;
-    driversLink: string;
+interface FinalCTAProps {
+  dictionary: {
+    cta: {
+      title: string;
+      subtitle: string;
+    };
   };
 }
 
-interface FinalCTAProps {
-  dictionary: CTADictionary;
-  locale: Locale;
-}
-
-/* -------------------------------------------------------------------------- */
-/*  FinalCTA                                                                  */
-/* -------------------------------------------------------------------------- */
-
-export default function FinalCTA({ dictionary, locale }: FinalCTAProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useSectionReveal(sectionRef, { stagger: 0.12, y: 24 });
-
-  const { cta } = dictionary;
-
+export default function FinalCTA({ dictionary }: FinalCTAProps) {
   return (
-    <section
-      ref={sectionRef}
-      aria-label={cta.title}
-      className="bg-white py-28 md:py-36 lg:py-44"
-    >
-      <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2
-            data-reveal
-            className="font-heading u-text-display font-bold text-deep"
-          >
-            {cta.title}
-          </h2>
-
-          <p
-            data-reveal
-            className="mt-6 u-text-large leading-relaxed text-deep/60"
-          >
-            {cta.subtitle}
-          </p>
-
-          <div
-            data-reveal
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-          >
-            <Button
-              href={APP_STORE_URL}
-              size="lg"
-            >
-              {cta.download}
-              <svg
-                className="ml-2 h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
-                />
-              </svg>
-            </Button>
-
-            <Button
-              href={localePath(ROUTES.drivers, locale)}
-              size="lg"
-              variant="outline"
-            >
-              {cta.driversLink}
-            </Button>
+    <section id="waitlist" className="py-28 md:py-36">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-[100px]">
+        <div className="flex flex-col items-center gap-[30px]">
+          {/* App mockup — fading from bottom */}
+          <div className="relative w-[470px] max-w-full h-[398px] -mb-16">
+            <Image
+              src={MEDIA.phoneMockup}
+              alt="Guana app"
+              fill
+              className="object-contain object-top"
+              sizes="470px"
+            />
+            {/* Fade gradient */}
+            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-white to-transparent pointer-events-none" />
           </div>
 
-          <p
-            data-reveal
-            className="mt-8 text-sm text-deep/40"
-          >
-            {cta.drivers}
-          </p>
+          {/* Content */}
+          <div className="relative z-10 flex flex-col items-center gap-[10px] text-center max-w-[595px]">
+            {/* Eyebrow */}
+            <span className="text-[18px] font-sans font-normal bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">
+              Early access
+            </span>
+            <div className="flex flex-col gap-5 items-center">
+              <h2
+                className="font-sans font-normal text-black"
+                style={{ fontSize: "clamp(2rem, 4vw, 50px)", lineHeight: 1 }}
+              >
+                {dictionary.cta.title}
+              </h2>
+              <p className="text-[18px] font-sans font-normal text-black leading-[1.2] max-w-[440px]">
+                {dictionary.cta.subtitle}
+              </p>
+            </div>
+          </div>
+
+          {/* Waitlist form */}
+          <WaitlistForm variant="stacked" />
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

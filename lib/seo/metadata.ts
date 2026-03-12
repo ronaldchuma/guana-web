@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n/config";
-import type { RouteData } from "@/lib/routes/data";
-import { getRouteLocalized } from "@/lib/routes/data";
 
 const BASE_URL = "https://guana.app";
 
@@ -83,35 +81,3 @@ export function createMetadata({
   };
 }
 
-/**
- * Create metadata specifically for a route page.
- * Generates a descriptive title and pulls the localized route description.
- */
-export function createRouteMetadata(
-  route: RouteData,
-  locale: Locale,
-): Metadata {
-  const localized = getRouteLocalized(route, locale);
-
-  const title =
-    locale === "es"
-      ? `${localized.originName} a ${localized.destinationName} | Viaje compartido | Guana`
-      : `${localized.originName} to ${localized.destinationName} | Shared Ride | Guana`;
-
-  const description =
-    locale === "es"
-      ? `Viaje compartido de ${localized.originName} a ${localized.destinationName} (${route.distance}, ~${route.duration}) desde ${route.price}. Reserva tu lugar con Guana.`
-      : `Shared ride from ${localized.originName} to ${localized.destinationName} (${route.distance}, ~${route.duration}) from ${route.price}. Book your seat with Guana.`;
-
-  const path = `/routes/${route.slug}`;
-
-  return createMetadata({
-    title,
-    description,
-    path,
-    locale,
-    image: route.image
-      ? `${BASE_URL}${route.image}`
-      : undefined,
-  });
-}

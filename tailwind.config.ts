@@ -65,12 +65,21 @@ const config: Config = {
 
         /* ── Accent: Sand ── */
         sand: "#D4B896",
+
+        /* ── Brand Blue (new primary) ── */
+        "brand-blue": {
+          DEFAULT: "#105cbb",
+          hover: "#0d4e9e",
+        },
+
+        /* ── Brand Gold (accent) ── */
+        "brand-gold": "#ffc942",
       },
 
       fontFamily: {
         heading: ["var(--font-ease-display)", "system-ui", "sans-serif"],
-        display: ["var(--font-plus-jakarta)", "system-ui", "sans-serif"],
-        sans: ["var(--font-plus-jakarta)", "system-ui", "sans-serif"],
+        display: ["var(--font-nhgdp)", "system-ui", "sans-serif"],
+        sans: ["var(--font-nhgdp)", "system-ui", "sans-serif"],
       },
 
       /* ── Fluid typography — maps CSS vars into Tailwind ── */

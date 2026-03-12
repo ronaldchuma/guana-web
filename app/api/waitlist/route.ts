@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 const waitlistSchema = z.object({
-  full_name: z.string().min(1).max(100),
+  full_name: z.string().max(100).default(""),
   email: z.string().email().max(255),
   phone: z.string().max(20).nullish().transform((v) => v || null),
-  role: z.enum(["driver", "passenger", "both"]),
+  role: z.enum(["driver", "passenger", "both"]).default("both"),
   routes: z.array(z.string().max(100)).max(20).default([]),
   source: z.string().max(100).nullish().transform((v) => v || null),
 });

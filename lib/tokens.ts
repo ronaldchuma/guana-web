@@ -7,13 +7,6 @@ export const APP_ID = "6504720981";
 
 export const ROUTES = {
   home: "/",
-  routes: "/routes",
-  drivers: "/drivers",
-  safety: "/safety",
-  faq: "/faq",
-  about: "/about",
-  support: "/support",
-  download: "/download",
   privacy: "/legal/privacy",
   terms: "/legal/terms",
 } as const;
@@ -33,51 +26,10 @@ export interface NavLink {
 }
 
 export const NAV_LINKS: NavLink[] = [
-  {
-    key: "routes",
-    href: ROUTES.routes,
-    dropdown: [
-      {
-        key: "popular_routes",
-        href: ROUTES.routes,
-        icon: "map-pin",
-        description: "Explore popular destinations and routes across Costa Rica.",
-      },
-      {
-        key: "airport_transfers",
-        href: ROUTES.routes + "#airport",
-        icon: "plane",
-        description: "Reliable airport pickup and drop-off services.",
-      },
-    ],
-  },
-  {
-    key: "drivers",
-    href: ROUTES.drivers,
-    dropdown: [
-      {
-        key: "become_driver",
-        href: ROUTES.drivers,
-        icon: "car",
-        description: "Join our network and start earning on your own schedule.",
-      },
-      {
-        key: "driver_safety",
-        href: ROUTES.safety,
-        icon: "shield",
-        description: "How we keep drivers and riders safe on every trip.",
-      },
-      {
-        key: "driver_support",
-        href: ROUTES.support,
-        icon: "headphones",
-        description: "Get help, report issues, and access driver resources.",
-      },
-    ],
-  },
-  { key: "safety", href: ROUTES.safety },
-  { key: "faq", href: ROUTES.faq },
-  { key: "about", href: ROUTES.about },
+  { key: "howItWorks", href: "#how-it-works" },
+  { key: "features", href: "#features" },
+  { key: "safety", href: "#safety" },
+  { key: "drivers", href: "#drivers" },
 ];
 
 export const SOCIAL_LINKS = {

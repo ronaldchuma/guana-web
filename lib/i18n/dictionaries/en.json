@@ -7,32 +7,23 @@
   },
   "nav": {
     "home": "Home",
-    "routes": "Routes",
-    "drivers": "Drive",
+    "features": "Features",
+    "howItWorks": "How it works",
     "safety": "Safety",
+    "drivers": "For drivers",
     "faq": "FAQ",
     "about": "About",
     "support": "Support",
-    "download": "Get the App",
-    "language": "ES",
-    "popular_routes": "Popular Routes",
-    "popular_routes_desc": "Explore popular destinations and routes across Costa Rica.",
-    "airport_transfers": "Airport Transfers",
-    "airport_transfers_desc": "Reliable airport pickup and drop-off services.",
-    "become_driver": "Become a Driver",
-    "become_driver_desc": "Join our network and start earning on your own schedule.",
-    "driver_safety": "Driver Safety",
-    "driver_safety_desc": "How we keep drivers and riders safe on every trip.",
-    "driver_support": "Driver Support",
-    "driver_support_desc": "Get help, report issues, and access driver resources."
+    "download": "Join waitlist",
+    "language": "ES"
   },
   "hero": {
     "badge": "Ridesharing for Costa Rica",
     "title": "Share the ride to your",
     "titlePrefix": "next",
     "titleWords": ["adventure", "wave", "hike", "escape", "sunset"],
-    "subtitle": "",
-    "cta": "Get the App",
+    "subtitle": "Costa Rica's first ridesharing app, built for the roads between the life you live and the places you love.",
+    "cta": "Join waitlist",
     "ctaSecondary": "Browse Routes"
   },
   "howItWorks": {
@@ -41,19 +32,19 @@
   },
   "steps": {
     "title": "Getting there, together",
-    "subtitle": "Three simple steps to your next adventure across Costa Rica.",
+    "subtitle": "Three taps. One ride. Zero empty seats.",
     "items": [
       {
         "title": "Find your ride",
-        "description": "Search by destination, date, or surf break. Smart matching finds the best rides — or suggests nearby alternatives when there's no exact match."
+        "description": "Search by destination, date, and how many seats you need. Smart matching shows you the best options plus nearby alternatives when there's no exact fit."
       },
       {
         "title": "Book and connect",
-        "description": "Reserve your seat, message your driver, and coordinate the details. Verified profiles and ratings help you choose with confidence."
+        "description": "Reserve your seat and message your driver in-app. Check verified profiles, vehicle details, and ratings before you go."
       },
       {
         "title": "Share the journey",
-        "description": "Track your trip live, split the costs, and make a new friend before you hit the beach. That's the Guana way."
+        "description": "Track your trip live, split the cost fairly, and more often than not make a friend before you hit the beach."
       }
     ]
   },
@@ -110,8 +101,8 @@
     "coverAlt": "Guana app features overview"
   },
   "routes": {
-    "title": "Popular routes",
-    "subtitle": "The most traveled corridors connecting Costa Rica's cities to its best destinations.",
+    "title": "Every road worth taking",
+    "subtitle": "From the capital to the coast, Guana connects the routes locals actually travel.",
     "cta": "Find Rides",
     "ctaAll": "See All Routes",
     "distance": "Distance",
@@ -120,8 +111,8 @@
     "perPerson": "per person"
   },
   "trust": {
-    "title": "Your safety, protected",
-    "subtitle": "Built into every ride — verified identities, encrypted communications, and real-time tracking keep you safe on every Guana trip.",
+    "title": "People you can actually trust",
+    "subtitle": "Every profile is verified. Every message is private. Every trip is tracked. That's not a feature, it's the foundation.",
     "cta": "Learn more",
     "cards": [
       {
@@ -136,8 +127,8 @@
     ]
   },
   "cta": {
-    "title": "Guana Ride?",
-    "subtitle": "Your next adventure across Costa Rica is one tap away.",
+    "title": "Be first on the road",
+    "subtitle": "Guana is coming to Costa Rica. Join the waitlist and we'll let you know the moment you can ride or drive.",
     "download": "Download on the App Store",
     "drivers": "Want to drive?",
     "driversLink": "Learn about driving with Guana"

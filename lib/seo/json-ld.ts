@@ -2,7 +2,6 @@ const BASE_URL = "https://guana.app";
 
 /**
  * Organization schema for Guana.
- * Renders as a <script type="application/ld+json"> in the document head.
  */
 export function organizationSchema() {
   return {
@@ -34,16 +33,6 @@ export function organizationSchema() {
 
 /**
  * BreadcrumbList schema for structured navigation breadcrumbs.
- *
- * @param items - Ordered array of breadcrumb items, each with a name and
- *                absolute URL. The last item is treated as the current page.
- *
- * @example
- * breadcrumbSchema([
- *   { name: "Home", url: "https://guana.app" },
- *   { name: "Routes", url: "https://guana.app/routes" },
- *   { name: "San José to Jacó", url: "https://guana.app/routes/san-jose-jaco" },
- * ])
  */
 export function breadcrumbSchema(
   items: { name: string; url: string }[],
@@ -61,14 +50,29 @@ export function breadcrumbSchema(
 }
 
 /**
- * FAQPage schema for rendering FAQ rich results in search engines.
- *
- * @param items - Array of question/answer pairs.
- *
- * @example
- * faqSchema([
- *   { question: "How long is the drive?", answer: "About 1.5 hours." },
- * ])
+ * SoftwareApplication schema for the Guana iOS app.
+ */
+export function softwareApplicationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Guana",
+    operatingSystem: "iOS",
+    applicationCategory: "TravelApplication",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "USD",
+    },
+    description:
+      "Costa Rica's ridesharing app. Find or offer shared rides between cities and beach destinations.",
+    url: BASE_URL,
+    downloadUrl: "https://apps.apple.com/app/guana/id6504720981",
+  };
+}
+
+/**
+ * FAQPage schema — helps answer engines surface Q&A directly.
  */
 export function faqSchema(
   items: { question: string; answer: string }[],
@@ -84,5 +88,42 @@ export function faqSchema(
         text: item.answer,
       },
     })),
+  };
+}
+
+/**
+ * HowTo schema for step-by-step processes.
+ */
+export function howToSchema(
+  name: string,
+  description: string,
+  steps: { name: string; text: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    step: steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
+/**
+ * WebSite schema for sitelinks.
+ */
+export function webSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Guana",
+    url: BASE_URL,
+    description:
+      "Find affordable shared rides between Costa Rica's cities and surf destinations.",
+    inLanguage: ["en", "es"],
   };
 }

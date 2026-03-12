@@ -4,7 +4,8 @@ import { i18n, isValidLocale, type Locale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { organizationSchema } from "@/lib/seo/json-ld";
+import { organizationSchema, webSiteSchema, softwareApplicationSchema } from "@/lib/seo/json-ld";
+import { ScrollPath } from "@/components/motion/ScrollPath";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ locale }));
@@ -65,16 +66,30 @@ export default async function LocaleLayout({
           __html: JSON.stringify(organizationSchema()),
         }}
       />
-      <Header locale={locale} dictionary={{ nav: dict.nav }} />
-      <main id="main-content">{children}</main>
-      <Footer
-        locale={locale}
-        dictionary={{
-          nav: dict.nav,
-          footer: dict.footer,
-          common: dict.common,
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webSiteSchema()),
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(softwareApplicationSchema()),
+        }}
+      />
+      <div className="relative isolate">
+        <ScrollPath />
+        <Header locale={locale} dictionary={{ nav: dict.nav }} />
+        <main id="main-content">{children}</main>
+        <Footer
+          locale={locale}
+          dictionary={{
+            nav: dict.nav,
+            footer: dict.footer,
+          }}
+        />
+      </div>
     </>
   );
 }
