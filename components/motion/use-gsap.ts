@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 import { Observer } from "gsap/Observer";
+import { CSSPlugin } from "gsap/CSSPlugin";
 import { usePrefersReducedMotion } from "./use-prefers-reduced-motion";
 import { DURATIONS, EASINGS, STAGGER, PRESETS } from "./animations";
 
@@ -13,7 +14,7 @@ import { DURATIONS, EASINGS, STAGGER, PRESETS } from "./animations";
 // ---------------------------------------------------------------------------
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, SplitText, Observer);
+  gsap.registerPlugin(ScrollTrigger, SplitText, Observer, CSSPlugin);
 }
 
 // ---------------------------------------------------------------------------

@@ -5,10 +5,11 @@ import Image from "next/image";
 import { MEDIA } from "@/lib/media";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CSSPlugin } from "gsap/CSSPlugin";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 }
 
 const CARDS = [

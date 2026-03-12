@@ -4,11 +4,12 @@ import { useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CSSPlugin } from "gsap/CSSPlugin";
 import { MEDIA } from "@/lib/media";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 }
 
 interface StepItem {

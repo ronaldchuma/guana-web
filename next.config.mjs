@@ -48,7 +48,7 @@ const nextConfig = {
     return {
       beforeFiles: [
         {
-          source: "/:path((?!en|es|api|_next|auth|\\.well-known|favicon\\.ico|robots\\.txt|sitemap\\.xml).*)",
+          source: "/:path((?!en|es|api|_next|auth|\\.well-known|favicon\\.ico|robots\\.txt|sitemap\\.xml|site\\.webmanifest).*)",
           destination: "/en/:path",
         },
       ],

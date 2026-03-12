@@ -5,13 +5,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { CSSPlugin } from "gsap/CSSPlugin";
 import { cn, localePath } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/tokens";
 import { GuanaLogo } from "@/components/ui/GuanaLogo";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 }
 
 /* ── Section anchors for ScrollTrigger ── */
