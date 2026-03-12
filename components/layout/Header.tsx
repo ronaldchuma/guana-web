@@ -225,6 +225,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
         ref={mobileMenuRef}
         role="dialog"
         aria-modal="true"
+        aria-label="Navigation menu"
         className="fixed inset-0 z-[60] lg:hidden bg-white flex flex-col opacity-0 pointer-events-none"
       >
         <div className="h-20 shrink-0 flex items-center justify-between px-6">
