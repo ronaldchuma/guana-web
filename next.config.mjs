@@ -3,6 +3,7 @@ const nextConfig = {
   transpilePackages: ["lenis"],
 
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",

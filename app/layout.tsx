@@ -18,13 +18,13 @@ const neueHaas = localFont({
     },
   ],
   variable: "--font-nhgdp",
-  display: "swap",
+  display: "optional",
 });
 
 const easeDisplay = localFont({
   src: "../public/fonts/EaseDisplay-Medium.woff2",
   variable: "--font-ease-display",
-  display: "swap",
+  display: "optional",
   weight: "500",
 });
 
