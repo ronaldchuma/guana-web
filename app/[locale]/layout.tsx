@@ -25,17 +25,17 @@ export async function generateMetadata({
     description: dict.meta.description,
     alternates: {
       canonical:
-        locale === "en" ? "https://guana.app" : `https://guana.app/es`,
+        locale === "es" ? "https://guana.app" : `https://guana.app/en`,
       languages: {
-        en: "https://guana.app",
-        es: "https://guana.app/es",
+        es: "https://guana.app",
+        en: "https://guana.app/en",
         "x-default": "https://guana.app",
       },
     },
     openGraph: {
       title: dict.meta.ogTitle,
       description: dict.meta.ogDescription,
-      locale: locale === "en" ? "en_US" : "es_CR",
+      locale: locale === "es" ? "es_CR" : "en_US",
     },
   };
 }
@@ -53,7 +53,7 @@ export default async function LocaleLayout({
 
   return (
     <>
-      {locale !== "en" && (
+      {locale !== "es" && (
         <script
           dangerouslySetInnerHTML={{
             __html: `document.documentElement.lang="${locale}"`,

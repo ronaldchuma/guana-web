@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { localePath } from "@/lib/utils";
 import { GuanaLogo } from "@/components/ui/GuanaLogo";
+import { LanguageSwitch } from "@/components/ui/LanguageSwitch";
 
 interface FooterProps {
   locale: string;
@@ -66,6 +67,9 @@ export function Footer({ locale, dictionary }: FooterProps) {
             <Link href={localePath("/legal/terms", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
               {footer.terms}
             </Link>
+          </div>
+          <div className="flex justify-center mt-4">
+            <LanguageSwitch locale={locale} />
           </div>
         </div>
       </div>

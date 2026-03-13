@@ -5,6 +5,6 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function localePath(path: string, locale: string): string {
-  if (locale === "en") return path;
+  if (locale === "es") return path;
   return `/${locale}${path}`;
 }

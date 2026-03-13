@@ -18,18 +18,23 @@ export function LanguageSwitch({ locale, className }: LanguageSwitchProps) {
   // Build the equivalent path in the other locale
   let targetPath: string;
 
-  if (otherLocale === "es") {
-    // Switching from EN to ES: prefix with /es
-    targetPath = `/es${pathname}`;
+  if (otherLocale === "en") {
+    // Switching from ES to EN: prefix with /en
+    targetPath = `/en${pathname}`;
   } else {
-    // Switching from ES to EN: strip the /es prefix
-    targetPath = pathname.replace(/^\/es/, "") || "/";
+    // Switching from EN to ES: strip the /en prefix
+    targetPath = pathname.replace(/^\/en/, "") || "/";
   }
+
+  const handleClick = () => {
+    document.cookie = `NEXT_LOCALE=${otherLocale};path=/;max-age=31536000;SameSite=Lax`;
+  };
 
   return (
     <Link
       href={targetPath}
       locale={false}
+      onClick={handleClick}
       className={cn(
         "inline-flex items-center justify-center rounded-lg border border-deep/10 px-3 py-1.5",
         "text-xs font-semibold tracking-wide text-deep/70",

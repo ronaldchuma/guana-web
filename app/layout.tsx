@@ -37,42 +37,42 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://guana.app"),
   title: {
-    default: "Guana — Share rides across Costa Rica",
+    default: "Guana — Comparte viajes por Costa Rica",
     template: "%s | Guana",
   },
   description:
-    "Find affordable rides between Costa Rica's cities and best surf spots. Or share your drive and offset costs.",
+    "Encuentra viajes accesibles entre las ciudades de Costa Rica y sus mejores destinos de surf. O comparte tu viaje y reduce costos.",
   keywords: [
-    "Costa Rica rideshare",
+    "viaje compartido Costa Rica",
     "ridesharing Costa Rica",
     "carpooling Costa Rica",
-    "ride to Jaco",
-    "ride to Tamarindo",
-    "ride to Santa Teresa",
-    "ride to Nosara",
-    "ride to Arenal",
-    "surf transport Costa Rica",
-    "San Jose to beach shuttle",
-    "intercity travel Costa Rica",
+    "viaje a Jacó",
+    "viaje a Tamarindo",
+    "viaje a Santa Teresa",
+    "viaje a Nosara",
+    "viaje a Arenal",
+    "transporte surf Costa Rica",
+    "San José a playa",
+    "viaje intercity Costa Rica",
+    "Costa Rica rideshare",
     "shared ride Costa Rica",
-    "viaje compartido Costa Rica",
     "Guana app",
     "Guana rideshare",
   ],
   openGraph: {
     type: "website",
     siteName: "Guana",
-    title: "Guana — Share rides across Costa Rica",
+    title: "Guana — Comparte viajes por Costa Rica",
     description:
-      "Ridesharing for surfers, travelers, and locals moving between Costa Rica's cities and beach destinations.",
-    locale: "en_US",
-    alternateLocale: ["es_CR"],
+      "Viajes compartidos para surfers, viajeros y locales que se mueven entre las ciudades y playas de Costa Rica.",
+    locale: "es_CR",
+    alternateLocale: ["en_US"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guana — Share rides across Costa Rica",
+    title: "Guana — Comparte viajes por Costa Rica",
     description:
-      "Find or offer rides between Costa Rica's cities and surf destinations.",
+      "Encuentra o comparte viajes entre las ciudades y destinos de surf de Costa Rica.",
   },
   verification: {
     google: "7CiTFgsTm031CuGPcH2BA5zje_gPqmQxYn3NttdJN4U",
@@ -106,7 +106,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${neueHaas.variable} ${easeDisplay.variable}`} suppressHydrationWarning>
+    <html lang="es" className={`${neueHaas.variable} ${easeDisplay.variable}`} suppressHydrationWarning>
       <body>
         <ClientSmoothScroll />
         {children}
