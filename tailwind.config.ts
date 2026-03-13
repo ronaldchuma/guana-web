@@ -8,39 +8,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        /* ── Neutrals (warm undertone) ── */
+        /* ── Neutrals (sage-green undertone) ── */
         cream: {
-          DEFAULT: "#F5F1EB",
-          light: "#FAF8F4",
-          dark: "#EDE8E0",
+          DEFAULT: "#f2f6ed",
+          light: "#f7f9f4",
+          dark: "#e8ede2",
         },
         deep: {
-          DEFAULT: "#0B1210",
-          800: "#131A17",
-          700: "#1C2622",
-          600: "#263330",
+          DEFAULT: "#002600",
+          800: "#0a3a0a",
+          700: "#1a4d1a",
+          600: "#2d602d",
         },
 
-        /* ── Brand Primary: Ocean Teal ── */
+        /* ── Brand Primary: Forest Green ── */
         teal: {
-          DEFAULT: "#0D7C66",
-          50: "#E8F5F1",
-          100: "#C4E8DE",
-          200: "#8DD4C0",
-          300: "#45B89A",
-          400: "#15A085",
-          500: "#0D7C66",
-          600: "#0A5F4E",
-          700: "#084A3D",
-          800: "#05352B",
-          900: "#032019",
+          DEFAULT: "#002600",
+          50: "#f0f7eb",
+          100: "#d5eac4",
+          200: "#a8d48e",
+          300: "#6fb84f",
+          400: "#3d8a20",
+          500: "#1a6600",
+          600: "#004d00",
+          700: "#003a00",
+          800: "#002600",
+          900: "#001400",
         },
 
-        /* ── Brand Secondary: Ocean Blue ── */
+        /* ── Brand Secondary: Forest Mid ── */
         ocean: {
-          DEFAULT: "#2E6DB4",
-          light: "#4B8AD0",
-          dark: "#1E5593",
+          DEFAULT: "#1a6600",
+          light: "#3d8a20",
+          dark: "#004d00",
         },
 
         /* ── Accent: Jungle Green ── */
@@ -50,30 +50,37 @@ const config: Config = {
           dark: "#1F6D39",
         },
 
-        /* ── Accent: Sunset Orange ── */
+        /* ── Accent: Red ── */
         sunset: {
-          DEFAULT: "#E2813B",
-          light: "#EDA05C",
-          dark: "#C46A28",
+          DEFAULT: "#ff3126",
+          light: "#ff5a4d",
+          dark: "#d42a1f",
         },
 
-        /* ── Accent: Coral ── */
+        /* ── Accent: Orange ── */
         coral: {
-          DEFAULT: "#D45D4C",
-          light: "#E07B6D",
+          DEFAULT: "#fc6b3e",
+          light: "#fd8a65",
         },
 
         /* ── Accent: Sand ── */
         sand: "#D4B896",
 
-        /* ── Brand Blue (new primary) ── */
+        /* ── Brand Primary Action ── */
         "brand-blue": {
-          DEFAULT: "#105cbb",
-          hover: "#0d4e9e",
+          DEFAULT: "#002600",
+          hover: "#003a00",
         },
 
         /* ── Brand Gold (accent) ── */
         "brand-gold": "#ffc942",
+
+        /* ── Lime (CTA text / bright accent) ── */
+        lime: {
+          DEFAULT: "#c1ff5e",
+          light: "#d4ff8a",
+          dark: "#a8e63a",
+        },
       },
 
       fontFamily: {
@@ -172,22 +179,22 @@ const config: Config = {
         card: "var(--shadow-card)",
         "card-hover": "var(--shadow-card-hover)",
         elevated: "var(--shadow-elevated)",
-        glow: "0 0 40px rgba(13,124,102,0.15)",
+        glow: "0 0 40px rgba(0,38,0,0.15)",
       },
 
       backgroundImage: {
         "gradient-flow":
-          "linear-gradient(135deg, #0D7C66 0%, #2E6DB4 30%, #2D8B4E 60%, #E2813B 100%)",
+          "linear-gradient(135deg, #002600 0%, #1a6600 30%, #2D8B4E 60%, #c1ff5e 100%)",
         "gradient-ocean":
-          "linear-gradient(135deg, #0D7C66 0%, #2E6DB4 100%)",
+          "linear-gradient(135deg, #002600 0%, #1a6600 100%)",
         "gradient-sunset":
-          "linear-gradient(135deg, #E2813B 0%, #D45D4C 100%)",
+          "linear-gradient(135deg, #ff3126 0%, #fc6b3e 100%)",
         "gradient-jungle":
-          "linear-gradient(135deg, #2D8B4E 0%, #0D7C66 100%)",
+          "linear-gradient(135deg, #2D8B4E 0%, #002600 100%)",
         "gradient-warm":
-          "linear-gradient(135deg, #2D8B4E 0%, #E2813B 50%, #D45D4C 100%)",
+          "linear-gradient(135deg, #2D8B4E 0%, #ff3126 50%, #fc6b3e 100%)",
         "gradient-cream":
-          "linear-gradient(180deg, #F5F1EB 0%, #FAF8F4 100%)",
+          "linear-gradient(180deg, #f2f6ed 0%, #f7f9f4 100%)",
       },
 
       transitionTimingFunction: {

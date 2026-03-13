@@ -127,36 +127,37 @@
 
     /* ═══════ SURFACE TOKENS ═════════════════════════════════ */
 
-    --color-surface:        #FAF8F4;
+    --color-surface:        #f7f9f4;
     --color-surface-raised: #FFFFFF;
-    --color-surface-sunken: #F5F1EB;
-    --color-surface-overlay: rgba(11, 18, 16, 0.6);
+    --color-surface-sunken: #f2f6ed;
+    --color-surface-overlay: rgba(0, 38, 0, 0.6);
 
 
     /* ═══════ TEXT TOKENS ════════════════════════════════════ */
 
-    --color-text-primary:   #0B1210;
-    --color-text-secondary: #263330;
-    --color-text-tertiary:  rgba(11, 18, 16, 0.5);
-    --color-text-inverse:   #FAF8F4;
+    --color-text-primary:   #002600;
+    --color-text-secondary: #2d602d;
+    --color-text-tertiary:  rgba(0, 38, 0, 0.5);
+    --color-text-inverse:   #f7f9f4;
 
 
     /* ═══════ BRAND TOKENS ═══════════════════════════════════ */
 
-    --color-brand:        #0D7C66;
-    --color-brand-hover:  #0A5F4E;
-    --color-brand-light:  #E8F5F1;
-    --color-brand-blue:   #105cbb;
-    --color-brand-blue-hover: #0d4e9e;
+    --color-brand:        #002600;
+    --color-brand-hover:  #003a00;
+    --color-brand-light:  #f0f7eb;
+    --color-brand-blue:   #002600;
+    --color-brand-blue-hover: #003a00;
     --color-brand-gold:   #ffc942;
+    --color-brand-lime:   #c1ff5e;
 
 
     /* ═══════ SEMANTIC TOKENS ════════════════════════════════ */
 
     --color-success:  #2D8B4E;
-    --color-warning:  #E2813B;
-    --color-danger:   #D45D4C;
-    --color-info:     #2E6DB4;
+    --color-warning:  #ff3126;
+    --color-danger:   #fc6b3e;
+    --color-info:     #1a6600;
 
 
     /* ═══════ RADIUS ═════════════════════════════════════════ */
@@ -206,7 +207,7 @@
   }
 
   body {
-    @apply bg-white text-deep font-sans;
+    @apply bg-cream text-deep font-sans;
     font-size: var(--text-main);
     line-height: var(--leading-main);
     letter-spacing: var(--tracking-main);
@@ -214,7 +215,7 @@
   }
 
   ::selection {
-    @apply bg-teal-100 text-deep;
+    @apply bg-lime/30 text-deep;
   }
 
   /* Remove default heading styles — apply via utility classes only (Lumos DRY) */
@@ -306,7 +307,7 @@
     font-size: var(--text-h6);
     line-height: var(--leading-h6);
     letter-spacing: var(--tracking-h6);
-    @apply font-semibold uppercase text-teal-600;
+    @apply font-semibold uppercase text-teal-500;
   }
 
   /* ── Route ribbon (decorative road line) ── */
@@ -322,7 +323,7 @@
     top: 50%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #0D7C66, #2E6DB4, transparent);
+    background: linear-gradient(90deg, transparent, #002600, #1a6600, transparent);
     opacity: 0.2;
     transform: translateY(-50%);
     pointer-events: none;
@@ -412,7 +413,7 @@
 
 .fp-item-bg {
   z-index: 0;
-  background-color: rgba(13, 124, 102, 0.06);
+  background-color: rgba(0, 38, 0, 0.06);
   border-radius: 2em;
   width: 100%;
   height: 100%;
@@ -446,7 +447,7 @@
 
 .fp-item-icon {
   aspect-ratio: 1;
-  background-color: rgba(13, 124, 102, 0.12);
+  background-color: rgba(0, 38, 0, 0.12);
   border-radius: var(--radius-full);
   flex: none;
   justify-content: center;
@@ -563,7 +564,7 @@
   aspect-ratio: 1;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  background-color: rgba(11, 18, 16, 0.06);
+  background-color: rgba(0, 38, 0, 0.06);
   border: none;
   border-radius: var(--radius-full);
   justify-content: center;
@@ -800,7 +801,7 @@
 
   * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(13, 124, 102, 0.15) transparent;
+    scrollbar-color: rgba(0, 38, 0, 0.15) transparent;
   }
 
   *::-webkit-scrollbar {
@@ -812,7 +813,7 @@
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: rgba(13, 124, 102, 0.15);
+    background-color: rgba(0, 38, 0, 0.15);
     border-radius: 2px;
   }
 }
@@ -866,7 +867,7 @@
 }
 
 .focus-ring:focus-visible {
-  @apply ring-2 ring-teal-400 ring-offset-2 ring-offset-cream-light;
+  @apply ring-2 ring-lime ring-offset-2 ring-offset-cream-light;
 }
 
 /* ── Data-reveal initial state ── */

@@ -31,7 +31,7 @@ const easeDisplay = localFont({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0D7C66",
+  themeColor: "#002600",
   width: "device-width",
   initialScale: 1,
 };
