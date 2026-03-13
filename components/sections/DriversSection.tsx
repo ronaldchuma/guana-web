@@ -67,7 +67,7 @@ export default function DriversSection({ dictionary }: DriversSectionProps) {
               {driversSection.benefits.slice(0, 2).map((label) => (
                 <div
                   key={label}
-                  className="flex-1 bg-[#f2f2f2] rounded-[10px] p-4 md:p-5 flex flex-col justify-between gap-3 h-[100px] md:h-[116px]"
+                  className="flex-1 bg-white rounded-[10px] p-4 md:p-5 flex flex-col justify-between gap-3 h-[100px] md:h-[116px]"
                 >
                   <CheckIcon />
                   <p className="font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{label}</p>
@@ -80,7 +80,7 @@ export default function DriversSection({ dictionary }: DriversSectionProps) {
               {driversSection.benefits.slice(2, 4).map((label) => (
                 <div
                   key={label}
-                  className="flex-1 bg-[#f2f2f2] rounded-[10px] p-4 md:p-5 flex flex-col justify-between gap-3 h-[100px] md:h-[116px]"
+                  className="flex-1 bg-white rounded-[10px] p-4 md:p-5 flex flex-col justify-between gap-3 h-[100px] md:h-[116px]"
                 >
                   <CheckIcon />
                   <p className="font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{label}</p>
@@ -90,7 +90,7 @@ export default function DriversSection({ dictionary }: DriversSectionProps) {
 
             {/* Row 3 */}
             <div className="flex gap-3 md:gap-5">
-              <div className="flex-1 bg-[#f2f2f2] rounded-[10px] p-4 md:p-5 flex flex-col justify-between gap-3 h-[100px] md:h-[116px]">
+              <div className="flex-1 bg-white rounded-[10px] p-4 md:p-5 flex flex-col justify-between gap-3 h-[100px] md:h-[116px]">
                 <CheckIcon />
                 <p className="font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{driversSection.benefits[4]}</p>
               </div>
