@@ -99,7 +99,7 @@ export default function DriversSection({ dictionary }: DriversSectionProps) {
               <a
                 href="#waitlist"
                 className="group flex-1 rounded-[10px] p-4 md:p-5 flex flex-col justify-end h-[100px] md:h-[116px] relative overflow-hidden"
-                style={{ background: "linear-gradient(109.5deg, #ffd66f 0%, #ffb600 100%)" }}
+                style={{ background: "linear-gradient(109.5deg, #ffc942 0%, #ffb600 100%)" }}
               >
                 {/* Shine sweep */}
                 <div className="absolute inset-0 -translate-x-full skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-in-out" />

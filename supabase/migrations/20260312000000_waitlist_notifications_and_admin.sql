@@ -67,9 +67,9 @@ BEGIN
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bienvenido a Guana</title>
 </head>
-<body style="margin:0;padding:0;background-color:#F5F1EB;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+<body style="margin:0;padding:0;background-color:#f2f6ed;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
 
-<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#F5F1EB;padding:48px 20px;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f2f6ed;padding:48px 20px;">
 <tr><td align="center">
 <table width="560" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:10px;overflow:hidden;">
 
@@ -82,36 +82,36 @@ BEGIN
 <tr>
 <td style="padding:28px 28px 40px;">
 
-<h1 style="margin:0 0 24px;color:#0B1210;font-size:28px;font-weight:500;line-height:1.1;">
+<h1 style="margin:0 0 24px;color:#002600;font-size:28px;font-weight:500;line-height:1.1;">
 Pura vida!
 </h1>
 
-<p style="margin:0 0 20px;color:#0B1210;font-size:16px;line-height:1.5;font-weight:400;">
+<p style="margin:0 0 20px;color:#002600;font-size:16px;line-height:1.5;font-weight:400;">
 Soy Ronald, fundador de Guana. Te escribo personalmente para decirte que ya estás en nuestra lista de espera.
 </p>
 
-<p style="margin:0 0 20px;color:#0B1210;font-size:16px;line-height:1.5;font-weight:400;">
+<p style="margin:0 0 20px;color:#002600;font-size:16px;line-height:1.5;font-weight:400;">
 Estamos construyendo la forma más social y accesible de viajar por Costa Rica — conectando surfers, nómadas digitales, ticos y turistas que van en la misma dirección para compartir ride, dividir costos y hacer el viaje parte de la aventura.
 </p>
 
 <table width="100%" cellpadding="0" cellspacing="0" style="margin:28px 0;">
 <tr>
-<td style="background-color:#F5F1EB;border-radius:10px;padding:24px;">
-<p style="margin:0 0 4px;color:#0B1210;font-size:16px;font-weight:500;">¿Qué sigue?</p>
-<p style="margin:0;color:#0B1210;font-size:15px;line-height:1.5;font-weight:400;opacity:0.7;">
+<td style="background-color:#f2f6ed;border-radius:10px;padding:24px;">
+<p style="margin:0 0 4px;color:#002600;font-size:16px;font-weight:500;">¿Qué sigue?</p>
+<p style="margin:0;color:#002600;font-size:15px;line-height:1.5;font-weight:400;opacity:0.7;">
 Te voy a avisar personalmente cuando sea tu turno. Los primeros en la lista tendrán acceso anticipado y beneficios exclusivos.
 </p>
 </td>
 </tr>
 </table>
 
-<p style="margin:0 0 4px;color:#0B1210;font-size:16px;line-height:1.5;font-weight:400;">
+<p style="margin:0 0 4px;color:#002600;font-size:16px;line-height:1.5;font-weight:400;">
 Nos vemos en el camino,
 </p>
 
 <img src="https://zkmrnbemrbogwzztzpyj.supabase.co/storage/v1/object/public/Website%20Media/Ronald%20Signature.png" alt="Ronald" width="120" style="display:block;margin:8px 0 4px;height:auto;" />
 
-<p style="margin:0;color:#0B1210;font-size:16px;line-height:1.5;font-weight:400;">
+<p style="margin:0;color:#002600;font-size:16px;line-height:1.5;font-weight:400;">
 <strong>Ronald</strong><br>
 <span style="opacity:0.5;font-size:14px;">Fundador, Guana</span>
 </p>
@@ -123,11 +123,11 @@ Nos vemos en el camino,
 <td style="padding:0 28px 32px;text-align:center;">
 <table width="100%" cellpadding="0" cellspacing="0">
 <tr><td style="border-top:1px solid rgba(0,0,0,0.06);padding-top:24px;">
-<p style="margin:0 0 8px;color:#0B1210;font-size:14px;line-height:1.4;font-weight:400;opacity:0.4;">
+<p style="margin:0 0 8px;color:#002600;font-size:14px;line-height:1.4;font-weight:400;opacity:0.4;">
 Ventanas abajo, música arriba,<br>desconocidos que se hacen amigos.
 </p>
 <p style="margin:0;">
-<a href="https://guana.app" style="color:#0B1210;font-size:14px;text-decoration:none;font-weight:400;opacity:0.4;">guana.app</a>
+<a href="https://guana.app" style="color:#002600;font-size:14px;text-decoration:none;font-weight:400;opacity:0.4;">guana.app</a>
 </p>
 </td></tr>
 </table>
@@ -159,9 +159,9 @@ BEGIN
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Estás dentro</title>
 </head>
-<body style="margin:0;padding:0;background-color:#F5F1EB;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+<body style="margin:0;padding:0;background-color:#f2f6ed;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
 
-<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#F5F1EB;padding:48px 20px;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f2f6ed;padding:48px 20px;">
 <tr><td align="center">
 <table width="560" cellpadding="0" cellspacing="0" style="background-color:#ffffff;border-radius:10px;overflow:hidden;">
 
@@ -174,21 +174,21 @@ BEGIN
 <tr>
 <td style="padding:28px 28px 40px;">
 
-<h1 style="margin:0 0 24px;color:#0B1210;font-size:28px;font-weight:500;line-height:1.1;">
+<h1 style="margin:0 0 24px;color:#002600;font-size:28px;font-weight:500;line-height:1.1;">
 Estás dentro!
 </h1>
 
-<p style="margin:0 0 20px;color:#0B1210;font-size:16px;line-height:1.5;font-weight:400;">
+<p style="margin:0 0 20px;color:#002600;font-size:16px;line-height:1.5;font-weight:400;">
 Soy Ronald de Guana. Quería darte la noticia personalmente: tu espera terminó. Ya tienes acceso a Guana.
 </p>
 
-<p style="margin:0 0 28px;color:#0B1210;font-size:16px;line-height:1.5;font-weight:400;">
+<p style="margin:0 0 28px;color:#002600;font-size:16px;line-height:1.5;font-weight:400;">
 Descarga la app y empieza a compartir rides hoy mismo.
 </p>
 
 <table cellpadding="0" cellspacing="0" style="margin:0 0 32px;">
 <tr>
-<td align="center" style="background-color:#105CBB;border-radius:999px;">
+<td align="center" style="background-color:#002600;border-radius:999px;">
 <a href="https://apps.apple.com/app/guana/id6504720981" style="display:inline-block;padding:14px 36px;color:#ffffff;font-size:16px;font-weight:400;text-decoration:none;letter-spacing:0.2px;">
 Descargar Guana para iOS
 </a>
@@ -198,8 +198,8 @@ Descargar Guana para iOS
 
 <table width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 28px;">
 <tr>
-<td style="background-color:#F5F1EB;border-radius:10px;padding:24px;">
-<p style="margin:0 0 16px;color:#0B1210;font-size:16px;font-weight:500;">Empieza en 3 pasos</p>
+<td style="background-color:#f2f6ed;border-radius:10px;padding:24px;">
+<p style="margin:0 0 16px;color:#002600;font-size:16px;font-weight:500;">Empieza en 3 pasos</p>
 
 <table cellpadding="0" cellspacing="0" width="100%">
 <tr>
@@ -207,9 +207,9 @@ Descargar Guana para iOS
 <table cellpadding="0" cellspacing="0">
 <tr>
 <td style="width:28px;vertical-align:top;">
-<div style="background:linear-gradient(109.5deg,#FFD66F 0%,#FFB600 100%);width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;font-weight:500;color:#0B1210;">1</div>
+<div style="background:linear-gradient(109.5deg,#ffc942 0%,#ffb600 100%);width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;font-weight:500;color:#002600;">1</div>
 </td>
-<td style="padding-left:12px;color:#0B1210;font-size:15px;line-height:1.4;font-weight:400;">Descarga la app y crea tu perfil</td>
+<td style="padding-left:12px;color:#002600;font-size:15px;line-height:1.4;font-weight:400;">Descarga la app y crea tu perfil</td>
 </tr>
 </table>
 </td>
@@ -219,9 +219,9 @@ Descargar Guana para iOS
 <table cellpadding="0" cellspacing="0">
 <tr>
 <td style="width:28px;vertical-align:top;">
-<div style="background:linear-gradient(109.5deg,#FFD66F 0%,#FFB600 100%);width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;font-weight:500;color:#0B1210;">2</div>
+<div style="background:linear-gradient(109.5deg,#ffc942 0%,#ffb600 100%);width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;font-weight:500;color:#002600;">2</div>
 </td>
-<td style="padding-left:12px;color:#0B1210;font-size:15px;line-height:1.4;font-weight:400;">Busca un ride o publica el tuyo</td>
+<td style="padding-left:12px;color:#002600;font-size:15px;line-height:1.4;font-weight:400;">Busca un ride o publica el tuyo</td>
 </tr>
 </table>
 </td>
@@ -231,9 +231,9 @@ Descargar Guana para iOS
 <table cellpadding="0" cellspacing="0">
 <tr>
 <td style="width:28px;vertical-align:top;">
-<div style="background:linear-gradient(109.5deg,#FFD66F 0%,#FFB600 100%);width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;font-weight:500;color:#0B1210;">3</div>
+<div style="background:linear-gradient(109.5deg,#ffc942 0%,#ffb600 100%);width:24px;height:24px;border-radius:50%;text-align:center;line-height:24px;font-size:13px;font-weight:500;color:#002600;">3</div>
 </td>
-<td style="padding-left:12px;color:#0B1210;font-size:15px;line-height:1.4;font-weight:400;">Viaja, conoce gente y ahorra</td>
+<td style="padding-left:12px;color:#002600;font-size:15px;line-height:1.4;font-weight:400;">Viaja, conoce gente y ahorra</td>
 </tr>
 </table>
 </td>
@@ -244,17 +244,17 @@ Descargar Guana para iOS
 </tr>
 </table>
 
-<p style="margin:0 0 20px;color:#0B1210;font-size:16px;line-height:1.5;font-weight:400;">
+<p style="margin:0 0 20px;color:#002600;font-size:16px;line-height:1.5;font-weight:400;">
 ¿Ya estás conduciendo hacia algún lado? Publica tu viaje y llena esos asientos vacíos. Cada ride compartido hace las carreteras de Costa Rica un poco más divertidas.
 </p>
 
-<p style="margin:0 0 4px;color:#0B1210;font-size:16px;line-height:1.5;font-weight:400;">
+<p style="margin:0 0 4px;color:#002600;font-size:16px;line-height:1.5;font-weight:400;">
 Pura vida,
 </p>
 
 <img src="https://zkmrnbemrbogwzztzpyj.supabase.co/storage/v1/object/public/Website%20Media/Ronald%20Signature.png" alt="Ronald" width="120" style="display:block;margin:8px 0 4px;height:auto;" />
 
-<p style="margin:0;color:#0B1210;font-size:16px;line-height:1.5;font-weight:400;">
+<p style="margin:0;color:#002600;font-size:16px;line-height:1.5;font-weight:400;">
 <strong>Ronald</strong><br>
 <span style="opacity:0.5;font-size:14px;">Fundador, Guana</span>
 </p>
@@ -266,11 +266,11 @@ Pura vida,
 <td style="padding:0 28px 32px;text-align:center;">
 <table width="100%" cellpadding="0" cellspacing="0">
 <tr><td style="border-top:1px solid rgba(0,0,0,0.06);padding-top:24px;">
-<p style="margin:0 0 8px;color:#0B1210;font-size:14px;line-height:1.4;font-weight:400;opacity:0.4;">
+<p style="margin:0 0 8px;color:#002600;font-size:14px;line-height:1.4;font-weight:400;opacity:0.4;">
 Ventanas abajo, música arriba,<br>desconocidos que se hacen amigos.
 </p>
 <p style="margin:0;">
-<a href="https://guana.app" style="color:#0B1210;font-size:14px;text-decoration:none;font-weight:400;opacity:0.4;">guana.app</a>
+<a href="https://guana.app" style="color:#002600;font-size:14px;text-decoration:none;font-weight:400;opacity:0.4;">guana.app</a>
 </p>
 </td></tr>
 </table>
@@ -289,96 +289,11 @@ $function$;
 -- 5. NOTIFICATION TRIGGERS (use full_name column)
 -- ============================================================================
 
--- 5a. On INSERT: send welcome email + add to Resend contact list
-CREATE OR REPLACE FUNCTION public.notify_waitlist_insert()
-RETURNS trigger
-LANGUAGE plpgsql
-SECURITY DEFINER
-SET search_path = 'public'
-AS $function$
-DECLARE
-  v_resend_key text;
-  v_segment_id text;
-  v_contact_body jsonb;
-  v_first_name text;
-  v_last_name text;
-  v_name_parts text[];
-  v_email_html text;
-BEGIN
-  SELECT decrypted_secret INTO v_resend_key
-    FROM vault.decrypted_secrets WHERE name = 'resend_api_key' LIMIT 1;
-  SELECT decrypted_secret INTO v_segment_id
-    FROM vault.decrypted_secrets WHERE name = 'resend_waitlist_segment_id' LIMIT 1;
+-- NOTE: The on-insert welcome email + Resend contact creation is handled by
+-- the Next.js API route (lib/resend.ts) rather than a DB trigger. This avoids
+-- Resend's 2 req/sec rate limit when pg_net fires multiple calls simultaneously.
 
-  IF v_resend_key IS NULL THEN
-    RAISE WARNING 'resend_api_key not found in vault';
-    RETURN NEW;
-  END IF;
-
-  v_name_parts := string_to_array(trim(coalesce(NEW.full_name, '')), ' ');
-  v_first_name := v_name_parts[1];
-  IF array_length(v_name_parts, 1) > 1 THEN
-    v_last_name := array_to_string(v_name_parts[2:], ' ');
-  END IF;
-
-  -- 1. Create contact in Resend
-  v_contact_body := jsonb_build_object('email', NEW.email);
-  IF v_first_name IS NOT NULL AND v_first_name != '' THEN
-    v_contact_body := v_contact_body || jsonb_build_object('first_name', v_first_name);
-  END IF;
-  IF v_last_name IS NOT NULL AND v_last_name != '' THEN
-    v_contact_body := v_contact_body || jsonb_build_object('last_name', v_last_name);
-  END IF;
-
-  PERFORM net.http_post(
-    url := 'https://api.resend.com/contacts',
-    headers := jsonb_build_object(
-      'Content-Type', 'application/json',
-      'Authorization', 'Bearer ' || v_resend_key
-    ),
-    body := v_contact_body
-  );
-
-  -- 2. Add contact to waitlist segment (separate API call)
-  IF v_segment_id IS NOT NULL THEN
-    PERFORM net.http_post(
-      url := 'https://api.resend.com/segments/' || v_segment_id || '/contacts',
-      headers := jsonb_build_object(
-        'Content-Type', 'application/json',
-        'Authorization', 'Bearer ' || v_resend_key
-      ),
-      body := jsonb_build_object('email', NEW.email)
-    );
-  END IF;
-
-  -- 3. Send welcome email
-  v_email_html := public.waitlist_welcome_email_html(NEW.full_name);
-  PERFORM net.http_post(
-    url := 'https://api.resend.com/emails',
-    headers := jsonb_build_object(
-      'Content-Type', 'application/json',
-      'Authorization', 'Bearer ' || v_resend_key
-    ),
-    body := jsonb_build_object(
-      'from', 'Ronald from Guana <hello@guana.app>',
-      'to', ARRAY[NEW.email],
-      'subject', '¡Estás en la lista! Bienvenido a Guana 🌴',
-      'html', v_email_html,
-      'text', 'Hola ' || coalesce(nullif(trim(NEW.full_name), ''), 'Viajero') || '! Soy Ronald, fundador de Guana. Ya estás en nuestra lista de espera. Te voy a avisar personalmente cuando sea tu turno. — Ronald, Guana'
-    )
-  );
-
-  RETURN NEW;
-END;
-$function$;
-
-DROP TRIGGER IF EXISTS on_waitlist_insert ON public.waitlist;
-CREATE TRIGGER on_waitlist_insert
-  AFTER INSERT ON public.waitlist
-  FOR EACH ROW
-  EXECUTE FUNCTION public.notify_waitlist_insert();
-
--- 5b. On UPDATE: send approval email when status changes to 'approved'
+-- 5a. On UPDATE: send approval email when status changes to 'approved'
 CREATE OR REPLACE FUNCTION public.notify_waitlist_status_change()
 RETURNS trigger
 LANGUAGE plpgsql

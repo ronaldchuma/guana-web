@@ -54,7 +54,7 @@ export default function Hero({ dictionary }: HeroProps) {
               <span className="block">{hero.title}</span>
               <span className="block">
                 {hero.titlePrefix}{" "}
-                <span className="bg-gradient-to-r from-[#FF0000] to-[#FC6B3E] bg-clip-text text-transparent">{currentWord}</span>
+                <span className="bg-gradient-to-r from-[#ff3126] to-[#fc6b3e] bg-clip-text text-transparent">{currentWord}</span>
               </span>
             </h1>
 

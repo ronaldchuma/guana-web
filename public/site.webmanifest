@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "browser",
   "background_color": "#ffffff",
-  "theme_color": "#0D7C66",
+  "theme_color": "#002600",
   "icons": [
     {
       "src": "https://zkmrnbemrbogwzztzpyj.supabase.co/storage/v1/object/public/Website%20Media/favicon.png",
