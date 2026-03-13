@@ -21,7 +21,7 @@ export function Footer({ locale, dictionary }: FooterProps) {
   const { footer } = dictionary;
 
   return (
-    <footer className="pt-10 pb-12">
+    <footer className="pt-10 pb-8">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-[100px]">
         {/* Logo — centered */}
         <div className="flex justify-center mb-8">
@@ -34,14 +34,27 @@ export function Footer({ locale, dictionary }: FooterProps) {
         </p>
 
         {/* Divider */}
-        <div className="border-t border-black/10 mt-8 pt-6">
-          {/* Bottom row: legal left | language toggle right */}
-          <div className="flex items-center justify-between">
+        <div className="border-t border-black/10 mt-6 pt-4">
+          {/* Desktop: legal left | toggle right */}
+          <div className="hidden sm:flex items-center justify-between">
             <div className="flex gap-[30px] items-center">
               <Link href={localePath("/legal/privacy", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
                 {footer.privacy}
               </Link>
               <Link href={localePath("/legal/terms", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
+                {footer.terms}
+              </Link>
+            </div>
+            <LanguageSwitch locale={locale} />
+          </div>
+
+          {/* Mobile: stacked */}
+          <div className="flex sm:hidden flex-col items-center gap-3">
+            <div className="flex gap-6 items-center">
+              <Link href={localePath("/legal/privacy", locale)} className="text-[15px] font-sans font-normal text-black hover:text-black/60 transition-colors">
+                {footer.privacy}
+              </Link>
+              <Link href={localePath("/legal/terms", locale)} className="text-[15px] font-sans font-normal text-black hover:text-black/60 transition-colors">
                 {footer.terms}
               </Link>
             </div>
