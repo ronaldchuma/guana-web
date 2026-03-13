@@ -3,7 +3,15 @@
 import { useRef } from "react";
 import { useSplitTextHighlight } from "@/components/motion/use-gsap";
 
-export default function Manifesto() {
+interface ManifestoProps {
+  dictionary: {
+    manifesto: {
+      text: string;
+    };
+  };
+}
+
+export default function Manifesto({ dictionary }: ManifestoProps) {
   const sectionRef = useRef<HTMLElement>(null);
   useSplitTextHighlight(sectionRef);
 
@@ -16,7 +24,7 @@ export default function Manifesto() {
           className="font-sans font-normal text-black text-center"
           style={{ fontSize: "clamp(1.75rem, 4vw, 50px)", lineHeight: 1 }}
         >
-          {"Costa Rica's roads are already full of stories. Guana just connects them."}
+          {dictionary.manifesto.text}
         </div>
       </div>
     </section>

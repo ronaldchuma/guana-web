@@ -9,6 +9,7 @@ import { CSSPlugin } from "gsap/CSSPlugin";
 import { cn, localePath } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/tokens";
 import { GuanaLogo } from "@/components/ui/GuanaLogo";
+import { LanguageSwitch } from "@/components/ui/LanguageSwitch";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 
 if (typeof window !== "undefined") {
@@ -152,12 +153,12 @@ export function Header({ locale, dictionary }: HeaderProps) {
           <div ref={barRef} className="pointer-events-auto relative flex items-center justify-between">
 
             {/* ── Logo ── */}
-            <Link href={localePath("/", locale)} aria-label="Guana — Home" className="shrink-0">
+            <Link href={localePath("/", locale)} aria-label={nav.ariaHome ?? "Guana — Home"} className="shrink-0">
               <GuanaLogo height={32} />
             </Link>
 
             {/* ── Desktop progress nav ── */}
-            <nav className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2" aria-label="Main navigation">
+            <nav className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2" aria-label={nav.ariaMainNav ?? "Main navigation"}>
               <div className="rounded-full p-[5px]">
                 <div ref={navListRef} className="relative flex items-center rounded-full overflow-hidden">
                   {/* Sliding indicator */}
@@ -196,10 +197,10 @@ export function Header({ locale, dictionary }: HeaderProps) {
                 className="progress-nav-cta relative px-[30px] rounded-full text-[18px] font-sans font-normal text-white bg-brand-blue hover:bg-brand-blue-hover transition-colors duration-200 overflow-hidden h-[44px] flex items-center"
               >
                 <span className="progress-nav-text block leading-[44px]">
-                  {nav.download ?? "Join waitlist"}
+                  {nav.download}
                 </span>
                 <span className="progress-nav-text progress-nav-text--dup absolute left-0 right-0 text-center leading-[44px]">
-                  {nav.download ?? "Join waitlist"}
+                  {nav.download}
                 </span>
               </a>
             </div>
@@ -208,7 +209,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
             <button
               onClick={toggleMobile}
               className="lg:hidden relative z-[70] flex flex-col items-center justify-center w-10 h-10 -mr-2"
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-label={mobileOpen ? (nav.ariaCloseMenu ?? "Close menu") : (nav.ariaOpenMenu ?? "Open menu")}
               aria-expanded={mobileOpen}
             >
               <span className={cn("block h-[1.5px] w-5 bg-black rounded-full transition-all duration-300", mobileOpen && "translate-y-[5px] rotate-45")} />
@@ -225,12 +226,12 @@ export function Header({ locale, dictionary }: HeaderProps) {
         ref={mobileMenuRef}
         role="dialog"
         aria-modal="true"
-        aria-label="Navigation menu"
+        aria-label={nav.ariaNavMenu ?? "Navigation menu"}
         className="fixed inset-0 z-[60] lg:hidden bg-white flex flex-col opacity-0 pointer-events-none"
       >
         <div className="h-20 shrink-0 flex items-center justify-between px-6">
           <GuanaLogo height={32} />
-          <button onClick={closeMobile} aria-label="Close menu" className="w-10 h-10 flex items-center justify-center">
+          <button onClick={closeMobile} aria-label={nav.ariaCloseMenu ?? "Close menu"} className="w-10 h-10 flex items-center justify-center">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -254,8 +255,11 @@ export function Header({ locale, dictionary }: HeaderProps) {
                 onClick={(e) => handleNavClick(e, "#waitlist")}
                 className="flex items-center justify-center w-full px-8 py-4 rounded-full bg-brand-blue text-white text-lg font-sans"
               >
-                {nav.download ?? "Join waitlist"}
+                {nav.download}
               </a>
+            </div>
+            <div className="pt-4 flex justify-center">
+              <LanguageSwitch locale={locale} className="text-sm px-4 py-2" />
             </div>
           </div>
         </nav>

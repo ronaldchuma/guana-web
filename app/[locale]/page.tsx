@@ -51,26 +51,30 @@ export default async function HomePage({
         }}
       />
       <Hero
-        dictionary={{ hero: dict.hero }}
+        dictionary={{ hero: dict.hero, waitlistForm: dict.waitlistForm }}
         locale={locale as Locale}
       />
-      <Manifesto />
+      <Manifesto
+        dictionary={{ manifesto: dict.manifesto }}
+      />
       <SocialProofCards
-        dictionary={{ cta: dict.cta, nav: dict.nav }}
+        dictionary={{ cta: dict.cta, nav: dict.nav, socialProof: dict.socialProof }}
       />
       <HowItWorks
-        dictionary={{ steps: dict.steps }}
+        dictionary={{ howItWorks: dict.howItWorks, steps: dict.steps }}
       />
       <RoutesPreview
-        dictionary={{ routes: dict.routes }}
+        dictionary={{ routes: dict.routes, nav: dict.nav }}
         locale={locale as Locale}
       />
       <TrustSafety
         dictionary={{ trust: dict.trust }}
       />
-      <DriversSection />
+      <DriversSection
+        dictionary={{ driversSection: dict.driversSection }}
+      />
       <FinalCTA
-        dictionary={{ cta: dict.cta }}
+        dictionary={{ cta: dict.cta, waitlistForm: dict.waitlistForm }}
       />
     </>
   );

@@ -47,6 +47,7 @@ export function Footer({ locale, dictionary }: FooterProps) {
             <Link href={localePath("/legal/terms", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
               {footer.terms}
             </Link>
+            <LanguageSwitch locale={locale} />
           </div>
         </div>
 

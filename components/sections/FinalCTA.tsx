@@ -7,6 +7,18 @@ interface FinalCTAProps {
     cta: {
       title: string;
       subtitle: string;
+      eyebrow: string;
+    };
+    waitlistForm: {
+      emailLabel: string;
+      placeholder: string;
+      submit: string;
+      submitStacked: string;
+      loading: string;
+      error: string;
+      disclaimer: string;
+      successTitle: string;
+      successMessage: string;
     };
   };
 }
@@ -33,7 +45,7 @@ export default function FinalCTA({ dictionary }: FinalCTAProps) {
           <div className="relative z-10 flex flex-col items-center gap-[10px] text-center max-w-[595px]">
             {/* Eyebrow */}
             <span className="text-[18px] font-sans font-normal bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">
-              Early access
+              {dictionary.cta.eyebrow}
             </span>
             <div className="flex flex-col gap-5 items-center">
               <h2
@@ -49,7 +61,7 @@ export default function FinalCTA({ dictionary }: FinalCTAProps) {
           </div>
 
           {/* Waitlist form */}
-          <WaitlistForm variant="stacked" />
+          <WaitlistForm variant="stacked" dictionary={dictionary.waitlistForm} />
         </div>
       </div>
     </section>

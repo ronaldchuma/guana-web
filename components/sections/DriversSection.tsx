@@ -1,15 +1,7 @@
 import Image from "next/image";
 import { MEDIA } from "@/lib/media";
 
-const BENEFIT_CARDS = [
-  { label: "Offset your costs" },
-  { label: "Zero commitment" },
-  { label: "Travel with company" },
-  { label: "You're always in control" },
-  { label: "Safe & private" },
-] as const;
-
-/* Inline check icon for all cards — no clipPath needed (viewBox matches rect) */
+/* Inline check icon for all cards */
 function CheckIcon() {
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,24 +10,39 @@ function CheckIcon() {
   );
 }
 
-export default function DriversSection() {
+interface DriversSectionProps {
+  dictionary: {
+    driversSection: {
+      eyebrow: string;
+      title: string;
+      subtitle: string;
+      benefits: string[];
+      cta: string;
+      photoAlt: string;
+    };
+  };
+}
+
+export default function DriversSection({ dictionary }: DriversSectionProps) {
+  const { driversSection } = dictionary;
+
   return (
     <section id="drivers" className="py-28 md:py-36">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-[100px]">
         {/* Section header */}
         <div className="text-center mb-14 flex flex-col items-center gap-[10px]">
           <span className="text-[18px] font-sans font-normal bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">
-            Drive with Guana
+            {driversSection.eyebrow}
           </span>
           <div className="flex flex-col gap-5 items-center">
             <h2
               className="font-sans font-normal text-black"
               style={{ fontSize: "clamp(2rem, 4vw, 50px)", lineHeight: 1 }}
             >
-              Already driving? Fill your empty seats
+              {driversSection.title}
             </h2>
             <p className="text-[18px] font-sans font-normal text-black leading-[1.2] max-w-[440px]">
-              {"You're heading there anyway. Bring someone along, split the costs, and make the trip better for everyone."}
+              {driversSection.subtitle}
             </p>
           </div>
         </div>
@@ -46,7 +53,7 @@ export default function DriversSection() {
           <div className="w-full md:flex-1 rounded-[10px] overflow-hidden h-[280px] md:h-[388px]">
             <Image
               src={MEDIA.driversPhoto}
-              alt="Driver on a Costa Rica road"
+              alt={driversSection.photoAlt}
               width={500}
               height={600}
               className="w-full h-full object-cover"
@@ -57,26 +64,26 @@ export default function DriversSection() {
           <div className="w-full md:flex-[1.4] flex flex-col gap-3 md:gap-5">
             {/* Row 1 */}
             <div className="flex gap-3 md:gap-5">
-              {BENEFIT_CARDS.slice(0, 2).map((card) => (
+              {driversSection.benefits.slice(0, 2).map((label) => (
                 <div
-                  key={card.label}
+                  key={label}
                   className="flex-1 bg-[#f2f2f2] rounded-[10px] p-4 md:p-5 flex flex-col justify-between gap-3 h-[100px] md:h-[116px]"
                 >
                   <CheckIcon />
-                  <p className="font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{card.label}</p>
+                  <p className="font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{label}</p>
                 </div>
               ))}
             </div>
 
             {/* Row 2 */}
             <div className="flex gap-3 md:gap-5">
-              {BENEFIT_CARDS.slice(2, 4).map((card) => (
+              {driversSection.benefits.slice(2, 4).map((label) => (
                 <div
-                  key={card.label}
+                  key={label}
                   className="flex-1 bg-[#f2f2f2] rounded-[10px] p-4 md:p-5 flex flex-col justify-between gap-3 h-[100px] md:h-[116px]"
                 >
                   <CheckIcon />
-                  <p className="font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{card.label}</p>
+                  <p className="font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{label}</p>
                 </div>
               ))}
             </div>
@@ -85,7 +92,7 @@ export default function DriversSection() {
             <div className="flex gap-3 md:gap-5">
               <div className="flex-1 bg-[#f2f2f2] rounded-[10px] p-4 md:p-5 flex flex-col justify-between gap-3 h-[100px] md:h-[116px]">
                 <CheckIcon />
-                <p className="font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{BENEFIT_CARDS[4].label}</p>
+                <p className="font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{driversSection.benefits[4]}</p>
               </div>
 
               {/* CTA card — golden gradient */}
@@ -96,7 +103,7 @@ export default function DriversSection() {
               >
                 {/* Shine sweep */}
                 <div className="absolute inset-0 -translate-x-full skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
-                <p className="relative font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">Join as a driver</p>
+                <p className="relative font-sans font-normal text-[16px] md:text-[18px] text-black leading-[1.2]">{driversSection.cta}</p>
               </a>
             </div>
           </div>

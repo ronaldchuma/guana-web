@@ -15,7 +15,17 @@
     "about": "About",
     "support": "Support",
     "download": "Join waitlist",
-    "language": "ES"
+    "language": "ES",
+    "ariaHome": "Guana — Home",
+    "ariaMainNav": "Main navigation",
+    "ariaOpenMenu": "Open menu",
+    "ariaCloseMenu": "Close menu",
+    "ariaNavMenu": "Navigation menu",
+    "ariaFeaturedRoutes": "Featured routes",
+    "ariaSliderNav": "Slider navigation",
+    "ariaPrevRoute": "Previous route",
+    "ariaNextRoute": "Next route",
+    "ariaSwitchLang": "Switch to Spanish"
   },
   "hero": {
     "badge": "Ridesharing for Costa Rica",
@@ -24,11 +34,13 @@
     "titleWords": ["adventure", "wave", "hike", "escape", "sunset"],
     "subtitle": "Costa Rica's first ridesharing app, built for the roads between the life you live and the places you love.",
     "cta": "Join waitlist",
-    "ctaSecondary": "Browse Routes"
+    "ctaSecondary": "Browse Routes",
+    "appScreenshotAlt": "Guana app screenshot"
   },
   "howItWorks": {
     "headline": "Windows down, music up, strangers becoming friends before the next town. That's how Costa Rica was meant to be traveled and Guana makes it happen every day.",
-    "cta": "Get the App"
+    "cta": "Get the App",
+    "eyebrow": "How it works"
   },
   "steps": {
     "title": "Getting there, together",
@@ -108,12 +120,20 @@
     "distance": "Distance",
     "duration": "Drive time",
     "price": "From",
-    "perPerson": "per person"
+    "perPerson": "per person",
+    "perSeat": "/seat"
   },
   "trust": {
     "title": "People you can actually trust",
     "subtitle": "Every profile is verified. Every message is private. Every trip is tracked. That's not a feature, it's the foundation.",
-    "cta": "Learn more",
+    "eyebrow": "Safety & trust",
+    "cta": "Join waitlist",
+    "pillars": [
+      { "title": "Verified identities", "description": "No guessing who's showing up" },
+      { "title": "Private in-app chat", "description": "Everything stays in the app" },
+      { "title": "Live trip tracking", "description": "Follow along on a live map" },
+      { "title": "Ratings on both sides", "description": "Keeps the community honest" }
+    ],
     "cards": [
       {
         "title": "Verified identities for every driver and passenger"
@@ -129,6 +149,7 @@
   "cta": {
     "title": "Be first on the road",
     "subtitle": "Guana is coming to Costa Rica. Join the waitlist and we'll let you know the moment you can ride or drive.",
+    "eyebrow": "Early access",
     "download": "Download on the App Store",
     "drivers": "Want to drive?",
     "driversLink": "Learn about driving with Guana"
@@ -420,6 +441,38 @@
     "relatedRoutes": "Related routes",
     "faqTitle": "Common questions about this route",
     "downloadCta": "Find rides on this route"
+  },
+  "waitlistForm": {
+    "emailLabel": "Email address",
+    "placeholder": "Your email address",
+    "submit": "Join waitlist",
+    "submitStacked": "Join the waitlist",
+    "loading": "Joining...",
+    "error": "Something went wrong. Please try again.",
+    "disclaimer": "No spam. Just your launch invite when it's time.",
+    "successTitle": "Pura vida — you're in!",
+    "successMessage": "We'll send you a personal note when it's your turn. Keep an eye on your inbox."
+  },
+  "driversSection": {
+    "eyebrow": "Drive with Guana",
+    "title": "Already driving? Fill your empty seats",
+    "subtitle": "You're heading there anyway. Bring someone along, split the costs, and make the trip better for everyone.",
+    "benefits": ["Offset your costs", "Zero commitment", "Travel with company", "You're always in control", "Safe & private"],
+    "cta": "Join as a driver",
+    "photoAlt": "Driver on a Costa Rica road"
+  },
+  "socialProof": {
+    "cards": ["Verified drivers & riders", "Every major route, covered", "Share costs, not strangers", "Built for Costa Rica's roads", "Diay, vamos", "Que buena nota mae", "Tico-built, road-tested", "Pura Vida"],
+    "heading": "Your next ride starts here",
+    "subtitle": "Guana connects Costa Rica's roads with the people already traveling them. Be first on the list."
+  },
+  "manifesto": {
+    "text": "Costa Rica's roads are already full of stories. Guana just connects them."
+  },
+  "notFound": {
+    "heading": "Page not found",
+    "message": "The page you're looking for doesn't exist or has been moved. Let's get you back on track.",
+    "cta": "Go to Homepage"
   },
   "common": {
     "learnMore": "Learn more",

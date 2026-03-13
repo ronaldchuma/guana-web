@@ -19,6 +19,9 @@ interface StepItem {
 
 interface HowItWorksProps {
   dictionary: {
+    howItWorks: {
+      eyebrow: string;
+    };
     steps: {
       title: string;
       subtitle: string;
@@ -100,7 +103,7 @@ export default function HowItWorks({ dictionary }: HowItWorksProps) {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-[100px] pt-28 pb-14 md:pb-20 flex flex-col items-start lg:items-center lg:text-center gap-[10px]">
         {/* Eyebrow */}
         <span className="text-[18px] font-sans font-normal bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">
-          How it works
+          {dictionary.howItWorks.eyebrow}
         </span>
         <div className="flex flex-col gap-5">
           <h2

@@ -15,7 +15,17 @@
     "about": "Nosotros",
     "support": "Soporte",
     "download": "Únete a la lista",
-    "language": "EN"
+    "language": "EN",
+    "ariaHome": "Guana — Inicio",
+    "ariaMainNav": "Navegación principal",
+    "ariaOpenMenu": "Abrir menú",
+    "ariaCloseMenu": "Cerrar menú",
+    "ariaNavMenu": "Menú de navegación",
+    "ariaFeaturedRoutes": "Rutas destacadas",
+    "ariaSliderNav": "Navegación del carrusel",
+    "ariaPrevRoute": "Ruta anterior",
+    "ariaNextRoute": "Siguiente ruta",
+    "ariaSwitchLang": "Cambiar a inglés"
   },
   "hero": {
     "badge": "Viajes compartidos en Costa Rica",
@@ -24,11 +34,13 @@
     "titleWords": ["aventura", "ola", "caminata", "escapada", "playa"],
     "subtitle": "",
     "cta": "Descargar App",
-    "ctaSecondary": "Ver Rutas"
+    "ctaSecondary": "Ver Rutas",
+    "appScreenshotAlt": "Captura de pantalla de la app Guana"
   },
   "howItWorks": {
     "headline": "Ventanas abajo, música arriba, desconocidos que se hacen amigos antes del próximo pueblo. Así se viaja Costa Rica — y Guana lo hace posible cada día.",
-    "cta": "Descargar App"
+    "cta": "Descargar App",
+    "eyebrow": "Cómo funciona"
   },
   "steps": {
     "title": "Llegamos juntos",
@@ -108,12 +120,20 @@
     "distance": "Distancia",
     "duration": "Tiempo de viaje",
     "price": "Desde",
-    "perPerson": "por persona"
+    "perPerson": "por persona",
+    "perSeat": "/asiento"
   },
   "trust": {
     "title": "Tu seguridad, protegida",
     "subtitle": "Integrada en cada viaje — identidades verificadas, comunicaciones cifradas y seguimiento en tiempo real te mantienen seguro en cada viaje con Guana.",
-    "cta": "Conocer más",
+    "eyebrow": "Seguridad y confianza",
+    "cta": "Únete a la lista",
+    "pillars": [
+      { "title": "Identidades verificadas", "description": "Sin dudas de quién se presenta" },
+      { "title": "Chat privado en la app", "description": "Todo se queda en la app" },
+      { "title": "Seguimiento en vivo", "description": "Sigue el viaje en el mapa en tiempo real" },
+      { "title": "Calificaciones mutuas", "description": "Mantiene la comunidad honesta" }
+    ],
     "cards": [
       {
         "title": "Identidades verificadas para cada conductor y pasajero"
@@ -128,6 +148,7 @@
   },
   "cta": {
     "title": "Guana Ride?",
+    "eyebrow": "Acceso anticipado",
     "subtitle": "Tu pr\u00f3xima aventura por Costa Rica est\u00e1 a un toque de distancia.",
     "download": "Descargar en la App Store",
     "drivers": "\u00bfQuieres conducir?",
@@ -420,6 +441,38 @@
     "relatedRoutes": "Rutas relacionadas",
     "faqTitle": "Preguntas comunes sobre esta ruta",
     "downloadCta": "Buscar viajes en esta ruta"
+  },
+  "waitlistForm": {
+    "emailLabel": "Correo electrónico",
+    "placeholder": "Tu correo electrónico",
+    "submit": "Únete a la lista",
+    "submitStacked": "Únete a la lista de espera",
+    "loading": "Registrando...",
+    "error": "Algo salió mal. Intenta de nuevo.",
+    "disclaimer": "Sin spam. Solo tu invitación cuando sea el momento.",
+    "successTitle": "¡Pura vida — estás dentro!",
+    "successMessage": "Te enviaremos una nota personal cuando sea tu turno. Revisa tu bandeja de entrada."
+  },
+  "driversSection": {
+    "eyebrow": "Conduce con Guana",
+    "title": "¿Ya vas en camino? Llena tus asientos vacíos",
+    "subtitle": "Ya vas para allá. Lleva a alguien, comparte los costos y mejora el viaje para todos.",
+    "benefits": ["Reduce tus costos", "Sin compromiso", "Viaja acompañado", "Siempre tienes el control", "Seguro y privado"],
+    "cta": "Únete como conductor",
+    "photoAlt": "Conductor en una carretera de Costa Rica"
+  },
+  "socialProof": {
+    "cards": ["Conductores y pasajeros verificados", "Todas las rutas principales cubiertas", "Comparte costos, no extraños", "Hecho para las carreteras de Costa Rica", "Diay, vamos", "Que buena nota mae", "Hecho por ticos, probado en la calle", "Pura Vida"],
+    "heading": "Tu próximo viaje empieza aquí",
+    "subtitle": "Guana conecta las carreteras de Costa Rica con la gente que ya las recorre. Sé el primero en la lista."
+  },
+  "manifesto": {
+    "text": "Las carreteras de Costa Rica ya están llenas de historias. Guana simplemente las conecta."
+  },
+  "notFound": {
+    "heading": "Página no encontrada",
+    "message": "La página que buscas no existe o fue movida. Volvamos al camino.",
+    "cta": "Ir al inicio"
   },
   "common": {
     "learnMore": "M\u00e1s informaci\u00f3n",

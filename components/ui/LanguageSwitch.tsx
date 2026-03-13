@@ -6,10 +6,11 @@ import { cn } from "@/lib/utils";
 
 interface LanguageSwitchProps {
   locale: string;
+  ariaLabel?: string;
   className?: string;
 }
 
-export function LanguageSwitch({ locale, className }: LanguageSwitchProps) {
+export function LanguageSwitch({ locale, ariaLabel, className }: LanguageSwitchProps) {
   const pathname = usePathname();
 
   const otherLocale = locale === "en" ? "es" : "en";
@@ -43,7 +44,7 @@ export function LanguageSwitch({ locale, className }: LanguageSwitchProps) {
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-light",
         className,
       )}
-      aria-label={`Switch to ${otherLocale === "es" ? "Spanish" : "English"}`}
+      aria-label={ariaLabel ?? `Switch to ${otherLocale === "es" ? "Spanish" : "English"}`}
     >
       {label}
     </Link>

@@ -12,7 +12,20 @@ interface HeroProps {
       title: string;
       titlePrefix: string;
       titleWords: string[];
+      subtitle: string;
       cta: string;
+      appScreenshotAlt: string;
+    };
+    waitlistForm: {
+      emailLabel: string;
+      placeholder: string;
+      submit: string;
+      submitStacked: string;
+      loading: string;
+      error: string;
+      disclaimer: string;
+      successTitle: string;
+      successMessage: string;
     };
   };
   locale: Locale;
@@ -25,7 +38,6 @@ export default function Hero({ dictionary }: HeroProps) {
   return (
     <section
       id="top"
-      aria-label="Hero"
       className="relative overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-[100px] pt-[80px] sm:pt-[100px] lg:pt-[136px] pb-0">
@@ -48,18 +60,18 @@ export default function Hero({ dictionary }: HeroProps) {
 
             {/* Subtitle */}
             <p className="text-[16px] sm:text-[18px] font-sans font-normal text-black leading-[1.3] max-w-[440px]">
-              {"Costa Rica's first ridesharing app, built for the roads between the life you live and the places you love."}
+              {hero.subtitle}
             </p>
 
             {/* Waitlist form */}
-            <WaitlistForm variant="inline" />
+            <WaitlistForm variant="inline" dictionary={dictionary.waitlistForm} />
 
             {/* ── Mobile/Tablet: Phone mockup ── */}
             <div className="lg:hidden flex justify-center w-full" aria-hidden="true">
               <div className="relative w-[220px] h-[451px] sm:w-[294px] sm:h-[604px]">
                 <Image
                   src={MEDIA.appMockup}
-                  alt="Guana app screenshot"
+                  alt={hero.appScreenshotAlt}
                   fill
                   priority
                   fetchPriority="high"
@@ -75,7 +87,7 @@ export default function Hero({ dictionary }: HeroProps) {
             <div className="absolute top-0 right-0 w-[294px] h-[604px] z-10">
               <Image
                 src={MEDIA.appMockup}
-                alt="Guana app screenshot"
+                alt={hero.appScreenshotAlt}
                 fill
                 className="object-contain object-top"
                 sizes="294px"

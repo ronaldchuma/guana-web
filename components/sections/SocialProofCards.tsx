@@ -12,33 +12,36 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 }
 
-const CARDS = [
-  // Top-left — "Verified drivers & riders"
-  { src: MEDIA.moments[3], label: "Verified drivers & riders",  rotate: -8,  left: "18%", top: "8%",  pos: "center" },
-  // Top-center — "Every major route, covered"
-  { src: MEDIA.moments[5], label: "Every major route, covered",  rotate: 2,   left: "40%", top: "0%",  pos: "center top" },
-  // Top-right — "Share costs, not strangers"
-  { src: MEDIA.moments[1], label: "Share costs, not strangers",  rotate: 8,   left: "62%", top: "4%",  pos: "center" },
-  // Mid-left — "Built for Costa Rica's roads"
-  { src: MEDIA.moments[4], label: "Built for Costa Rica's roads", rotate: -6,  left: "5%",  top: "38%", pos: "center" },
-  // Mid-right — "Diay, vamos"
-  { src: MEDIA.moments[0], label: "Diay, vamos",                  rotate: 6,   left: "82%", top: "28%", pos: "center" },
-  // Bot-left — "Que buena nota mae"
-  { src: MEDIA.moments[2], label: "Que buena nota mae",           rotate: -12, left: "15%", top: "68%", pos: "center" },
-  // Bot-center — "Tico-built, road-tested"
-  { src: MEDIA.moments[6], label: "Tico-built, road-tested",      rotate: 4,   left: "42%", top: "74%", pos: "center 40%" },
-  // Bot-right — "Pura Vida"
-  { src: MEDIA.moments[2], label: "Pura Vida",                    rotate: 10,  left: "68%", top: "64%", pos: "center" },
+const CARD_LAYOUT = [
+  { src: MEDIA.moments[3], rotate: -8,  left: "18%", top: "8%",  pos: "center" },
+  { src: MEDIA.moments[5], rotate: 2,   left: "40%", top: "0%",  pos: "center top" },
+  { src: MEDIA.moments[1], rotate: 8,   left: "62%", top: "4%",  pos: "center" },
+  { src: MEDIA.moments[4], rotate: -6,  left: "5%",  top: "38%", pos: "center" },
+  { src: MEDIA.moments[0], rotate: 6,   left: "82%", top: "28%", pos: "center" },
+  { src: MEDIA.moments[2], rotate: -12, left: "15%", top: "68%", pos: "center" },
+  { src: MEDIA.moments[6], rotate: 4,   left: "42%", top: "74%", pos: "center 40%" },
+  { src: MEDIA.moments[2], rotate: 10,  left: "68%", top: "64%", pos: "center" },
 ] as const;
 
 interface SocialProofCardsProps {
   dictionary: {
     cta: { title: string; subtitle: string };
     nav: { download: string };
+    socialProof: {
+      cards: string[];
+      heading: string;
+      subtitle: string;
+    };
   };
 }
 
 export default function SocialProofCards({ dictionary }: SocialProofCardsProps) {
+  const { socialProof } = dictionary;
+  const CARDS = CARD_LAYOUT.map((layout, i) => ({
+    ...layout,
+    label: socialProof.cards[i] ?? "",
+  }));
+
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -51,7 +54,7 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
     // When reduced motion is preferred, place cards at final positions immediately
     if (prefersReducedMotion) {
       cards.forEach((card, i) => {
-        const data = CARDS[i];
+        const data = CARD_LAYOUT[i];
         gsap.set(card, {
           left: data.left,
           top: data.top,
@@ -86,7 +89,7 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
     });
 
     cards.forEach((card, i) => {
-      const data = CARDS[i];
+      const data = CARD_LAYOUT[i];
       tl.to(
         card,
         {
@@ -153,16 +156,16 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
             className="font-sans font-normal text-black"
             style={{ fontSize: "clamp(1.75rem, 4vw, 50px)", lineHeight: 1.1 }}
           >
-            Your next ride starts here
+            {socialProof.heading}
           </h2>
           <p className="text-[16px] sm:text-[18px] font-sans font-normal text-black leading-[1.3] max-w-[440px]">
-            {"Guana connects Costa Rica's roads with the people already traveling them. Be first on the list."}
+            {socialProof.subtitle}
           </p>
           <a
             href="#waitlist"
             className="inline-flex items-center px-[24px] sm:px-[30px] py-[10px] rounded-full bg-brand-blue hover:bg-brand-blue-hover text-white text-[16px] sm:text-[18px] font-sans font-normal transition-colors duration-200 mt-2"
           >
-            {dictionary.nav.download ?? "Join waitlist"}
+            {dictionary.nav.download}
           </a>
         </div>
       </div>

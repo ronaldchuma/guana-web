@@ -42,7 +42,10 @@ function debounce<T extends (...args: unknown[]) => void>(fn: T, ms: number): T 
 
 /* ── Types ───────────────────────────────────────────────── */
 interface RoutesPreviewProps {
-  dictionary: { routes: { title: string; subtitle: string } };
+  dictionary: {
+    routes: { title: string; subtitle: string; price: string; perSeat: string };
+    nav: { ariaFeaturedRoutes: string; ariaSliderNav: string; ariaPrevRoute: string; ariaNextRoute: string };
+  };
   locale: Locale;
 }
 
@@ -229,7 +232,7 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
           <div
             ref={viewportRef}
             role="region"
-            aria-label="Featured routes"
+            aria-label={dictionary.nav.ariaFeaturedRoutes}
             aria-roledescription="carousel"
             className="relative overflow-hidden w-full h-[280px] sm:h-[340px] md:h-[383px]"
           >
@@ -275,9 +278,9 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
                   {/* Price — bottom-center on mobile, bottom-right on desktop */}
                   <div className="route-overlay absolute bottom-5 inset-x-0 flex justify-center md:inset-x-auto md:right-5">
                     <div className="backdrop-blur-[12.5px] bg-[rgba(255,201,66,0.1)] border border-[rgba(255,201,66,0.25)] rounded-[10px] px-3 py-2 md:px-4 md:py-4 text-center">
-                      <p className="text-[11px] md:text-[13px] font-sans font-normal text-white">From</p>
+                      <p className="text-[11px] md:text-[13px] font-sans font-normal text-white">{dictionary.routes.price}</p>
                       <p className="text-[22px] md:text-[30px] font-sans font-normal text-white leading-tight">{route.price}</p>
-                      <p className="text-[11px] md:text-[13px] font-sans font-normal text-white">/seat</p>
+                      <p className="text-[11px] md:text-[13px] font-sans font-normal text-white">{dictionary.routes.perSeat}</p>
                     </div>
                   </div>
                 </div>
@@ -286,10 +289,10 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
           </div>
 
           {/* Navigation arrows */}
-          <nav aria-label="Slider navigation" className="flex justify-center items-center gap-4 mt-8">
+          <nav aria-label={dictionary.nav.ariaSliderNav} className="flex justify-center items-center gap-4 mt-8">
             <button
               onClick={() => goToRef.current(activeIdxRef.current - 1)}
-              aria-label="Previous route"
+              aria-label={dictionary.nav.ariaPrevRoute}
               className="w-10 h-10 rounded-[5px] bg-brand-gold flex items-center justify-center hover:opacity-80 transition-opacity"
             >
               <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeMiterlimit="10">
@@ -299,7 +302,7 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
             </button>
             <button
               onClick={() => goToRef.current(activeIdxRef.current + 1)}
-              aria-label="Next route"
+              aria-label={dictionary.nav.ariaNextRoute}
               className="w-10 h-10 rounded-[5px] bg-brand-gold flex items-center justify-center hover:opacity-80 transition-opacity"
             >
               <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeMiterlimit="10">
