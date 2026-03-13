@@ -15,6 +15,7 @@ export function GuanaLogo({ className, height = 32 }: GuanaLogoProps) {
       height={height}
       className={className}
       priority
+      unoptimized
     />
   );
 }
