@@ -6,47 +6,59 @@ import { cn } from "@/lib/utils";
 
 interface LanguageSwitchProps {
   locale: string;
-  ariaLabel?: string;
   className?: string;
 }
 
-export function LanguageSwitch({ locale, ariaLabel, className }: LanguageSwitchProps) {
+export function LanguageSwitch({ locale, className }: LanguageSwitchProps) {
   const pathname = usePathname();
 
-  const otherLocale = locale === "en" ? "es" : "en";
-  const label = otherLocale.toUpperCase();
-
-  // Build the equivalent path in the other locale
-  let targetPath: string;
-
-  if (otherLocale === "en") {
-    // Switching from ES to EN: prefix with /en
-    targetPath = `/en${pathname}`;
-  } else {
-    // Switching from EN to ES: strip the /en prefix
-    targetPath = pathname.replace(/^\/en/, "") || "/";
+  function buildPath(targetLocale: string) {
+    if (targetLocale === "es") {
+      // Strip /en prefix to get bare path
+      return pathname.replace(/^\/en/, "") || "/";
+    }
+    // Add /en prefix
+    return `/en${pathname.replace(/^\/en/, "") || ""}`;
   }
 
-  const handleClick = () => {
-    document.cookie = `NEXT_LOCALE=${otherLocale};path=/;max-age=31536000;SameSite=Lax`;
+  const handleClick = (targetLocale: string) => {
+    document.cookie = `NEXT_LOCALE=${targetLocale};path=/;max-age=31536000;SameSite=Lax`;
   };
 
   return (
-    <Link
-      href={targetPath}
-      locale={false}
-      onClick={handleClick}
+    <div
       className={cn(
-        "inline-flex items-center justify-center rounded-lg border border-deep/10 px-3 py-1.5",
-        "text-xs font-semibold tracking-wide text-deep/70",
-        "transition-colors duration-200 ease-out",
-        "hover:bg-deep/5 hover:text-deep",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-light",
+        "inline-flex items-center rounded-full border border-black/10 overflow-hidden",
         className,
       )}
-      aria-label={ariaLabel ?? `Switch to ${otherLocale === "es" ? "Spanish" : "English"}`}
     >
-      {label}
-    </Link>
+      {(["ES", "EN"] as const).map((lang) => {
+        const code = lang.toLowerCase();
+        const isActive = locale === code;
+
+        if (isActive) {
+          return (
+            <span
+              key={lang}
+              className="px-3 py-1.5 text-xs font-semibold tracking-wide bg-black text-white cursor-default"
+            >
+              {lang}
+            </span>
+          );
+        }
+
+        return (
+          <Link
+            key={lang}
+            href={buildPath(code)}
+            locale={false}
+            onClick={() => handleClick(code)}
+            className="px-3 py-1.5 text-xs font-semibold tracking-wide text-black/50 hover:text-black transition-colors"
+          >
+            {lang}
+          </Link>
+        );
+      })}
+    </div>
   );
 }

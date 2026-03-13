@@ -18,7 +18,7 @@ interface FooterProps {
 }
 
 export function Footer({ locale, dictionary }: FooterProps) {
-  const { footer, nav } = dictionary;
+  const { footer } = dictionary;
 
   return (
     <footer className="pt-10 pb-12">
@@ -28,48 +28,23 @@ export function Footer({ locale, dictionary }: FooterProps) {
           <GuanaLogo height={96} />
         </div>
 
-        {/* Bottom row: nav left | tagline center | legal right */}
-        <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] items-center gap-4">
-          <div className="flex gap-[30px] items-center">
-            <Link href={localePath("/", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
-              {nav.home}
-            </Link>
-          </div>
+        {/* Tagline — centered */}
+        <p className="text-[20px] font-sans font-normal text-black text-center max-w-[293px] mx-auto leading-[1.2]">
+          {footer.tagline}
+        </p>
 
-          <p className="text-[20px] font-sans font-normal text-black text-center max-w-[293px] leading-[1.2]">
-            {footer.tagline}
-          </p>
-
-          <div className="flex gap-[30px] items-center justify-end">
-            <Link href={localePath("/legal/privacy", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
-              {footer.privacy}
-            </Link>
-            <Link href={localePath("/legal/terms", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
-              {footer.terms}
-            </Link>
-            <LanguageSwitch locale={locale} />
-          </div>
-        </div>
-
-        {/* Mobile fallback */}
-        <div className="flex md:hidden flex-col items-center gap-4">
-          <p className="text-[20px] font-sans font-normal text-black text-center max-w-[293px] leading-[1.2]">
-            {footer.tagline}
-          </p>
-          <div className="flex gap-[30px] items-center">
-            <Link href={localePath("/", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
-              {nav.home}
-            </Link>
-          </div>
-          <div className="flex gap-[30px] items-center">
-            <Link href={localePath("/legal/privacy", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
-              {footer.privacy}
-            </Link>
-            <Link href={localePath("/legal/terms", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
-              {footer.terms}
-            </Link>
-          </div>
-          <div className="flex justify-center mt-4">
+        {/* Divider */}
+        <div className="border-t border-black/10 mt-8 pt-6">
+          {/* Bottom row: legal left | language toggle right */}
+          <div className="flex items-center justify-between">
+            <div className="flex gap-[30px] items-center">
+              <Link href={localePath("/legal/privacy", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
+                {footer.privacy}
+              </Link>
+              <Link href={localePath("/legal/terms", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
+                {footer.terms}
+              </Link>
+            </div>
             <LanguageSwitch locale={locale} />
           </div>
         </div>
