@@ -100,7 +100,7 @@ export default function TrustSafety({ dictionary }: TrustSafetyProps) {
         {/* CTA */}
         <a
           href="#waitlist"
-          className="px-[30px] py-[10px] rounded-full bg-brand-blue hover:bg-brand-blue-hover text-white text-[18px] font-sans font-normal transition-colors duration-200"
+          className="px-[30px] py-[10px] rounded-full bg-brand-blue hover:bg-brand-blue-hover text-lime text-[18px] font-sans font-normal transition-colors duration-200"
         >
           {trust.cta}
         </a>

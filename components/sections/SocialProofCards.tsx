@@ -163,7 +163,7 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
           </p>
           <a
             href="#waitlist"
-            className="inline-flex items-center px-[24px] sm:px-[30px] py-[10px] rounded-full bg-brand-blue hover:bg-brand-blue-hover text-white text-[16px] sm:text-[18px] font-sans font-normal transition-colors duration-200 mt-2"
+            className="inline-flex items-center px-[24px] sm:px-[30px] py-[10px] rounded-full bg-brand-blue hover:bg-brand-blue-hover text-lime text-[16px] sm:text-[18px] font-sans font-normal transition-colors duration-200 mt-2"
           >
             {dictionary.nav.download}
           </a>

@@ -70,7 +70,7 @@ export default function WaitlistForm({ variant = "stacked", dictionary }: Waitli
           <button
             type="submit"
             disabled={status === "loading"}
-            className="shrink-0 px-[24px] py-[10px] rounded-full bg-brand-blue hover:bg-brand-blue-hover disabled:opacity-60 text-white text-[16px] font-sans font-normal transition-colors duration-200"
+            className="shrink-0 px-[24px] py-[10px] rounded-full bg-brand-blue hover:bg-brand-blue-hover disabled:opacity-60 text-lime text-[16px] font-sans font-normal transition-colors duration-200"
           >
             {status === "loading" ? dictionary.loading : dictionary.submit}
           </button>
@@ -99,7 +99,7 @@ export default function WaitlistForm({ variant = "stacked", dictionary }: Waitli
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full px-[30px] py-[10px] rounded-full bg-brand-blue hover:bg-brand-blue-hover disabled:opacity-60 text-white text-[18px] font-sans font-normal transition-colors duration-200"
+        className="w-full px-[30px] py-[10px] rounded-full bg-brand-blue hover:bg-brand-blue-hover disabled:opacity-60 text-lime text-[18px] font-sans font-normal transition-colors duration-200"
       >
         {status === "loading" ? dictionary.loading : dictionary.submitStacked}
       </button>

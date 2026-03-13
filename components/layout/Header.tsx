@@ -194,7 +194,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
               <a
                 href="#waitlist"
                 onClick={(e) => handleNavClick(e, "#waitlist")}
-                className="progress-nav-cta relative px-[30px] rounded-full text-[18px] font-sans font-normal text-white bg-brand-blue hover:bg-brand-blue-hover transition-colors duration-200 overflow-hidden h-[44px] flex items-center"
+                className="progress-nav-cta relative px-[30px] rounded-full text-[18px] font-sans font-normal text-lime bg-brand-blue hover:bg-brand-blue-hover transition-colors duration-200 overflow-hidden h-[44px] flex items-center"
               >
                 <span className="progress-nav-text block leading-[44px]">
                   {nav.download}
@@ -253,7 +253,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
               <a
                 href="#waitlist"
                 onClick={(e) => handleNavClick(e, "#waitlist")}
-                className="flex items-center justify-center w-full px-8 py-4 rounded-full bg-brand-blue text-white text-lg font-sans"
+                className="flex items-center justify-center w-full px-8 py-4 rounded-full bg-brand-blue text-lime text-lg font-sans"
               >
                 {nav.download}
               </a>

@@ -7,6 +7,7 @@ export const MEDIA = {
   driversPhoto: `${BUCKET}/0b121d9e-2fa5-48e1-ba77-c058361be0ac.jpeg`,
   appMockup: `${BUCKET}/app-home-noshadow%201.png`,
   phoneMockup: `${BUCKET}/phone-mockup.png`,
+  ctaImage: `${BUCKET}/cta-imga.png`,
   moments: [
     `${BUCKET}/0b121d9e-2fa5-48e1-ba77-c058361be0ac.jpeg`,
     `${BUCKET}/2157c7eb-588e-4e1c-8459-f6c8e918acd8.jpeg`,

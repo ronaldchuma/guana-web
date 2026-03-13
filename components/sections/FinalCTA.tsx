@@ -31,14 +31,14 @@ export default function FinalCTA({ dictionary }: FinalCTAProps) {
           {/* App mockup — fading from bottom */}
           <div className="relative w-[470px] max-w-full h-[398px] -mb-16">
             <Image
-              src={MEDIA.phoneMockup}
+              src={MEDIA.ctaImage}
               alt="Guana app"
               fill
               className="object-contain object-top"
               sizes="470px"
             />
             {/* Fade gradient */}
-            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-cream to-transparent pointer-events-none" />
           </div>
 
           {/* Content */}
