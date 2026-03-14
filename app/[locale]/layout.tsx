@@ -5,7 +5,7 @@ import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { organizationSchema, webSiteSchema, softwareApplicationSchema } from "@/lib/seo/json-ld";
-import { ScrollPath } from "@/components/motion/ScrollPath";
+
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ locale }));
@@ -79,7 +79,6 @@ export default async function LocaleLayout({
         }}
       />
       <div className="relative isolate">
-        <ScrollPath />
         <Header locale={locale} dictionary={{ nav: dict.nav }} />
         <main id="main-content">{children}</main>
         <Footer
