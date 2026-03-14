@@ -295,9 +295,9 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
             <button
               onClick={() => goToRef.current(activeIdxRef.current - 1)}
               aria-label={dictionary.nav.ariaPrevRoute}
-              className="w-10 h-10 rounded-[5px] bg-brand-gold flex items-center justify-center hover:opacity-80 transition-opacity"
+              className="w-10 h-10 rounded-[5px] bg-brand-blue hover:bg-brand-blue-hover flex items-center justify-center transition-colors"
             >
-              <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeMiterlimit="10">
+              <svg className="w-5 h-5 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeMiterlimit="10">
                 <path d="M14 19L7 12L14 5" stroke="currentColor" strokeMiterlimit="10" strokeWidth="1.5" />
                 <path d="M7 12H26" stroke="currentColor" strokeMiterlimit="10" strokeWidth="1.5" />
               </svg>
@@ -305,9 +305,9 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
             <button
               onClick={() => goToRef.current(activeIdxRef.current + 1)}
               aria-label={dictionary.nav.ariaNextRoute}
-              className="w-10 h-10 rounded-[5px] bg-brand-gold flex items-center justify-center hover:opacity-80 transition-opacity"
+              className="w-10 h-10 rounded-[5px] bg-brand-blue hover:bg-brand-blue-hover flex items-center justify-center transition-colors"
             >
-              <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeMiterlimit="10">
+              <svg className="w-5 h-5 text-lime" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} strokeMiterlimit="10">
                 <path d="M14 19L21 12L14 5" stroke="currentColor" strokeMiterlimit="10" strokeWidth="1.5" />
                 <path d="M21 12H2" stroke="currentColor" strokeMiterlimit="10" strokeWidth="1.5" />
               </svg>
