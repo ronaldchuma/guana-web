@@ -136,8 +136,8 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 sm:py-28 md:py-36 overflow-hidden"
-      style={{ minHeight: "clamp(520px, 90vw, 800px)" }}
+      className="relative py-28 sm:py-28 md:py-36 overflow-hidden"
+      style={{ minHeight: "clamp(620px, 100vw, 800px)" }}
     >
       {/* Scattered photo cards */}
       {/* On mobile: wider container (-15% each side) so %-based positions spread cards further apart */}
