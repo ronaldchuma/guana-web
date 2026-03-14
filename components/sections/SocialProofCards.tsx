@@ -115,11 +115,12 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 sm:py-28 md:py-36"
+      className="relative py-16 sm:py-28 md:py-36 overflow-hidden"
       style={{ minHeight: "clamp(520px, 90vw, 800px)" }}
     >
       {/* Scattered photo cards */}
-      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+      {/* On mobile: wider container (-15% each side) so %-based positions spread cards further apart */}
+      <div className="absolute top-0 bottom-0 -left-[15%] -right-[15%] sm:left-0 sm:right-0 pointer-events-none select-none overflow-visible sm:overflow-hidden" aria-hidden="true">
         {CARDS.map((card, i) => (
           <div
             key={i}
@@ -154,7 +155,7 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
         <div className="flex flex-col gap-3 sm:gap-5 items-center max-w-[495px]">
           <h2
             className="font-sans font-normal text-black"
-            style={{ fontSize: "clamp(1.75rem, 4vw, 50px)", lineHeight: 1.1 }}
+            style={{ fontSize: "clamp(2.25rem, 5vw, 50px)", lineHeight: 1.1 }}
           >
             {socialProof.heading}
           </h2>
