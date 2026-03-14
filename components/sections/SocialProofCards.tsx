@@ -26,14 +26,14 @@ const CARD_LAYOUT = [
 
 /* Mobile positions — push cards to top/bottom edges, keep center clear for text */
 const CARD_LAYOUT_MOBILE = [
-  { src: MEDIA.moments[3], rotate: -8,  left: "2%",  top: "2%",  pos: "center" },
-  { src: MEDIA.moments[5], rotate: 2,   left: "35%", top: "-4%", pos: "center top" },
-  { src: MEDIA.moments[1], rotate: 8,   left: "68%", top: "0%",  pos: "center" },
+  { src: MEDIA.moments[3], rotate: -8,  left: "2%",  top: "8%",  pos: "center" },
+  { src: MEDIA.moments[5], rotate: 2,   left: "35%", top: "4%",  pos: "center top" },
+  { src: MEDIA.moments[1], rotate: 8,   left: "68%", top: "6%",  pos: "center" },
   { src: MEDIA.moments[4], rotate: -6,  left: "-8%", top: "32%", pos: "center" },
   { src: MEDIA.moments[0], rotate: 6,   left: "88%", top: "26%", pos: "center" },
-  { src: MEDIA.moments[2], rotate: -12, left: "2%",  top: "76%", pos: "center" },
-  { src: MEDIA.moments[6], rotate: 4,   left: "35%", top: "82%", pos: "center 40%" },
-  { src: MEDIA.moments[2], rotate: 10,  left: "68%", top: "74%", pos: "center" },
+  { src: MEDIA.moments[2], rotate: -12, left: "2%",  top: "68%", pos: "center" },
+  { src: MEDIA.moments[6], rotate: 4,   left: "35%", top: "72%", pos: "center 40%" },
+  { src: MEDIA.moments[2], rotate: 10,  left: "68%", top: "66%", pos: "center" },
 ] as const;
 
 interface SocialProofCardsProps {
@@ -136,8 +136,8 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
   return (
     <section
       ref={sectionRef}
-      className="relative py-40 sm:py-28 md:py-36 overflow-hidden"
-      style={{ minHeight: "clamp(700px, 110vw, 800px)" }}
+      className="relative py-48 sm:py-28 md:py-36 overflow-hidden"
+      style={{ minHeight: "clamp(750px, 115vw, 800px)" }}
     >
       {/* Scattered photo cards */}
       {/* On mobile: wider container (-15% each side) so %-based positions spread cards further apart */}
