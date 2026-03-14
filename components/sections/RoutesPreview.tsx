@@ -96,7 +96,9 @@ export default function RoutesPreview({ dictionary }: RoutesPreviewProps) {
         { slot:  2, w: farW },
       ];
 
-      let x = 0;
+      // Calculate total width of all slots + gaps to center within viewport
+      const totalSlotsWidth = slots.reduce((sum, { w }) => sum + w, 0) + GAP * (slots.length - 1);
+      let x = (vw - totalSlotsWidth) / 2;
       slots.forEach(({ slot, w }, i) => {
         centers[slot] = x + w / 2;
         widths[slot]  = w;

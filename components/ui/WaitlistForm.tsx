@@ -57,7 +57,7 @@ export default function WaitlistForm({ variant = "stacked", dictionary }: Waitli
   if (variant === "inline") {
     return (
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full max-w-[440px]">
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <input
             type="email"
             required

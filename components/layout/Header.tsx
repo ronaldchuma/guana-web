@@ -142,7 +142,6 @@ export function Header({ locale, dictionary }: HeaderProps) {
   }, [mobileOpen, prefersReducedMotion]);
 
   useEffect(() => { setMobileOpen(false); }, [pathname]);
-  const closeMobile = useCallback(() => setMobileOpen(false), []);
   const toggleMobile = useCallback(() => setMobileOpen((v) => !v), []);
 
   return (
@@ -229,14 +228,8 @@ export function Header({ locale, dictionary }: HeaderProps) {
         aria-label={nav.ariaNavMenu ?? "Navigation menu"}
         className="fixed inset-0 z-[60] lg:hidden bg-white flex flex-col opacity-0 pointer-events-none"
       >
-        <div className="h-20 shrink-0 flex items-center justify-between px-6">
-          <GuanaLogo height={32} />
-          <button onClick={closeMobile} aria-label={nav.ariaCloseMenu ?? "Close menu"} className="w-10 h-10 flex items-center justify-center">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+        {/* Spacer matching the header height so content doesn't overlap the fixed navbar */}
+        <div className="h-[72px] shrink-0" />
         <nav className="flex-1 flex flex-col justify-center px-8 overflow-y-auto">
           <div ref={mobileLinksRef} className="space-y-1">
             {NAV_LINKS.map((link) => (

@@ -49,7 +49,7 @@ export default function Hero({ dictionary }: HeroProps) {
             {/* H1 */}
             <h1
               className="flex flex-col gap-0 font-sans font-normal text-black"
-              style={{ fontSize: "clamp(2rem, 5vw, 65px)", lineHeight: 1.1 }}
+              style={{ fontSize: "clamp(2.5rem, 5vw, 65px)", lineHeight: 1.1 }}
             >
               <span className="block">{hero.title}</span>
               <span className="block">
