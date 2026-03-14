@@ -12,6 +12,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger, CSSPlugin);
 }
 
+/* Desktop positions */
 const CARD_LAYOUT = [
   { src: MEDIA.moments[3], rotate: -8,  left: "18%", top: "8%",  pos: "center" },
   { src: MEDIA.moments[5], rotate: 2,   left: "40%", top: "0%",  pos: "center top" },
@@ -21,6 +22,18 @@ const CARD_LAYOUT = [
   { src: MEDIA.moments[2], rotate: -12, left: "15%", top: "68%", pos: "center" },
   { src: MEDIA.moments[6], rotate: 4,   left: "42%", top: "74%", pos: "center 40%" },
   { src: MEDIA.moments[2], rotate: 10,  left: "68%", top: "64%", pos: "center" },
+] as const;
+
+/* Mobile positions — push cards to top/bottom edges, keep center clear for text */
+const CARD_LAYOUT_MOBILE = [
+  { src: MEDIA.moments[3], rotate: -8,  left: "2%",  top: "2%",  pos: "center" },
+  { src: MEDIA.moments[5], rotate: 2,   left: "35%", top: "-4%", pos: "center top" },
+  { src: MEDIA.moments[1], rotate: 8,   left: "68%", top: "0%",  pos: "center" },
+  { src: MEDIA.moments[4], rotate: -6,  left: "-8%", top: "32%", pos: "center" },
+  { src: MEDIA.moments[0], rotate: 6,   left: "88%", top: "26%", pos: "center" },
+  { src: MEDIA.moments[2], rotate: -12, left: "2%",  top: "76%", pos: "center" },
+  { src: MEDIA.moments[6], rotate: 4,   left: "35%", top: "82%", pos: "center 40%" },
+  { src: MEDIA.moments[2], rotate: 10,  left: "68%", top: "74%", pos: "center" },
 ] as const;
 
 interface SocialProofCardsProps {
@@ -33,6 +46,12 @@ interface SocialProofCardsProps {
       subtitle: string;
     };
   };
+}
+
+function getLayout() {
+  return typeof window !== "undefined" && window.innerWidth < 640
+    ? CARD_LAYOUT_MOBILE
+    : CARD_LAYOUT;
 }
 
 export default function SocialProofCards({ dictionary }: SocialProofCardsProps) {
@@ -51,10 +70,12 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
     const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
     if (!section || cards.length === 0) return;
 
+    const layout = getLayout();
+
     // When reduced motion is preferred, place cards at final positions immediately
     if (prefersReducedMotion) {
       cards.forEach((card, i) => {
-        const data = CARD_LAYOUT[i];
+        const data = layout[i];
         gsap.set(card, {
           left: data.left,
           top: data.top,
@@ -89,7 +110,7 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
     });
 
     cards.forEach((card, i) => {
-      const data = CARD_LAYOUT[i];
+      const data = layout[i];
       tl.to(
         card,
         {
