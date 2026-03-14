@@ -55,19 +55,23 @@ export default async function PrivacyPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
 
-      <section className="bg-cream-light py-16 md:py-24">
+      {/* Hero */}
+      <section className="bg-cream-light py-20 md:py-28">
         <Container size="narrow">
-          <h1 className="text-display-md md:text-display-lg font-bold text-deep tracking-tight">
-            {legalPrivacy.title}
-          </h1>
-          <p className="mt-3 text-sm text-deep/40">{legalPrivacy.lastUpdated}</p>
+          <div className="text-center">
+            <h1 className="text-display-lg md:text-display-xl font-bold text-deep tracking-tight">
+              {legalPrivacy.title}
+            </h1>
+            <p className="mt-4 text-lg text-deep/60">{legalPrivacy.lastUpdated}</p>
+          </div>
         </Container>
       </section>
 
-      <section className="py-16 md:py-24">
+      {/* Content */}
+      <section className="py-20 md:py-28">
         <Container size="narrow">
-          <div className="max-w-3xl space-y-12 text-base leading-relaxed text-deep/70">
-            <p className="rounded-xl border border-sunset/20 bg-sunset/5 p-4 text-sm text-sunset-dark">
+          <div className="max-w-3xl mx-auto space-y-16 text-base md:text-lg leading-relaxed text-deep/60">
+            <p className="rounded-2xl border border-sunset/20 bg-sunset/5 p-5 text-sm text-sunset-dark">
               This is a summary of our privacy practices. Full legal review
               pending. For questions, contact{" "}
               <a
@@ -81,10 +85,10 @@ export default async function PrivacyPage({
 
             {/* 1. Information Collection */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 1. Information Collection
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 When you create a Guana account, we collect personal information
                 that you provide directly, including your name, email address,
                 profile photo, and travel preferences. If you choose to verify
@@ -108,10 +112,10 @@ export default async function PrivacyPage({
 
             {/* 2. Use of Information */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 2. Use of Information
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 We use the information we collect to operate, maintain, and
                 improve the Guana platform. This includes matching passengers
                 with drivers, facilitating in-app messaging, displaying
@@ -127,10 +131,10 @@ export default async function PrivacyPage({
 
             {/* 3. Data Sharing */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 3. Data Sharing
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 Your profile information (name, photo, verification status,
                 ratings) is visible to other Guana users when you publish a trip
                 or book a seat. Trip details are shared between drivers and
@@ -147,10 +151,10 @@ export default async function PrivacyPage({
 
             {/* 4. Security */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 4. Security
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 We implement industry-standard security measures to protect your
                 data. All network communications use certificate pinning to
                 prevent interception. Sensitive data stored on your device is
@@ -167,10 +171,10 @@ export default async function PrivacyPage({
 
             {/* 5. Your Rights */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 5. Your Rights
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 You have the right to access, correct, or delete your personal
                 information at any time. You can update your profile details
                 directly in the app. To request account deletion, use the option
@@ -185,10 +189,10 @@ export default async function PrivacyPage({
 
             {/* 6. Contact */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 6. Contact
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 If you have questions about this privacy policy or how we handle
                 your data, please contact us at{" "}
                 <a

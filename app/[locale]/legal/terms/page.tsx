@@ -55,19 +55,23 @@ export default async function TermsPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
       />
 
-      <section className="bg-cream-light py-16 md:py-24">
+      {/* Hero */}
+      <section className="bg-cream-light py-20 md:py-28">
         <Container size="narrow">
-          <h1 className="text-display-md md:text-display-lg font-bold text-deep tracking-tight">
-            {legalTerms.title}
-          </h1>
-          <p className="mt-3 text-sm text-deep/40">{legalTerms.lastUpdated}</p>
+          <div className="text-center">
+            <h1 className="text-display-lg md:text-display-xl font-bold text-deep tracking-tight">
+              {legalTerms.title}
+            </h1>
+            <p className="mt-4 text-lg text-deep/60">{legalTerms.lastUpdated}</p>
+          </div>
         </Container>
       </section>
 
-      <section className="py-16 md:py-24">
+      {/* Content */}
+      <section className="py-20 md:py-28">
         <Container size="narrow">
-          <div className="max-w-3xl space-y-12 text-base leading-relaxed text-deep/70">
-            <p className="rounded-xl border border-sunset/20 bg-sunset/5 p-4 text-sm text-sunset-dark">
+          <div className="max-w-3xl mx-auto space-y-16 text-base md:text-lg leading-relaxed text-deep/60">
+            <p className="rounded-2xl border border-sunset/20 bg-sunset/5 p-5 text-sm text-sunset-dark">
               This is a summary of our terms of service. Full legal review
               pending. For questions, contact{" "}
               <a
@@ -81,10 +85,10 @@ export default async function TermsPage({
 
             {/* 1. Acceptance */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 1. Acceptance of Terms
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 By downloading, accessing, or using the Guana mobile application
                 or website (collectively, the &quot;Platform&quot;), you agree to
                 be bound by these Terms of Service. If you do not agree to these
@@ -100,10 +104,10 @@ export default async function TermsPage({
 
             {/* 2. Description of Service */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 2. Description of Service
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 Guana is a ridesharing platform that connects drivers who are
                 already traveling between destinations in Costa Rica with
                 passengers seeking rides along similar routes. Guana facilitates
@@ -119,10 +123,10 @@ export default async function TermsPage({
 
             {/* 3. User Accounts */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 3. User Accounts
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 To use Guana, you must create an account by providing accurate
                 and complete information. You are responsible for maintaining the
                 security of your account credentials and for all activity that
@@ -139,10 +143,10 @@ export default async function TermsPage({
 
             {/* 4. User Conduct */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 4. User Conduct
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 All users agree to treat fellow travelers with respect and
                 courtesy. You must not use the Platform to engage in any illegal
                 activity, discriminate against other users, harass or threaten
@@ -163,10 +167,10 @@ export default async function TermsPage({
 
             {/* 5. Trips and Payments */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 5. Trips and Payments
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 Drivers publish trip details including route, date, time,
                 available seats, and per-seat price. Passengers browse and book
                 available trips through the Platform. Both parties can
@@ -189,10 +193,10 @@ export default async function TermsPage({
 
             {/* 6. Limitation of Liability */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 6. Limitation of Liability
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 Guana provides a platform for connecting users and does not
                 guarantee the availability, quality, safety, or legality of any
                 trip. Guana is not responsible for the actions, conduct, or
@@ -213,10 +217,10 @@ export default async function TermsPage({
 
             {/* 7. Changes to Terms */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 7. Changes to Terms
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 We may revise these Terms of Service from time to time. The most
                 current version will always be available on the Platform. If a
                 revision is material, we will provide at least 30 days notice
@@ -230,10 +234,10 @@ export default async function TermsPage({
 
             {/* 8. Contact */}
             <div>
-              <h2 className="text-display-sm font-bold text-deep tracking-tight">
+              <h2 className="text-display-sm md:text-display-md font-bold text-deep tracking-tight">
                 8. Contact
               </h2>
-              <p className="mt-4">
+              <p className="mt-6">
                 If you have questions about these terms, please contact us at{" "}
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
