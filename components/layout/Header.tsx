@@ -152,7 +152,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
           <div ref={barRef} className="pointer-events-auto relative flex items-center justify-between">
 
             {/* ── Logo ── */}
-            <Link href={localePath("/", locale)} aria-label={nav.ariaHome ?? "Guana — Home"} className="shrink-0">
+            <Link href={localePath("/", locale)} aria-label={nav.ariaHome ?? "Guana — Home"} className="shrink-0 relative z-[70]">
               <GuanaLogo height={32} />
             </Link>
 
