@@ -20,14 +20,16 @@ const neueHaas = localFont({
     },
   ],
   variable: "--font-nhgdp",
-  display: "optional",
+  display: "swap",
+  preload: true,
 });
 
 const easeDisplay = localFont({
   src: "../public/fonts/EaseDisplay-Medium.woff2",
   variable: "--font-ease-display",
-  display: "optional",
+  display: "swap",
   weight: "500",
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -109,6 +111,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={`${neueHaas.variable} ${easeDisplay.variable}`} suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://zkmrnbemrbogwzztzpyj.supabase.co" />
+        <link rel="dns-prefetch" href="https://zkmrnbemrbogwzztzpyj.supabase.co" />
+      </head>
       <body>
         <ClientSmoothScroll />
         {children}

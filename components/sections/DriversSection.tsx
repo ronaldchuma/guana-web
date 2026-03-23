@@ -50,13 +50,14 @@ export default function DriversSection({ dictionary }: DriversSectionProps) {
         {/* Two-column layout — stacks on mobile */}
         <div className="flex flex-col md:flex-row gap-5 items-start">
           {/* Left: lifestyle photo */}
-          <div className="w-full md:flex-1 rounded-[10px] overflow-hidden h-[280px] md:h-[388px]">
+          <div className="relative w-full md:flex-1 rounded-[10px] overflow-hidden h-[280px] md:h-[388px]">
             <Image
               src={MEDIA.driversPhoto}
               alt={driversSection.photoAlt}
-              width={500}
-              height={600}
-              className="w-full h-full object-cover"
+              fill
+              loading="lazy"
+              className="object-cover"
+              sizes="(min-width: 768px) 40vw, 100vw"
             />
           </div>
 

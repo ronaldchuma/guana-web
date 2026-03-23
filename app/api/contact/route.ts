@@ -3,6 +3,8 @@ import { rateLimit } from "@/lib/rate-limit";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
+export const dynamic = "force-dynamic";
+
 const contactSchema = z.object({
   name: z.string().min(1).max(100),
   email: z.string().email().max(255),

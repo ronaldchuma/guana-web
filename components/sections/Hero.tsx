@@ -89,6 +89,8 @@ export default function Hero({ dictionary }: HeroProps) {
                 src={MEDIA.appMockup}
                 alt={hero.appScreenshotAlt}
                 fill
+                priority
+                fetchPriority="high"
                 className="object-contain object-top"
                 sizes="294px"
               />

@@ -146,7 +146,7 @@ export default function SocialProofCards({ dictionary }: SocialProofCardsProps) 
           <div
             key={i}
             ref={(el) => { cardsRef.current[i] = el; }}
-            className="absolute will-change-transform"
+            className="absolute"
             style={{
               left: card.left,
               top: card.top,

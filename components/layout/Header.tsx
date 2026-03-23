@@ -3,17 +3,27 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { CSSPlugin } from "gsap/CSSPlugin";
 import { cn, localePath } from "@/lib/utils";
 import { NAV_LINKS } from "@/lib/tokens";
 import { GuanaLogo } from "@/components/ui/GuanaLogo";
 import { LanguageSwitch } from "@/components/ui/LanguageSwitch";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, CSSPlugin);
+// Lazy-load GSAP to reduce initial bundle
+let gsapReady: Promise<{ gsap: typeof import("gsap").default; ScrollTrigger: typeof import("gsap/ScrollTrigger").ScrollTrigger }> | null = null;
+function getGsap() {
+  if (!gsapReady) {
+    gsapReady = Promise.all([
+      import("gsap"),
+      import("gsap/ScrollTrigger"),
+    ]).then(([gsapMod, stMod]) => {
+      const g = gsapMod.default || gsapMod.gsap;
+      const ST = stMod.ScrollTrigger;
+      g.registerPlugin(ST);
+      return { gsap: g, ScrollTrigger: ST };
+    });
+  }
+  return gsapReady;
 }
 
 /* ── Section anchors for ScrollTrigger ── */
@@ -48,7 +58,12 @@ export function Header({ locale, dictionary }: HeaderProps) {
   useEffect(() => {
     const bar = barRef.current;
     if (!bar || prefersReducedMotion) return;
-    gsap.fromTo(bar, { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", delay: 0.1 });
+    let cancelled = false;
+    getGsap().then(({ gsap }) => {
+      if (cancelled) return;
+      gsap.fromTo(bar, { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out", delay: 0.1 });
+    });
+    return () => { cancelled = true; };
   }, [prefersReducedMotion]);
 
   /* ── Progress indicator via ScrollTrigger ── */
@@ -56,6 +71,9 @@ export function Header({ locale, dictionary }: HeaderProps) {
     const navList = navListRef.current;
     const indicator = indicatorRef.current;
     if (!navList || !indicator) return;
+
+    let cancelled = false;
+    let triggers: { kill: () => void }[] = [];
 
     function updateIndicator(activeLink: HTMLElement) {
       const parentRect = navList!.getBoundingClientRect();
@@ -74,35 +92,38 @@ export function Header({ locale, dictionary }: HeaderProps) {
       indicator!.style.height = heightPercent + "%";
     }
 
-    const triggers: ScrollTrigger[] = [];
+    getGsap().then(({ ScrollTrigger }) => {
+      if (cancelled) return;
 
-    SECTION_IDS.forEach((id) => {
-      const section = document.getElementById(id);
-      if (!section) return;
+      SECTION_IDS.forEach((id) => {
+        const section = document.getElementById(id);
+        if (!section) return;
 
-      const trigger = ScrollTrigger.create({
-        trigger: section,
-        start: "0% 50%",
-        end: "100% 50%",
-        onEnter: () => {
-          const activeLink = navList!.querySelector(`[data-nav-target="#${id}"]`) as HTMLElement | null;
-          if (!activeLink) return;
-          navList!.querySelectorAll("[data-nav-target]").forEach((el) => el.classList.remove("is-active"));
-          activeLink.classList.add("is-active");
-          updateIndicator(activeLink);
-        },
-        onEnterBack: () => {
-          const activeLink = navList!.querySelector(`[data-nav-target="#${id}"]`) as HTMLElement | null;
-          if (!activeLink) return;
-          navList!.querySelectorAll("[data-nav-target]").forEach((el) => el.classList.remove("is-active"));
-          activeLink.classList.add("is-active");
-          updateIndicator(activeLink);
-        },
+        const trigger = ScrollTrigger.create({
+          trigger: section,
+          start: "0% 50%",
+          end: "100% 50%",
+          onEnter: () => {
+            const activeLink = navList!.querySelector(`[data-nav-target="#${id}"]`) as HTMLElement | null;
+            if (!activeLink) return;
+            navList!.querySelectorAll("[data-nav-target]").forEach((el) => el.classList.remove("is-active"));
+            activeLink.classList.add("is-active");
+            updateIndicator(activeLink);
+          },
+          onEnterBack: () => {
+            const activeLink = navList!.querySelector(`[data-nav-target="#${id}"]`) as HTMLElement | null;
+            if (!activeLink) return;
+            navList!.querySelectorAll("[data-nav-target]").forEach((el) => el.classList.remove("is-active"));
+            activeLink.classList.add("is-active");
+            updateIndicator(activeLink);
+          },
+        });
+        triggers.push(trigger);
       });
-      triggers.push(trigger);
     });
 
     return () => {
+      cancelled = true;
       triggers.forEach((t) => t.kill());
     };
   }, []);
@@ -128,15 +149,19 @@ export function Header({ locale, dictionary }: HeaderProps) {
         menu.style.pointerEvents = "auto";
         Array.from(links.children).forEach((child) => { (child as HTMLElement).style.opacity = "1"; });
       } else {
-        gsap.to(menu, { opacity: 1, pointerEvents: "auto", duration: 0.3, ease: "power3.out" });
-        gsap.fromTo(links.children, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out", stagger: 0.06, delay: 0.05 });
+        getGsap().then(({ gsap }) => {
+          gsap.to(menu, { opacity: 1, pointerEvents: "auto", duration: 0.3, ease: "power3.out" });
+          gsap.fromTo(links.children, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out", stagger: 0.06, delay: 0.05 });
+        });
       }
     } else {
       if (prefersReducedMotion) {
         menu.style.opacity = "0";
         menu.style.pointerEvents = "none";
       } else {
-        gsap.to(menu, { opacity: 0, pointerEvents: "none", duration: 0.25, ease: "power3.in" });
+        getGsap().then(({ gsap }) => {
+          gsap.to(menu, { opacity: 0, pointerEvents: "none", duration: 0.25, ease: "power3.in" });
+        });
       }
     }
   }, [mobileOpen, prefersReducedMotion]);
