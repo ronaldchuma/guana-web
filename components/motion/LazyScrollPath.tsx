@@ -1,12 +1,23 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { lazy, Suspense, useEffect, useState } from "react";
 
-const ScrollPath = dynamic(
-  () => import("./ScrollPath").then((m) => m.ScrollPath),
-  { ssr: false },
+const ScrollPath = lazy(() =>
+  import("./ScrollPath").then((m) => ({ default: m.ScrollPath })),
 );
 
 export function LazyScrollPath() {
-  return <ScrollPath />;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return (
+    <Suspense fallback={null}>
+      <ScrollPath />
+    </Suspense>
+  );
 }
