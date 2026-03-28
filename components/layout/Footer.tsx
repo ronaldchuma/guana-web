@@ -10,6 +10,8 @@ interface FooterProps {
       tagline: string;
       privacy: string;
       terms: string;
+      legal: string;
+      help: string;
     };
     nav: {
       home: string;
@@ -44,18 +46,30 @@ export function Footer({ locale, dictionary }: FooterProps) {
               <Link href={localePath("/legal/terms", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
                 {footer.terms}
               </Link>
+              <Link href={localePath("/legal", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
+                {footer.legal}
+              </Link>
+              <Link href={localePath("/help", locale)} className="text-[16px] font-sans font-normal text-black hover:text-black/60 transition-colors">
+                {footer.help}
+              </Link>
             </div>
             <LanguageSwitch locale={locale} />
           </div>
 
           {/* Mobile: stacked */}
           <div className="flex sm:hidden flex-col items-center gap-3">
-            <div className="flex gap-6 items-center">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 items-center">
               <Link href={localePath("/legal/privacy", locale)} className="text-[15px] font-sans font-normal text-black hover:text-black/60 transition-colors">
                 {footer.privacy}
               </Link>
               <Link href={localePath("/legal/terms", locale)} className="text-[15px] font-sans font-normal text-black hover:text-black/60 transition-colors">
                 {footer.terms}
+              </Link>
+              <Link href={localePath("/legal", locale)} className="text-[15px] font-sans font-normal text-black hover:text-black/60 transition-colors">
+                {footer.legal}
+              </Link>
+              <Link href={localePath("/help", locale)} className="text-[15px] font-sans font-normal text-black hover:text-black/60 transition-colors">
+                {footer.help}
               </Link>
             </div>
             <LanguageSwitch locale={locale} />
