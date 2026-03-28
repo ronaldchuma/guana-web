@@ -52,7 +52,9 @@ export default async function HelpCenterPage({
       string,
       { title: string; items: { q: string; a: string }[] }
     >,
-  ).flatMap((cat) => cat.items);
+  )
+    .flatMap((cat) => cat.items)
+    .map((item) => ({ question: item.q, answer: item.a }));
 
   const faqLd = faqSchema(allItems);
 
