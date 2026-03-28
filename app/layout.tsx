@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ClientSmoothScroll } from "@/components/motion/ClientSmoothScroll";
+import { DeferredAnalytics } from "@/components/DeferredAnalytics";
 import "./globals.css";
 
 /* Neue Haas Grotesk Display Pro — 55 Roman (normal) + 65 Medium (medium) */
@@ -118,8 +117,7 @@ export default function RootLayout({
       <body>
         <ClientSmoothScroll />
         {children}
-        <Analytics />
-        <SpeedInsights />
+        <DeferredAnalytics />
       </body>
     </html>
   );
