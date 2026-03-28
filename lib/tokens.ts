@@ -9,6 +9,8 @@ export const ROUTES = {
   home: "/",
   privacy: "/legal/privacy",
   terms: "/legal/terms",
+  legal: "/legal",
+  help: "/help",
 } as const;
 
 /* ── Nav link types ── */
@@ -43,4 +45,5 @@ export const CONTACT_EMAIL = "hello@guana.app";
 export const LEGAL_LINKS = [
   { href: ROUTES.privacy, key: "privacy" },
   { href: ROUTES.terms, key: "terms" },
+  { href: ROUTES.legal, key: "legal" },
 ] as const;

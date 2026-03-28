@@ -17,33 +17,32 @@ export async function generateMetadata({
   const dict = await getDictionary(locale as Locale);
 
   return createMetadata({
-    title: `${dict.legalPrivacy.title} | Guana`,
+    title: `${dict.legalNotice.title} | Guana`,
     description:
       locale === "es"
-        ? "Política de privacidad de Guana. Cómo recopilamos, usamos y protegemos tu información."
-        : "Guana privacy policy. How we collect, use, and protect your information.",
-    path: ROUTES.privacy,
+        ? "Aviso legal de Guana. Información del desarrollador, propiedad intelectual y descargos de responsabilidad."
+        : "Guana legal notice. Developer information, intellectual property, and disclaimers.",
+    path: ROUTES.legal,
     locale: locale as Locale,
   });
 }
 
 /* ── Page ── */
 
-export default async function PrivacyPage({
+export default async function LegalNoticePage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
-  const { legalPrivacy, common } = dict;
+  const { legalNotice, common } = dict;
 
   const breadcrumbs = breadcrumbSchema([
     { name: common.home, url: `${SITE_URL}${localePath(ROUTES.home, locale)}` },
-    { name: "Legal", url: `${SITE_URL}${localePath(ROUTES.privacy, locale)}` },
     {
-      name: legalPrivacy.title,
-      url: `${SITE_URL}${localePath(ROUTES.privacy, locale)}`,
+      name: legalNotice.title,
+      url: `${SITE_URL}${localePath(ROUTES.legal, locale)}`,
     },
   ]);
 
@@ -61,10 +60,10 @@ export default async function PrivacyPage({
             className="font-sans font-normal text-black"
             style={{ fontSize: "clamp(2rem, 5vw, 65px)", lineHeight: 1.1 }}
           >
-            {legalPrivacy.title}
+            {legalNotice.title}
           </h1>
           <p className="text-[18px] font-sans font-normal text-black/50 leading-[1.2]">
-            {legalPrivacy.lastUpdated}
+            {legalNotice.lastUpdated}
           </p>
         </div>
       </section>
@@ -74,18 +73,16 @@ export default async function PrivacyPage({
         <div className="max-w-[800px] mx-auto px-6 lg:px-[100px] flex flex-col gap-14">
           {/* Intro */}
           <p className="text-[18px] font-sans font-normal text-black leading-[1.4]">
-            {legalPrivacy.intro}
+            {legalNotice.intro}
           </p>
 
           {/* Sections */}
-          {legalPrivacy.sections.map(
+          {legalNotice.sections.map(
             (
               section: {
                 title: string;
                 paragraphs: string[];
                 items?: string[];
-                autoItems?: string[];
-                paragraphs2?: string[];
               },
               i: number,
             ) => (
@@ -100,14 +97,15 @@ export default async function PrivacyPage({
                   {section.title}
                 </h2>
 
-                {/* First paragraph */}
-                {section.paragraphs[0] && (
-                  <p className="text-[18px] font-sans font-normal text-black leading-[1.4]">
-                    {section.paragraphs[0]}
+                {section.paragraphs.map((p: string, j: number) => (
+                  <p
+                    key={j}
+                    className="text-[18px] font-sans font-normal text-black leading-[1.4]"
+                  >
+                    {p}
                   </p>
-                )}
+                ))}
 
-                {/* Items list (if present, after first paragraph) */}
                 {section.items && (
                   <ul className="list-disc pl-6 flex flex-col gap-2">
                     {section.items.map((item: string, j: number) => (
@@ -120,52 +118,29 @@ export default async function PrivacyPage({
                     ))}
                   </ul>
                 )}
-
-                {/* Second paragraph (if present) */}
-                {section.paragraphs[1] && (
-                  <p className="text-[18px] font-sans font-normal text-black leading-[1.4]">
-                    {section.paragraphs[1]}
-                  </p>
-                )}
-
-                {/* Auto-collected items list */}
-                {section.autoItems && (
-                  <ul className="list-disc pl-6 flex flex-col gap-2">
-                    {section.autoItems.map((item: string, j: number) => (
-                      <li
-                        key={j}
-                        className="text-[18px] font-sans font-normal text-black leading-[1.4]"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {/* Remaining paragraphs */}
-                {section.paragraphs.slice(2).map((p: string, j: number) => (
-                  <p
-                    key={j}
-                    className="text-[18px] font-sans font-normal text-black leading-[1.4]"
-                  >
-                    {p}
-                  </p>
-                ))}
               </div>
             ),
           )}
 
-          {/* Contact email link */}
-          <div className="rounded-[10px] border border-black/10 bg-black/[0.03] p-5 text-[16px] font-sans font-normal text-black/60 leading-[1.4]">
-            {locale === "es"
-              ? "¿Preguntas sobre esta política? Escríbenos a "
-              : "Questions about this policy? Contact us at "}
-            <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="font-medium underline hover:text-black/80 transition-colors"
-            >
-              {CONTACT_EMAIL}
-            </a>
+          {/* Related legal links */}
+          <div className="rounded-[10px] border border-black/10 bg-black/[0.03] p-5 flex flex-col gap-2">
+            <p className="text-[16px] font-sans font-medium text-black/60 leading-[1.4]">
+              {locale === "es" ? "Documentos relacionados" : "Related documents"}
+            </p>
+            <div className="flex flex-col gap-1">
+              <a
+                href={localePath(ROUTES.privacy, locale)}
+                className="text-[16px] font-sans font-normal text-black/60 underline hover:text-black/80 transition-colors leading-[1.4]"
+              >
+                {dict.legalPrivacy.title}
+              </a>
+              <a
+                href={localePath(ROUTES.terms, locale)}
+                className="text-[16px] font-sans font-normal text-black/60 underline hover:text-black/80 transition-colors leading-[1.4]"
+              >
+                {dict.legalTerms.title}
+              </a>
+            </div>
           </div>
         </div>
       </section>

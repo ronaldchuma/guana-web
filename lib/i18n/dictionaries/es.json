@@ -421,12 +421,476 @@
     "manual": "Abrir en App Store"
   },
   "legalPrivacy": {
-    "title": "Pol\u00edtica de Privacidad",
-    "lastUpdated": "\u00daltima actualizaci\u00f3n: Enero 2025"
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: Marzo 2026",
+    "intro": "Esta Política de Privacidad describe cómo Guana (\"nosotros\" o \"nuestro\") recopila, utiliza y protege su información personal cuando utiliza la aplicación móvil y el sitio web de Guana (colectivamente, la \"Plataforma\"). Al utilizar la Plataforma, usted consiente las prácticas descritas en esta política.",
+    "sections": [
+      {
+        "title": "1. Información que Recopilamos",
+        "paragraphs": [
+          "Recopilamos información que usted proporciona directamente al crear y utilizar su cuenta de Guana. Esto incluye:",
+          "También recopilamos cierta información automáticamente cuando utiliza la Plataforma:",
+          "Los datos de ubicación se recopilan únicamente cuando la aplicación está en uso activo — específicamente durante búsquedas de viajes y seguimiento en vivo. Los datos de ubicación no se recopilan en segundo plano y no se conservan más allá de lo necesario para los registros de viajes.",
+          "La aplicación puede solicitar acceso a la cámara y biblioteca de fotos de su dispositivo para subir fotos de perfil y escanear documentos de identidad durante la verificación. El acceso NFC se utiliza para leer los chips de documentos de identidad durante la verificación. El acceso al micrófono puede solicitarse durante la verificación por video. Estos permisos se solicitan solo cuando son necesarios y pueden gestionarse desde la configuración de su dispositivo."
+        ],
+        "items": [
+          "Nombre completo",
+          "Dirección de correo electrónico",
+          "Número de teléfono",
+          "Foto de perfil",
+          "Fecha de nacimiento",
+          "Género",
+          "Documentos de verificación de identidad (identificación oficial, selfie)"
+        ],
+        "autoItems": [
+          "Tipo de dispositivo y versión del sistema operativo",
+          "Versión de la aplicación",
+          "Dirección IP",
+          "Datos generales de ubicación (cuando la aplicación está en uso)",
+          "Detalles del viaje (origen, destino, ruta, fecha, hora, precio)"
+        ]
+      },
+      {
+        "title": "2. Cómo Utilizamos su Información",
+        "paragraphs": [
+          "Utilizamos la información que recopilamos para:"
+        ],
+        "items": [
+          "Operar, mantener y mejorar la plataforma Guana",
+          "Crear y gestionar su cuenta",
+          "Conectar pasajeros con conductores y facilitar reservas de viajes",
+          "Procesar la verificación de identidad a través de nuestro proveedor de verificación",
+          "Habilitar la mensajería dentro de la aplicación entre participantes del viaje",
+          "Mostrar perfiles de usuarios, calificaciones y detalles de viajes",
+          "Enviar notificaciones push para actualizaciones de viajes (confirmaciones de reserva, proximidad del conductor, cambios de estado del viaje)",
+          "Proporcionar atención al cliente",
+          "Analizar tendencias de uso mediante datos agregados y anonimizados para mejorar la búsqueda, el emparejamiento y las recomendaciones de rutas",
+          "Detectar, prevenir y abordar fraudes, abusos o problemas de seguridad",
+          "Cumplir con obligaciones legales"
+        ]
+      },
+      {
+        "title": "3. Base Legal para el Tratamiento",
+        "paragraphs": [
+          "Tratamos sus datos personales con base en los siguientes fundamentos legales:",
+          "Ejecución contractual: Tratamiento necesario para proporcionar el servicio de viajes compartidos que usted solicitó, incluyendo la creación de cuenta, emparejamiento de viajes y comunicación entre usuarios.",
+          "Intereses legítimos: Tratamiento necesario para nuestros intereses comerciales legítimos, como mejorar la Plataforma, prevenir fraudes y garantizar la seguridad de los usuarios, cuando dichos intereses no prevalezcan sobre sus derechos.",
+          "Consentimiento: Cuando usted ha dado su consentimiento explícito, como para la verificación de identidad, la recopilación de datos de ubicación y las notificaciones push. Puede retirar su consentimiento en cualquier momento a través de la configuración de la aplicación o contactándonos.",
+          "Obligación legal: Tratamiento necesario para cumplir con las leyes y regulaciones aplicables."
+        ]
+      },
+      {
+        "title": "4. Servicios de Terceros",
+        "paragraphs": [
+          "Utilizamos los siguientes servicios de terceros para operar la Plataforma:",
+          "Supabase: Nuestro proveedor principal de base de datos e infraestructura. Sus datos se almacenan en servidores de Supabase alojados en Amazon Web Services (AWS). Supabase procesa los datos de acuerdo con su política de privacidad y las regulaciones de protección de datos aplicables.",
+          "Didit: Nuestro proveedor de verificación de identidad. Cuando verifica su identidad, Didit procesa su identificación oficial, datos del chip NFC y selfie para confirmar su identidad. El tratamiento de Didit se rige por su propia política de privacidad.",
+          "Google Sign-In y Apple Sign-In: Si elige iniciar sesión con Google o Apple, estos servicios comparten su nombre y dirección de correo electrónico con nosotros para crear o acceder a su cuenta. No recibimos su contraseña de Google o Apple.",
+          "No utilizamos servicios de publicidad de terceros. No utilizamos cookies de seguimiento ni tecnologías de rastreo entre aplicaciones. No vendemos, alquilamos ni compartimos su información personal con terceros para sus fines comerciales."
+        ]
+      },
+      {
+        "title": "5. Compartición y Divulgación de Datos",
+        "paragraphs": [
+          "Su información de perfil (nombre, foto, estado de verificación y calificaciones) es visible para otros usuarios de Guana cuando publica un viaje o reserva un asiento. Los detalles del viaje se comparten entre conductores y pasajeros emparejados en el mismo viaje.",
+          "Podemos compartir su información en las siguientes circunstancias limitadas:"
+        ],
+        "items": [
+          "Con proveedores de servicios que asisten en la operación de la Plataforma (alojamiento en la nube, notificaciones push, verificación de identidad), bajo obligaciones contractuales de proteger sus datos",
+          "Cuando lo requiera la ley, una orden judicial o una autoridad gubernamental",
+          "Para proteger la seguridad, los derechos o la propiedad de Guana, nuestros usuarios o el público",
+          "En relación con una fusión, adquisición o venta de activos, con notificación a los usuarios afectados"
+        ]
+      },
+      {
+        "title": "6. Retención de Datos",
+        "paragraphs": [
+          "Conservamos su información personal mientras su cuenta esté activa o según sea necesario para proporcionar servicios. Los registros de viajes se conservan durante un período razonable para respaldar la resolución de disputas, revisiones de seguridad y cumplimiento legal.",
+          "Si solicita la eliminación de su cuenta, eliminaremos o anonimizaremos sus datos personales dentro de 30 días, excepto cuando la retención sea requerida por ley o necesaria para resolver disputas pendientes. Los datos de verificación de identidad en poder de nuestro proveedor de verificación están sujetos a sus políticas de retención.",
+          "Los datos agregados y anonimizados que no pueden identificar a usuarios individuales pueden conservarse indefinidamente con fines analíticos."
+        ]
+      },
+      {
+        "title": "7. Seguridad de los Datos",
+        "paragraphs": [
+          "Implementamos medidas de seguridad estándar de la industria para proteger sus datos. Todas las comunicaciones de red utilizan cifrado HTTPS. Los datos sensibles almacenados localmente en su dispositivo están cifrados mediante AES-GCM. Los tokens de autenticación se almacenan de forma segura en el llavero del dispositivo.",
+          "Aunque nos esforzamos por proteger su información personal, ningún método de transmisión o almacenamiento electrónico es completamente seguro. Le recomendamos utilizar contraseñas fuertes y únicas y mantener actualizado el software de su dispositivo.",
+          "En caso de una violación de datos que represente un riesgo para sus derechos y libertades, notificaremos a los usuarios afectados y a las autoridades correspondientes según lo requiera la ley aplicable."
+        ]
+      },
+      {
+        "title": "8. Sus Derechos y Opciones",
+        "paragraphs": [
+          "Usted tiene los siguientes derechos respecto a sus datos personales:",
+          "Para ejercer cualquiera de estos derechos, utilice las opciones correspondientes en la configuración de la aplicación o contáctenos en soporte@guana.app. Responderemos a su solicitud dentro de 30 días.",
+          "También puede desactivar las notificaciones push no esenciales a través de la configuración de la aplicación. Las notificaciones transaccionales relacionadas con viajes activos no pueden desactivarse por razones de seguridad."
+        ],
+        "items": [
+          "Acceso: Solicitar una copia de los datos personales que tenemos sobre usted",
+          "Corrección: Solicitar la corrección de datos personales inexactos o incompletos",
+          "Eliminación: Solicitar la eliminación de su cuenta y datos personales",
+          "Portabilidad: Solicitar sus datos en un formato estructurado, de uso común y lectura mecánica",
+          "Oposición: Oponerse al tratamiento de sus datos personales basado en intereses legítimos",
+          "Restricción: Solicitar la restricción del tratamiento en determinadas circunstancias",
+          "Retirar consentimiento: Retirar el consentimiento previamente otorgado en cualquier momento"
+        ]
+      },
+      {
+        "title": "9. Privacidad de Menores",
+        "paragraphs": [
+          "Guana no está dirigido a menores de 13 años. No recopilamos intencionalmente información personal de menores de 13 años. Si descubrimos que hemos recopilado información personal de un menor de 13 años, tomaremos medidas para eliminar dicha información de inmediato.",
+          "Los usuarios deben tener al menos 18 años de edad para crear una cuenta de Guana y utilizar la Plataforma como conductor o pasajero."
+        ]
+      },
+      {
+        "title": "10. Transferencias Internacionales de Datos",
+        "paragraphs": [
+          "Sus datos se almacenan en servidores ubicados en Estados Unidos a través de nuestro proveedor de infraestructura (Supabase/AWS). Al utilizar la Plataforma, usted consiente la transferencia de su información a Estados Unidos y otras jurisdicciones donde operan nuestros proveedores de servicios.",
+          "Nos aseguramos de que existan salvaguardas apropiadas para las transferencias internacionales de datos, incluyendo protecciones contractuales con nuestros proveedores de servicios."
+        ]
+      },
+      {
+        "title": "11. Cambios a Esta Política de Privacidad",
+        "paragraphs": [
+          "Podemos actualizar esta Política de Privacidad periódicamente. La versión más actual siempre estará disponible en la Plataforma con la fecha de \"Última actualización\" en la parte superior.",
+          "Si realizamos cambios materiales, le notificaremos a través de la aplicación o por correo electrónico al menos 30 días antes de que los cambios entren en vigor. Su uso continuado de Guana después de la fecha de entrada en vigor constituye la aceptación de la política actualizada."
+        ]
+      },
+      {
+        "title": "12. Contáctenos",
+        "paragraphs": [
+          "Si tiene preguntas sobre esta Política de Privacidad, desea ejercer sus derechos sobre sus datos, o tiene inquietudes sobre cómo manejamos su información, contáctenos en:"
+        ],
+        "items": [
+          "Correo electrónico: soporte@guana.app",
+          "Desarrollador: Ronald Chumaceiro",
+          "Sitio web: https://guana.app"
+        ]
+      }
+    ]
   },
   "legalTerms": {
-    "title": "T\u00e9rminos de Servicio",
-    "lastUpdated": "\u00daltima actualizaci\u00f3n: Enero 2025"
+    "title": "Términos de Servicio",
+    "lastUpdated": "Última actualización: Marzo 2026",
+    "intro": "Estos Términos de Servicio (\"Términos\") rigen su acceso y uso de la aplicación móvil y el sitio web de Guana (colectivamente, la \"Plataforma\"). Lea estos Términos detenidamente antes de utilizar la Plataforma.",
+    "sections": [
+      {
+        "title": "1. Aceptación de los Términos",
+        "paragraphs": [
+          "Al descargar, acceder o utilizar la Plataforma, usted acepta quedar vinculado por estos Términos. Si no está de acuerdo con estos Términos, no debe utilizar la Plataforma.",
+          "Guana se reserva el derecho de actualizar o modificar estos Términos en cualquier momento. El uso continuado de la Plataforma después de la publicación de los cambios constituye la aceptación de los Términos revisados. Notificaremos a los usuarios sobre cambios materiales a través de la aplicación o por correo electrónico al menos 30 días antes de que los nuevos términos entren en vigor."
+        ]
+      },
+      {
+        "title": "2. Descripción del Servicio",
+        "paragraphs": [
+          "Guana es una plataforma de viajes compartidos entre pares que conecta a conductores que ya viajan entre destinos en Costa Rica con pasajeros que buscan viajes en rutas similares. Guana facilita acuerdos de costos compartidos entre conductores y pasajeros.",
+          "Guana NO es una empresa de transporte, servicio de taxi, servicio de shuttle ni transportista común. Guana no proporciona servicios de transporte, no emplea ni contrata conductores, no fija tarifas, no controla rutas ni horarios, y no asume responsabilidad por la conducta de ningún usuario.",
+          "Los conductores que publican viajes en Guana son personas particulares que comparten sus viajes planificados. El precio por asiento establecido por los conductores es una contribución voluntaria para compartir costos destinada a compensar gastos de viaje como combustible, peajes y desgaste del vehículo. No es una tarifa comercial ni un cargo por servicios de transporte."
+        ]
+      },
+      {
+        "title": "3. Elegibilidad",
+        "paragraphs": [
+          "Debe tener al menos 18 años de edad para crear una cuenta de Guana y utilizar la Plataforma. Al crear una cuenta, usted declara y garantiza que cumple con este requisito de edad.",
+          "Los conductores deben poseer una licencia de conducir válida emitida por una autoridad reconocida y mantener el seguro vehicular apropiado según lo requieran las leyes de Costa Rica. Los conductores son los únicos responsables de garantizar el cumplimiento de todas las leyes y regulaciones de tránsito aplicables.",
+          "Debe proporcionar información precisa, actual y completa durante el registro y mantener actualizada la información de su cuenta."
+        ]
+      },
+      {
+        "title": "4. Cuentas de Usuario y Responsabilidades",
+        "paragraphs": [
+          "Usted es responsable de mantener la confidencialidad de las credenciales de su cuenta y de toda la actividad que ocurra bajo su cuenta. Debe notificarnos inmediatamente sobre cualquier uso no autorizado de su cuenta.",
+          "Usted acepta proporcionar información veraz y precisa en su perfil. Falsificar su identidad, calificaciones o cualquier información material puede resultar en la suspensión o terminación inmediata de su cuenta.",
+          "La verificación de identidad está disponible a través de nuestro proveedor de verificación. Si bien se fomenta la verificación para construir confianza dentro de la comunidad, la presencia de una insignia de verificación no constituye una garantía por parte de Guana del carácter, confiabilidad o conducta de ningún usuario."
+        ]
+      },
+      {
+        "title": "5. Conducta del Usuario",
+        "paragraphs": [
+          "Todos los usuarios aceptan tratar a los demás viajeros con respeto y cortesía. No debe utilizar la Plataforma para:"
+        ],
+        "items": [
+          "Participar en cualquier actividad ilegal",
+          "Discriminar a otros usuarios por raza, etnia, nacionalidad, género, orientación sexual, religión, discapacidad o cualquier otra característica protegida",
+          "Acosar, amenazar o intimidar a otros usuarios",
+          "Falsificar su identidad o hacerse pasar por otra persona",
+          "Utilizar la Plataforma para servicios de transporte comercial",
+          "Cobrar tarifas que excedan el monto real de costos compartidos del viaje",
+          "Publicar listados de viajes falsos, engañosos o fraudulentos",
+          "Recopilar o almacenar información personal de otros usuarios sin su consentimiento",
+          "Interferir con el funcionamiento adecuado de la Plataforma"
+        ],
+        "paragraphs2": [
+          "Los conductores aceptan operar su vehículo de manera segura y en cumplimiento con todas las leyes de tránsito aplicables. Los pasajeros aceptan llegar puntualmente al punto de recogida acordado y comportarse respetuosamente durante el viaje.",
+          "Guana se reserva el derecho de investigar reportes de mala conducta y de suspender o terminar cuentas que violen estos estándares."
+        ]
+      },
+      {
+        "title": "6. Viajes y Pagos",
+        "paragraphs": [
+          "Los conductores publican detalles del viaje incluyendo ruta, fecha, hora, asientos disponibles y precio por asiento. Los pasajeros navegan y reservan viajes disponibles a través de la Plataforma. Ambas partes pueden comunicarse mediante mensajería en la aplicación para coordinar detalles.",
+          "El precio por asiento es una contribución para compartir costos establecida por el conductor. Está destinado a compensar los gastos reales de viaje del conductor y no debe exceder los costos proporcionales del viaje divididos entre todos los ocupantes. Los arreglos de pago se realizan directamente entre el conductor y el pasajero.",
+          "Cualquiera de las partes puede cancelar un viaje a través de la Plataforma. Recomendamos que las cancelaciones se realicen lo antes posible para minimizar inconvenientes. Las cancelaciones repetidas pueden afectar su reputación y visibilidad en la Plataforma.",
+          "Guana no procesa pagos entre usuarios y no es parte de ningún arreglo financiero entre conductores y pasajeros."
+        ]
+      },
+      {
+        "title": "7. Contenido y Propiedad Intelectual",
+        "paragraphs": [
+          "El nombre Guana, logotipo, diseño de la aplicación y todas las marcas comerciales, gráficos y contenidos asociados son propiedad de Guana y están protegidos por las leyes de propiedad intelectual. No puede usar, reproducir ni distribuir ninguna propiedad intelectual de Guana sin autorización previa por escrito.",
+          "Al publicar contenido en la Plataforma (incluyendo información de perfil, descripciones de viajes, reseñas y mensajes), usted otorga a Guana una licencia no exclusiva, mundial y libre de regalías para usar, mostrar y distribuir dicho contenido en relación con la operación de la Plataforma.",
+          "Usted conserva la propiedad de su contenido y puede eliminarlo en cualquier momento, sujeto a los requisitos de retención de datos descritos en nuestra Política de Privacidad."
+        ]
+      },
+      {
+        "title": "8. Descargos de Responsabilidad y Limitación de Responsabilidad",
+        "paragraphs": [
+          "LA PLATAFORMA SE PROPORCIONA \"TAL CUAL\" Y \"SEGÚN DISPONIBILIDAD\" SIN GARANTÍAS DE NINGÚN TIPO, YA SEAN EXPRESAS O IMPLÍCITAS, INCLUYENDO PERO NO LIMITADO A GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN.",
+          "Guana proporciona una plataforma para conectar usuarios y no garantiza la disponibilidad, calidad, seguridad, puntualidad o legalidad de ningún viaje. Guana no es responsable de las acciones, conducta, negligencia u omisiones de ningún usuario.",
+          "EN LA MÁXIMA MEDIDA PERMITIDA POR LA LEY APLICABLE, GUANA NO SERÁ RESPONSABLE POR NINGÚN DAÑO INDIRECTO, INCIDENTAL, ESPECIAL, CONSECUENTE O PUNITIVO, NI POR CUALQUIER PÉRDIDA DE BENEFICIOS, DATOS O FONDO DE COMERCIO, QUE SURJA DE O ESTÉ RELACIONADO CON SU USO DE LA PLATAFORMA O CUALQUIER VIAJE ORGANIZADO A TRAVÉS DE ELLA.",
+          "Los usuarios reconocen que los viajes compartidos implican riesgos inherentes asociados con el transporte en vehículos motorizados, incluyendo el riesgo de accidente, lesión o muerte. Al utilizar la Plataforma, usted asume estos riesgos voluntariamente.",
+          "En ningún caso la responsabilidad total acumulada de Guana excederá la cantidad que usted haya pagado a Guana (si la hubiere) en los doce meses anteriores a la reclamación."
+        ]
+      },
+      {
+        "title": "9. Indemnización",
+        "paragraphs": [
+          "Usted acepta indemnizar, defender y mantener indemne a Guana, su desarrollador, directivos y agentes de y contra cualquier reclamación, responsabilidad, daño, pérdida y gasto (incluyendo honorarios legales razonables) que surja de o en relación con: (a) su uso de la Plataforma; (b) su violación de estos Términos; (c) su violación de cualquier ley o regulación aplicable; (d) cualquier viaje en el que participe como conductor o pasajero; o (e) cualquier contenido que publique en la Plataforma."
+        ]
+      },
+      {
+        "title": "10. Resolución de Disputas",
+        "paragraphs": [
+          "En caso de cualquier disputa que surja de o se relacione con estos Términos o su uso de la Plataforma, usted acepta intentar primero resolver la disputa de manera informal contactándonos en soporte@guana.app.",
+          "Si la disputa no puede resolverse de manera informal dentro de 30 días, cualquiera de las partes puede someter la disputa a los tribunales competentes de Costa Rica. Ambas partes aceptan someterse a la jurisdicción de los tribunales de Costa Rica para la resolución de cualquier disputa.",
+          "Nada en esta sección impide que cualquiera de las partes busque medidas cautelares u otra reparación equitativa ante cualquier tribunal competente."
+        ]
+      },
+      {
+        "title": "11. Terminación",
+        "paragraphs": [
+          "Puede terminar su cuenta en cualquier momento solicitando la eliminación de la cuenta a través de la configuración de la aplicación o contactándonos en soporte@guana.app.",
+          "Guana puede suspender o terminar su cuenta en cualquier momento, con o sin previo aviso, por cualquier motivo, incluyendo pero no limitado a: violación de estos Términos, actividad fraudulenta o ilegal, quejas repetidas de usuarios o inactividad prolongada.",
+          "Tras la terminación, su derecho a usar la Plataforma cesa inmediatamente. Las disposiciones de estos Términos que por su naturaleza deban sobrevivir a la terminación seguirán vigentes, incluyendo pero no limitado a las disposiciones de propiedad intelectual, descargos de responsabilidad, limitación de responsabilidad e indemnización."
+        ]
+      },
+      {
+        "title": "12. Ley Aplicable y Jurisdicción",
+        "paragraphs": [
+          "Estos Términos se regirán e interpretarán de acuerdo con las leyes de la República de Costa Rica, sin tener en cuenta los principios de conflicto de leyes.",
+          "Cualquier procedimiento legal que surja de o se relacione con estos Términos o la Plataforma se presentará exclusivamente ante los tribunales competentes ubicados en Costa Rica."
+        ]
+      },
+      {
+        "title": "13. Divisibilidad",
+        "paragraphs": [
+          "Si alguna disposición de estos Términos es declarada inválida, ilegal o inaplicable por un tribunal competente, las disposiciones restantes continuarán en pleno vigor y efecto. La disposición inválida será modificada en la medida mínima necesaria para hacerla válida y aplicable."
+        ]
+      },
+      {
+        "title": "14. Cambios a Estos Términos",
+        "paragraphs": [
+          "Podemos revisar estos Términos periódicamente. La versión más actual siempre estará disponible en la Plataforma con la fecha de \"Última actualización\" en la parte superior.",
+          "Si una revisión es material, proporcionaremos al menos 30 días de aviso antes de que los nuevos términos entren en vigor, ya sea a través de la aplicación o por correo electrónico. Su uso continuado de Guana después de la fecha de entrada en vigor de cualquier cambio constituye la aceptación de los Términos actualizados."
+        ]
+      },
+      {
+        "title": "15. Contáctenos",
+        "paragraphs": [
+          "Si tiene preguntas sobre estos Términos de Servicio, contáctenos en:"
+        ],
+        "items": [
+          "Correo electrónico: soporte@guana.app",
+          "Desarrollador: Ronald Chumaceiro",
+          "Sitio web: https://guana.app"
+        ]
+      }
+    ]
+  },
+  "legalNotice": {
+    "title": "Aviso Legal",
+    "lastUpdated": "Última actualización: Marzo 2026",
+    "intro": "Este Aviso Legal proporciona información sobre el desarrollador y operador de la plataforma Guana, así como descargos de responsabilidad e información legal importante.",
+    "sections": [
+      {
+        "title": "1. Información del Desarrollador",
+        "paragraphs": [
+          "La aplicación móvil y el sitio web de Guana (https://guana.app) son desarrollados y operados por:"
+        ],
+        "items": [
+          "Desarrollador: Ronald Chumaceiro",
+          "Correo electrónico de contacto: soporte@guana.app",
+          "Sitio web: https://guana.app"
+        ]
+      },
+      {
+        "title": "2. Sobre el Servicio",
+        "paragraphs": [
+          "Guana es una plataforma de viajes compartidos entre pares que facilita el reparto de costos entre conductores y pasajeros que viajan entre destinos en Costa Rica. Guana actúa como intermediario tecnológico y no es una empresa de transporte, transportista ni proveedor de servicios de transporte.",
+          "Guana no emplea conductores, no fija tarifas, no determina rutas ni controla la conducta de sus usuarios. Todos los viajes organizados a través de la Plataforma son acuerdos entre usuarios individuales."
+        ]
+      },
+      {
+        "title": "3. Propiedad Intelectual",
+        "paragraphs": [
+          "Todo el contenido de la plataforma Guana — incluyendo pero no limitado al nombre \"Guana\", el logotipo de Guana, diseño de la aplicación, interfaz de usuario, gráficos, textos, código de software y documentación — es propiedad intelectual de Guana o sus licenciantes y está protegido por las leyes de propiedad intelectual aplicables.",
+          "Ninguna parte de la Plataforma puede ser reproducida, distribuida, modificada, exhibida públicamente o utilizada con fines comerciales sin autorización previa por escrito de Guana.",
+          "Las marcas comerciales, marcas de servicio y logotipos de terceros que aparecen en la Plataforma son propiedad de sus respectivos dueños."
+        ]
+      },
+      {
+        "title": "4. Descargos de Responsabilidad",
+        "paragraphs": [
+          "La información y el contenido proporcionados en la Plataforma tienen fines informativos generales. Aunque nos esforzamos por mantener la información precisa y actualizada, Guana no hace representaciones ni garantías de ningún tipo, expresas o implícitas, sobre la integridad, exactitud, fiabilidad o disponibilidad de la Plataforma o la información contenida en ella.",
+          "Guana no garantiza que la Plataforma estará disponible en todo momento, sin interrupciones o libre de errores. Nos reservamos el derecho de modificar, suspender o descontinuar cualquier parte de la Plataforma en cualquier momento sin previo aviso.",
+          "El contenido generado por usuarios, incluyendo listados de viajes, perfiles, calificaciones y reseñas, representa las opiniones y experiencias de usuarios individuales y no refleja las opiniones ni el respaldo de Guana."
+        ]
+      },
+      {
+        "title": "5. Limitación de Responsabilidad",
+        "paragraphs": [
+          "En la máxima medida permitida por la ley aplicable, Guana y su desarrollador no serán responsables de ningún daño directo, indirecto, incidental, especial, consecuente o ejemplar que resulte de: (a) su uso o incapacidad de usar la Plataforma; (b) cualquier viaje organizado a través de la Plataforma; (c) cualquier conducta o contenido de cualquier usuario; (d) acceso no autorizado o alteración de sus datos; o (e) cualquier otro asunto relacionado con la Plataforma.",
+          "Esta limitación se aplica ya sea que la supuesta responsabilidad se base en contrato, agravio, negligencia, responsabilidad estricta o cualquier otra teoría legal, incluso si Guana ha sido informado de la posibilidad de tales daños."
+        ]
+      },
+      {
+        "title": "6. Servicios de Terceros y Enlaces",
+        "paragraphs": [
+          "La Plataforma puede contener enlaces o integraciones con servicios, sitios web o aplicaciones de terceros. Estos incluyen proveedores de autenticación (Google Sign-In, Apple Sign-In), verificación de identidad (Didit) y servicios de infraestructura (Supabase).",
+          "Guana no tiene control sobre y no asume responsabilidad por el contenido, políticas de privacidad o prácticas de ningún servicio de terceros. Su uso de servicios de terceros se rige por sus respectivos términos y políticas."
+        ]
+      },
+      {
+        "title": "7. Ley Aplicable",
+        "paragraphs": [
+          "Este Aviso Legal y cualquier disputa que surja de o se relacione con la Plataforma se regirán e interpretarán de acuerdo con las leyes de la República de Costa Rica.",
+          "Para cualquier procedimiento legal, los tribunales competentes de Costa Rica tendrán jurisdicción exclusiva."
+        ]
+      },
+      {
+        "title": "8. Contacto",
+        "paragraphs": [
+          "Para cualquier pregunta, inquietud o solicitud relacionada con este Aviso Legal o la plataforma Guana, contáctenos en:"
+        ],
+        "items": [
+          "Correo electrónico: soporte@guana.app",
+          "Desarrollador: Ronald Chumaceiro",
+          "Sitio web: https://guana.app"
+        ]
+      }
+    ]
+  },
+  "helpCenter": {
+    "title": "Centro de Ayuda",
+    "subtitle": "Todo lo que necesitas saber sobre cómo usar Guana.",
+    "categories": {
+      "gettingStarted": {
+        "title": "Primeros Pasos",
+        "items": [
+          {
+            "q": "¿Cómo creo una cuenta en Guana?",
+            "a": "Descarga la app de Guana desde la App Store. Puedes registrarte con tu correo electrónico o iniciar sesión con tu cuenta de Google o Apple para una configuración más rápida. Durante la configuración inicial, se te pedirá tu nombre, foto de perfil, número de teléfono, fecha de nacimiento y género. Una vez que tu perfil esté completo, puedes empezar a buscar viajes o publicar los tuyos."
+          },
+          {
+            "q": "¿Qué es la verificación de identidad y cómo funciona?",
+            "a": "La verificación de identidad confirma que eres quien dices ser. El proceso utiliza el sistema de verificación Didit e involucra tres pasos: (1) escanear tu documento de identificación oficial, (2) leer el chip NFC de tu identificación si está disponible, y (3) tomar un selfie en vivo para comparación facial. Una vez verificado, tu perfil recibe una insignia de verificación visible para otros usuarios. La verificación es altamente recomendada para construir confianza en la comunidad."
+          },
+          {
+            "q": "¿Necesito verificar mi identidad para usar Guana?",
+            "a": "Aunque puedes navegar viajes sin verificación, completar la verificación de identidad es muy recomendable. Los usuarios verificados reciben una insignia de confianza en su perfil, y muchos conductores y pasajeros prefieren viajar con usuarios verificados. La verificación ayuda a mantener la comunidad segura para todos."
+          },
+          {
+            "q": "¿Puedo usar Guana en inglés y español?",
+            "a": "Sí. Guana es completamente bilingüe. Puedes cambiar entre inglés y español en cualquier momento desde la configuración de la app. Toda la experiencia de la app — incluyendo listados de viajes, mensajería, notificaciones y soporte — está disponible en ambos idiomas."
+          }
+        ]
+      },
+      "findingRides": {
+        "title": "Buscar y Reservar Viajes",
+        "items": [
+          {
+            "q": "¿Cómo busco un viaje?",
+            "a": "Abre la app y usa la función de búsqueda. Ingresa tu origen, destino, fecha de viaje y número de pasajeros. Guana te mostrará viajes que coincidan. Si no hay coincidencia exacta, el sistema de búsqueda inteligente sugerirá alternativas — viajes a diferentes horas, desde ciudades cercanas o en fechas flexibles."
+          },
+          {
+            "q": "¿Cómo reservo un asiento?",
+            "a": "Cuando encuentres un viaje que te guste, tócalo para ver los detalles completos — incluyendo el perfil del conductor, información del vehículo, calificaciones y precio por asiento. Si todo se ve bien, toca el botón de reservar para asegurar tu asiento. También puedes escribirle al conductor en la app antes de reservar para hacer preguntas o coordinar detalles de recogida."
+          },
+          {
+            "q": "¿Cómo pago mi viaje?",
+            "a": "El pago se coordina directamente entre tú y el conductor. El precio por asiento mostrado en el listado del viaje es una contribución para compartir costos que ayuda a compensar los gastos de viaje del conductor (combustible, peajes, etc.). Guana no procesa pagos. Tú y el conductor acuerdan el método de pago que funcione mejor para ambos."
+          },
+          {
+            "q": "¿Qué pasa si necesito cancelar mi reserva?",
+            "a": "Puedes cancelar una reserva a través de la app en cualquier momento antes del viaje. Te recomendamos cancelar lo antes posible para que el conductor pueda ofrecer el asiento a otro pasajero. Las cancelaciones tardías repetidas pueden afectar tu reputación en la cuenta."
+          },
+          {
+            "q": "¿Puedo seguir mi viaje en tiempo real?",
+            "a": "Sí. Una vez que el conductor inicia el viaje, su ubicación se transmite en tiempo real en un mapa en vivo. Puedes seguir el progreso del viaje desde la salida hasta la llegada. Esta función está disponible para todos los pasajeros del viaje."
+          }
+        ]
+      },
+      "publishing": {
+        "title": "Publicar Viajes (Para Conductores)",
+        "items": [
+          {
+            "q": "¿Cómo publico un viaje?",
+            "a": "Usa el asistente de publicación de viajes en la app. Pasarás por un proceso guiado para definir tu origen, destino, paradas en el camino, fecha y hora de salida, número de asientos disponibles, precio por asiento y detalles de tu vehículo. Todo el proceso toma aproximadamente 2 minutos. También puedes guardar un viaje como borrador y publicarlo después."
+          },
+          {
+            "q": "¿Cómo establezco el precio correcto por asiento?",
+            "a": "El precio por asiento debe reflejar una parte justa de tus costos reales de viaje — incluyendo combustible, peajes y desgaste del vehículo. Guana es una plataforma de costos compartidos, por lo que los precios deben establecerse para compensar gastos, no para generar ganancias. Considera el costo total del viaje y divídelo entre el número total de ocupantes (incluyéndote) para determinar un precio justo."
+          },
+          {
+            "q": "¿Qué pasa cuando alguien reserva un asiento?",
+            "a": "Recibirás una notificación push cuando un pasajero reserve un asiento en tu viaje. Puedes revisar su perfil, estado de verificación y calificaciones desde el panel de tu viaje. También puedes comunicarte con ellos a través de la mensajería en la app para coordinar detalles de recogida."
+          },
+          {
+            "q": "¿Puedo cancelar un viaje publicado?",
+            "a": "Sí. Puedes cancelar un viaje publicado desde la pantalla de gestión de viajes. Todos los pasajeros con reserva serán notificados inmediatamente. Te recomendamos cancelar lo antes posible si tus planes cambian, y evitar cancelaciones repetidas."
+          }
+        ]
+      },
+      "safetyTrust": {
+        "title": "Seguridad y Confianza",
+        "items": [
+          {
+            "q": "¿Cómo mantiene Guana seguros a los usuarios?",
+            "a": "La seguridad está integrada en cada capa de Guana. Ofrecemos verificación de identidad para todos los usuarios, detalles verificados de vehículos para conductores, mensajería en la app (para que no necesites compartir información de contacto personal), seguimiento de viajes en vivo y un sistema de calificación bidireccional. Todas las comunicaciones están cifradas y los tokens de autenticación se almacenan de forma segura en tu dispositivo."
+          },
+          {
+            "q": "¿Qué debo hacer si tengo un problema durante un viaje?",
+            "a": "Si encuentras un problema durante un viaje, primero intenta comunicarte con tu compañero de viaje a través de la mensajería en la app. Para preocupaciones serias de seguridad, contacta a los servicios de emergencia locales inmediatamente. Después del viaje, puedes reportar el problema a través de la app o contactar a nuestro equipo de soporte en soporte@guana.app. Todos los reportes son revisados y pueden resultar en restricciones de cuenta para usuarios que violen nuestros estándares comunitarios."
+          },
+          {
+            "q": "¿Puedo ver las calificaciones de un conductor antes de reservar?",
+            "a": "Sí. El perfil de cada conductor muestra su estado de verificación, calificaciones y reseñas de viajes anteriores. Puedes revisar esta información antes de decidir reservar un asiento. De igual manera, los conductores pueden ver las calificaciones de los pasajeros antes de aceptar reservas."
+          }
+        ]
+      },
+      "account": {
+        "title": "Gestión de Cuenta",
+        "items": [
+          {
+            "q": "¿Cómo edito mi perfil?",
+            "a": "Ve a la sección de perfil en la app. Puedes actualizar tu nombre, foto de perfil, número de teléfono y otra información personal en cualquier momento. Algunos cambios (como el correo electrónico) pueden requerir re-verificación."
+          },
+          {
+            "q": "¿Cómo elimino mi cuenta?",
+            "a": "Puedes solicitar la eliminación de tu cuenta a través de la configuración de la app. Navega a Configuración > Cuenta > Eliminar Cuenta. Tus datos personales serán eliminados o anonimizados dentro de 30 días de tu solicitud, de acuerdo con nuestra Política de Privacidad. También puedes solicitar la eliminación enviando un correo a soporte@guana.app."
+          },
+          {
+            "q": "¿Puedo exportar mis datos?",
+            "a": "Sí. Tienes derecho a solicitar una copia de tus datos personales. Contáctanos en soporte@guana.app y te proporcionaremos tus datos en un formato estructurado y de uso común dentro de 30 días."
+          },
+          {
+            "q": "¿Cómo contacto al soporte?",
+            "a": "Puedes contactar a nuestro equipo de soporte enviando un correo a soporte@guana.app. Nuestro objetivo es responder a todas las consultas dentro de 48 horas. Para problemas urgentes de seguridad durante un viaje, por favor contacta primero a los servicios de emergencia locales."
+          }
+        ]
+      }
+    }
   },
   "routeDetail": {
     "findRides": "Buscar viajes",
