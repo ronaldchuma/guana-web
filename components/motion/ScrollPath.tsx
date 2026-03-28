@@ -10,7 +10,7 @@ export function ScrollPath() {
   const pathname = usePathname();
   const animPathRef = useRef<SVGPathElement>(null);
   const rafIdRef = useRef(0);
-  const isHidden = pathname.includes("/legal");
+  const isHidden = pathname.includes("/legal") || pathname.includes("/help");
 
   useEffect(() => {
     if (isHidden) return;
