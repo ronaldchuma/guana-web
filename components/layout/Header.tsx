@@ -126,7 +126,7 @@ export function Header({ locale, dictionary }: HeaderProps) {
       cancelled = true;
       triggers.forEach((t) => t.kill());
     };
-  }, []);
+  }, [pathname]);
 
   /* ── Smooth scroll handler ── */
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
