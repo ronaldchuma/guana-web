@@ -10,10 +10,10 @@ export function ScrollPath() {
   const pathname = usePathname();
   const animPathRef = useRef<SVGPathElement>(null);
   const rafIdRef = useRef(0);
-
-  if (pathname.includes("/legal")) return null;
+  const isHidden = pathname.includes("/legal");
 
   useEffect(() => {
+    if (isHidden) return;
     const path = animPathRef.current;
     if (!path) return;
 
@@ -48,7 +48,9 @@ export function ScrollPath() {
       window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(rafIdRef.current);
     };
-  }, []);
+  }, [isHidden]);
+
+  if (isHidden) return null;
 
   return (
     <div
